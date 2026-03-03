@@ -1,0 +1,69 @@
+# Omar Al-Bakri — Full Profile
+
+> Director, Partnerships & Customer Solutions at RTGS.global. FinTech sales leader with 15+ years in Financial Services.
+
+## Professional Summary
+
+Omar Al-Bakri is a senior FinTech professional with deep expertise in cross-border payments, partnership development, and AI-driven business strategy. He is based in the UK and operates primarily across the ASIAPAC region. His career spans investment banking, executive search in financial services, and leadership roles at high-growth payments companies.
+
+## Current Position
+
+**Director, Partnerships & Customer Solutions — RTGS.global** (October 2024 – Present)
+
+RTGS.global is a cloud-native settlement platform enabling instant cross-border payments. Omar leads partnership development and client solutions across the ASIAPAC region, working with PSPs (Payment Service Providers), MTOs (Money Transfer Operators), EMIs (Electronic Money Institutions), and banks.
+
+Key responsibilities:
+- Building and managing partnerships with regulated financial institutions
+- Developing client solutions for cross-border payment infrastructure
+- Market development across ASIAPAC (excluding India, Pakistan, Bangladesh)
+- Aligning product capabilities with partner requirements
+
+## Career History
+
+### Founder — FiduciaNex|Ai (January 2024 – October 2024)
+AI strategy consultancy focused on helping financial services firms adopt AI for business transformation.
+
+### Senior Account Relationship Manager — Banking Circle (March 2023 – September 2023)
+Managed key banking relationships for Banking Circle's payments infrastructure platform.
+
+### Head of Bank Sales EMEA — Convera (February 2021 – March 2023)
+Led bank sales across EMEA for Convera (formerly Western Union Business Solutions), one of the world's largest non-bank B2B cross-border payments companies.
+
+### Principal, Financial Services — Marlin Hawk (October 2018 – October 2020)
+Executive search and leadership advisory focused on C-suite and senior leadership placements in financial services and FinTech.
+
+### Earlier Career
+- Roles at Bank of America Merrill Lynch and BNP Paribas in investment banking and financial services.
+
+## Areas of Expertise
+
+1. **Cross-Border Payments**: Settlement infrastructure, correspondent banking alternatives, real-time payment rails, multi-currency operations
+2. **Partnership Development**: PSP/MTO/EMI partnerships, bank relationships, channel strategy, ASIAPAC market entry
+3. **AI Strategy**: Enterprise AI adoption, business transformation through AI, strategic consulting
+4. **Treasury & Liquidity**: Pre-funding optimisation, working capital efficiency, JIT funding models
+5. **Sales Leadership**: Enterprise sales, consultative selling, pipeline development, team building
+6. **Regulatory & Compliance**: Understanding of payments regulation across jurisdictions, licensing frameworks
+
+## Education
+
+- **BSc Physiology & Pharmacology** — Nottingham Trent University
+
+## Contact Information
+
+- **Website**: https://omarbakri.com
+- **LinkedIn**: https://linkedin.com/in/omaralbakri
+- **Email**: oab@omarbakri.com
+- **Location**: Brentford, England, United Kingdom
+
+## About RTGS.global
+
+RTGS.global is a cloud-native settlement platform that enables instant cross-border payments:
+- Bypasses SWIFT and correspondent banking
+- Settles in seconds, 24/7 including weekends
+- 30+ currencies supported
+- No pre-funding or collateral required
+- Smart liquidity management across corridors
+- Competitive FX across member network
+- Single API/UI integration — sandbox in minutes, live in days
+
+RTGS.global serves as a SaaS/platform layer — Funds Controllers provide the regulated execution layer. The platform facilitates messaging and orchestration for settlement between participants.

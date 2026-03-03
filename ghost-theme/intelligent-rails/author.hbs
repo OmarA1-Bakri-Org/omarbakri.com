@@ -1,0 +1,31 @@
+{{!< default}}
+
+<div class="ir-container">
+    <header class="ir-archive-header">
+        {{#if profile_image}}
+        <img class="ir-author-avatar" src="{{img_url profile_image size="m"}}" alt="{{name}}">
+        {{/if}}
+        <h1 class="ir-archive-title">{{name}}</h1>
+        {{#if bio}}
+        <p class="ir-archive-description">{{bio}}</p>
+        {{/if}}
+    </header>
+
+    <section class="ir-post-feed">
+        {{#foreach posts}}
+            {{> post-card}}
+        {{/foreach}}
+    </section>
+
+    {{#if pagination.pages}}
+    <nav class="ir-pagination" aria-label="Pagination">
+        {{#if pagination.prev}}
+        <a href="{{pagination.prev}}" class="ir-pagination-link">&larr; Newer</a>
+        {{/if}}
+        <span class="ir-pagination-count">Page {{pagination.page}} of {{pagination.pages}}</span>
+        {{#if pagination.next}}
+        <a href="{{pagination.next}}" class="ir-pagination-link">Older &rarr;</a>
+        {{/if}}
+    </nav>
+    {{/if}}
+</div>

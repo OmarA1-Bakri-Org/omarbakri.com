@@ -1,0 +1,43 @@
+{
+  "name": "intelligent-rails",
+  "description": "Dark monochrome Ghost theme with champagne gold accents",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Omar Al-Bakri",
+    "email": "oab@omarbakri.com",
+    "url": "https://omarbakri.com"
+  },
+  "keywords": [
+    "ghost-theme",
+    "fintech",
+    "newsletter",
+    "dark-theme",
+    "minimal"
+  ],
+  "config": {
+    "posts_per_page": 12,
+    "image_sizes": {
+      "xxs": { "width": 30 },
+      "xs": { "width": 100 },
+      "s": { "width": 300 },
+      "m": { "width": 600 },
+      "l": { "width": 1000 },
+      "xl": { "width": 2000 }
+    },
+    "custom": {
+      "show_reading_time": {
+        "type": "boolean",
+        "default": true,
+        "description": "Show estimated reading time",
+        "group": "site"
+      },
+      "cta_text": {
+        "type": "text",
+        "default": "Subscribe to Intelligent Rails",
+        "description": "CTA text for subscribe prompts",
+        "group": "site"
+      }
+    }
+  }
+}

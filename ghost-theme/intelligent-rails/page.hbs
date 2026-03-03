@@ -1,0 +1,51 @@
+{{!< default}}
+
+{{#post}}
+<article class="ir-page {{post_class}}">
+    {{#if @page.show_title_and_feature_image}}
+    <header class="ir-page-header ir-container ir-container--narrow">
+        <h1 class="ir-page-title">{{title}}</h1>
+        {{#if custom_excerpt}}
+        <p class="ir-page-excerpt">{{custom_excerpt}}</p>
+        {{/if}}
+        <div class="ir-article-meta">
+            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+            {{#primary_author}}
+            <span class="ir-article-meta-sep">&middot;</span>
+            <a href="{{url}}">{{name}}</a>
+            {{/primary_author}}
+        </div>
+    </header>
+
+    {{#if feature_image}}
+    <figure class="ir-article-image">
+        <img
+            srcset="{{img_url feature_image size="m"}} 600w,
+                    {{img_url feature_image size="l"}} 1000w,
+                    {{img_url feature_image size="xl"}} 2000w"
+            sizes="(max-width: 800px) 100vw, 800px"
+            src="{{img_url feature_image size="l"}}"
+            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+        >
+        {{#if feature_image_caption}}
+        <figcaption>{{feature_image_caption}}</figcaption>
+        {{/if}}
+    </figure>
+    {{/if}}
+    {{/if}}
+
+    <section class="ir-article-body ir-container ir-container--narrow">
+        {{content}}
+    </section>
+
+    {{#if tags}}
+    <footer class="ir-article-footer ir-container ir-container--narrow">
+        <div class="ir-article-tags">
+            {{#foreach tags}}
+            <a href="{{url}}" class="ir-tag">{{name}}</a>
+            {{/foreach}}
+        </div>
+    </footer>
+    {{/if}}
+</article>
+{{/post}}

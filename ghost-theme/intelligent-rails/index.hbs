@@ -1,0 +1,38 @@
+{{!< default}}
+
+<div class="ir-container">
+    {{#is "home"}}
+    <section class="ir-hero">
+        <h1 class="ir-hero-title">{{@site.title}}</h1>
+        <p class="ir-hero-description">{{@site.description}}</p>
+
+        {{#unless @member}}
+        <form class="ir-hero-subscribe" data-members-form="subscribe">
+            <label for="hero-email" class="sr-only">Email address</label>
+            <input type="email" id="hero-email" name="email" placeholder="your@email.com" required>
+            <button type="submit">Subscribe</button>
+            <p class="ir-form-message ir-form-success" data-members-success>Subscribed!</p>
+            <p class="ir-form-message ir-form-error" data-members-error></p>
+        </form>
+        {{/unless}}
+    </section>
+    {{/is}}
+
+    <section class="ir-post-feed">
+        {{#foreach posts}}
+            {{> post-card}}
+        {{/foreach}}
+    </section>
+
+    {{#if pagination.pages}}
+    <nav class="ir-pagination" aria-label="Pagination">
+        {{#if pagination.prev}}
+        <a href="{{pagination.prev}}" class="ir-pagination-link ir-pagination-prev">&larr; Newer</a>
+        {{/if}}
+        <span class="ir-pagination-count">Page {{pagination.page}} of {{pagination.pages}}</span>
+        {{#if pagination.next}}
+        <a href="{{pagination.next}}" class="ir-pagination-link ir-pagination-next">Older &rarr;</a>
+        {{/if}}
+    </nav>
+    {{/if}}
+</div>

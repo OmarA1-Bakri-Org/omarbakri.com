@@ -25,62 +25,11 @@ const nextConfig = {
 
   // Experimental features for performance
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['@iconify/react', 'framer-motion'],
   },
 
   // Production source maps (smaller)
   productionBrowserSourceMaps: false,
-
-  // Webpack optimizations
-  webpack: (config, { dev, isServer }) => {
-    // Production optimizations
-    if (!dev && !isServer) {
-      config.optimization = {
-        ...config.optimization,
-        moduleIds: 'deterministic',
-        runtimeChunk: 'single',
-        splitChunks: {
-          chunks: 'all',
-          cacheGroups: {
-            default: false,
-            vendors: false,
-            // Vendor chunk for node_modules
-            vendor: {
-              name: 'vendor',
-              chunks: 'all',
-              test: /node_modules/,
-              priority: 20,
-            },
-            // Common chunk for shared code
-            common: {
-              name: 'common',
-              minChunks: 2,
-              chunks: 'all',
-              priority: 10,
-              reuseExistingChunk: true,
-              enforce: true,
-            },
-            // Iconify separate chunk (frequently updated)
-            iconify: {
-              name: 'iconify',
-              test: /[\\/]node_modules[\\/]@iconify[\\/]/,
-              chunks: 'all',
-              priority: 30,
-            },
-            // Framer Motion separate chunk
-            framerMotion: {
-              name: 'framer-motion',
-              test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
-              chunks: 'all',
-              priority: 30,
-            },
-          },
-        },
-      };
-    }
-    return config;
-  },
 
   // Headers for security and caching
   async headers() {

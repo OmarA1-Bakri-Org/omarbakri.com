@@ -1,0 +1,79 @@
+{{!< default}}
+
+{{#post}}
+<article class="ir-article {{post_class}}">
+    <header class="ir-article-header">
+        <div class="ir-container ir-container--narrow">
+            {{#if primary_tag}}
+            <a href="{{primary_tag.url}}" class="ir-article-tag">{{primary_tag.name}}</a>
+            {{/if}}
+
+            <h1 class="ir-article-title">{{title}}</h1>
+
+            {{#if custom_excerpt}}
+            <p class="ir-article-excerpt">{{custom_excerpt}}</p>
+            {{/if}}
+
+            <div class="ir-article-meta">
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                {{#if @custom.show_reading_time}}
+                <span class="ir-article-meta-sep">&middot;</span>
+                <span>{{reading_time}}</span>
+                {{/if}}
+            </div>
+        </div>
+    </header>
+
+    {{#if feature_image}}
+    <figure class="ir-article-image">
+        <img
+            srcset="{{img_url feature_image size="m"}} 600w,
+                    {{img_url feature_image size="l"}} 1000w,
+                    {{img_url feature_image size="xl"}} 2000w"
+            sizes="(max-width: 800px) 100vw, 800px"
+            src="{{img_url feature_image size="l"}}"
+            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+        >
+        {{#if feature_image_caption}}
+        <figcaption>{{feature_image_caption}}</figcaption>
+        {{/if}}
+    </figure>
+    {{/if}}
+
+    <section class="ir-article-body ir-container ir-container--narrow">
+        {{content}}
+    </section>
+
+    <footer class="ir-article-footer ir-container ir-container--narrow">
+        {{#if tags}}
+        <div class="ir-article-tags">
+            {{#foreach tags}}
+            <a href="{{url}}" class="ir-tag">{{name}}</a>
+            {{/foreach}}
+        </div>
+        {{/if}}
+
+        {{!-- CTA for non-members --}}
+        {{#unless @member}}
+        <section class="ir-article-cta">
+            <h3>{{@custom.cta_text}}</h3>
+            <p>Practical insights on AI, FinTech, and business strategy. Delivered to your inbox.</p>
+            <form data-members-form="subscribe" class="ir-cta-form">
+                <label for="cta-email" class="sr-only">Email address</label>
+                <input type="email" id="cta-email" name="email" placeholder="your@email.com" required>
+                <button type="submit">Subscribe</button>
+                <p class="ir-form-message ir-form-success" data-members-success>Subscribed!</p>
+                <p class="ir-form-message ir-form-error" data-members-error></p>
+            </form>
+        </section>
+        {{/unless}}
+
+        {{!-- Comments --}}
+        {{#if comments}}
+        <section class="ir-comments">
+            {{comments}}
+        </section>
+        {{/if}}
+    </footer>
+</article>
+{{/post}}

@@ -1,0 +1,33 @@
+<footer class="ir-footer" role="contentinfo">
+    <div class="ir-footer-inner">
+        <div class="ir-footer-top">
+            <div class="ir-footer-brand">
+                <a href="{{@site.url}}" class="ir-footer-logo" aria-label="{{@site.title}} — Home">
+                    <svg width="34" height="45" viewBox="0 0 150 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <ellipse cx="75" cy="100" rx="64" ry="90" stroke="var(--accent)" stroke-width="3" fill="none"/>
+                        <text x="75" y="88" text-anchor="middle" font-family="Georgia, serif" font-size="78" font-weight="400" fill="var(--accent)">A</text>
+                        <line x1="38" y1="102" x2="112" y2="102" stroke="var(--accent)" stroke-width="2"/>
+                        <text x="75" y="170" text-anchor="middle" font-family="Georgia, serif" font-size="78" font-weight="400" fill="var(--accent)">B</text>
+                    </svg>
+                </a>
+                <p class="ir-footer-tagline">FinTech &middot; AI Strategy &middot; Business Development</p>
+            </div>
+
+            <nav class="ir-footer-nav" aria-label="Footer navigation">
+                {{#foreach navigation}}
+                <a href="{{url}}" class="ir-footer-link">{{label}}</a>
+                {{/foreach}}
+            </nav>
+
+            <div class="ir-footer-social">
+                <a href="https://omarbakri.com" class="ir-footer-link" target="_blank" rel="noopener noreferrer">Website</a>
+                <a href="https://linkedin.com/in/omaralbakri" class="ir-footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+
+        <div class="ir-footer-bottom">
+            <p>&copy; {{date format="YYYY"}} {{@site.title}}. All rights reserved.</p>
+            <a href="https://ghost.org" target="_blank" rel="noopener noreferrer">Powered by Ghost</a>
+        </div>
+    </div>
+</footer>

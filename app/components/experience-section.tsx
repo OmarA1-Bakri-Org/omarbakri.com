@@ -1,166 +1,175 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Icon } from "@iconify/react";
+
+const experiences = [
+  {
+    title: "Director, Partnerships & Customer Solutions",
+    company: "RTGS.global",
+    period: "Oct 2024 — Present",
+    description:
+      "Enabling atomic, borderless, instant, and secure money movement across RTGS.global infrastructure — bypassing the constraints of traditional correspondent banking.",
+    outcomes: [
+      "Real-time 24/7 atomic cross-border settlement via ISO20022 API",
+      "Driving partnerships across payments infrastructure and open banking",
+      "Building revenue through liquidity provision, transaction fees, and FX income",
+    ],
+  },
+  {
+    title: "Founder",
+    company: "FiduciaNex|Ai",
+    period: "Jan 2024 — Oct 2024",
+    description:
+      "Founded an AI-focused venture building intelligent sales tools and multi-agent systems for the financial services industry.",
+    outcomes: [
+      "Built AI sales tools leveraging LLMs and multi-agent systems",
+      "Full-stack development with prompt engineering and automation",
+      "Developed new product rollout strategy from concept to market",
+    ],
+  },
+  {
+    title: "Senior Account Relationship Manager",
+    company: "Banking Circle",
+    period: "Mar 2023 — Sep 2023",
+    description:
+      "Direct sales, business development, and account management for a leading payments bank serving EU-focused financial institutions.",
+    outcomes: [
+      "Exceeded yearly sales targets by 20% in 6 months, doubling MoM revenue to \u20AC500k",
+      "Reduced client onboarding time by 50%, grew payment volumes by 30%",
+      "Boosted customer satisfaction by 25% across 20-client EU portfolio",
+    ],
+  },
+  {
+    title: "Head of Bank Sales for EMEA, FI Payments",
+    company: "Convera",
+    period: "Feb 2021 — Mar 2023",
+    description:
+      "Led EMEA bank sales for financial institution payments, driving strategic growth across the correspondent banking landscape.",
+    outcomes: [
+      "Achieved 5x growth in major bank opportunities via strategic domestic payments roadmap",
+      "Secured \u00A31M deal with major bank through data-driven negotiation",
+      "Held 30+ stakeholder and client meetings monthly to optimise cross-selling and pipeline",
+    ],
+  },
+  {
+    title: "Principal, Financial Services",
+    company: "Marlin Hawk",
+    period: "Oct 2018 — Oct 2020",
+    description:
+      "Executive search and advisory for global financial services, building C-suite relationships across banking and FinTech.",
+    outcomes: [
+      "Secured 10 new global clients including Gruppo Santander and Vanguard",
+      "Generated \u00A31.53M in new fees through strategic business development",
+      "Grew flagship industry event attendance by 40% annually",
+    ],
+  },
+  {
+    title: "RM, Financial Institutions Coverage",
+    company: "Bank of America Merrill Lynch",
+    period: "Apr 2011 — Dec 2013",
+    description:
+      "Relationship management for financial institutions coverage, managing complex multi-product banking relationships.",
+    outcomes: [
+      "Managed portfolio of institutional clients across global markets",
+      "C-suite engagement and consultative selling across banking products",
+      "Cross-selling and revenue optimisation across transaction banking",
+    ],
+  },
+  {
+    title: "Analyst — Associate, Corporate Coverage",
+    company: "BNP Paribas",
+    period: "May 2006 — Mar 2011",
+    description:
+      "Nearly five years in corporate coverage at one of Europe\u2019s largest banks, building foundational expertise in financial services.",
+    outcomes: [
+      "Corporate client relationship management and credit analysis",
+      "Transaction structuring and deal origination",
+      "Deep foundation in retail and commercial banking operations",
+    ],
+  },
+];
+
 export default function ExperienceSection() {
-  const experiences = [
-    {
-      title: "Customer Solutions Lead",
-      company: "RTGS.global",
-      period: "2023 - Present",
-      description: "Leading customer solutions and driving growth in the global payments technology sector. Specializing in real-time gross settlement systems and cross-border payment innovations.",
-      achievements: [
-        "Increased customer satisfaction by 40% through strategic solution design",
-        "Led implementation of AI-driven customer success initiatives",
-        "Managed portfolio of enterprise clients worth $50M+ ARR"
-      ],
-      icon: "solar:case-linear",
-      color: "from-cyan-500 to-blue-600"
-    },
-    {
-      title: "Senior Sales Manager",
-      company: "FinTech Solutions Inc.",
-      period: "2021 - 2023",
-      description: "Drove revenue growth through strategic partnerships and innovative sales methodologies in the financial technology space.",
-      achievements: [
-        "Exceeded sales targets by 150% for two consecutive years",
-        "Built and managed high-performing sales team of 12 professionals",
-        "Pioneered AI-assisted sales processes that improved conversion by 35%"
-      ],
-      icon: "solar:chart-linear",
-      color: "from-blue-500 to-purple-600"
-    },
-    {
-      title: "Business Development Manager",
-      company: "Digital Banking Corp",
-      period: "2019 - 2021",
-      description: "Focused on expanding market presence in the digital banking sector, with emphasis on AI and machine learning solutions.",
-      achievements: [
-        "Secured partnerships with 25+ financial institutions",
-        "Launched innovative AI-powered banking products",
-        "Generated $15M in new business revenue"
-      ],
-      icon: "solar:graph-up-linear",
-      color: "from-purple-500 to-pink-600"
-    }
-  ];
   return (
-    <section id="experience" className="relative py-20 overflow-hidden">
-      {}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        {}
+    <section id="experience" className="py-32 lg:py-40 bg-subtle">
+      <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Professional
-            </span>
-            <br />
-            <span className="text-white">Journey</span>
-          </h2>
-          <p className="text-neutral-300 text-lg max-w-2xl mx-auto">
-            A track record of transforming complex challenges into growth opportunities 
-            across the FinTech and AI landscape.
+          {/* Section label */}
+          <p
+            className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
+            style={{ fontSize: "var(--text-xs)" }}
+          >
+            Experience
           </p>
+
+          <h2
+            className="font-light tracking-[-0.02em] text-primary mb-20"
+            style={{ fontSize: "var(--text-3xl)" }}
+          >
+            Professional journey
+          </h2>
         </motion.div>
-        {}
-        <div className="relative">
-          {}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-cyan-500 to-blue-600 rounded-full hidden lg:block" />
-          <div className="space-y-16">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                } flex-col lg:space-x-8`}
-              >
-                {}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full border-4 border-black z-10 hidden lg:block" />
-                {}
-                <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? "" : "lg:text-right"}`}>
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    className="bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-8 hover:border-cyan-500/40 transition-all duration-300"
-                  >
-                    {}
-                    <div className={`flex items-center mb-4 ${index % 2 === 0 ? "" : "lg:justify-end"}`}>
-                      <div className={`flex items-center space-x-3 ${index % 2 === 0 ? "" : "lg:flex-row-reverse lg:space-x-reverse"}`}>
-                        <div className={`w-12 h-12 bg-gradient-to-r ${exp.color} rounded-full flex items-center justify-center`}>
-                          <Icon icon={exp.icon} className="w-6 h-6 text-white" />
-                        </div>
-                        <span className="text-cyan-400 font-medium">{exp.period}</span>
-                      </div>
-                    </div>
-                    {}
-                    <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
-                    <h4 className="text-lg text-cyan-400 mb-4">{exp.company}</h4>
-                    {}
-                    <p className="text-neutral-300 mb-6 leading-relaxed">{exp.description}</p>
-                    {}
-                    <div className="space-y-3">
-                      <h5 className="text-white font-semibold mb-3">Key Achievements:</h5>
-                      {exp.achievements.map((achievement, achIndex) => (
-                        <motion.div
-                          key={achIndex}
-                          initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.1 * achIndex }}
-                          viewport={{ once: true }}
-                          className="flex items-start space-x-3"
-                        >
-                          <Icon icon="solar:check-circle-linear" className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                          <span className="text-neutral-300 text-sm">{achievement}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
-                </div>
-                {}
-                <div className="hidden lg:block w-5/12" />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-        {}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-cyan-500/10 to-blue-600/10 border border-cyan-500/20 rounded-2xl p-8 backdrop-blur-sm">
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Transform Your Business?</h3>
-            <p className="text-neutral-300 mb-6 max-w-2xl mx-auto">
-              Let&apos;s discuss how my expertise in FinTech and AI can drive your organization&apos;s growth.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                const element = document.querySelector("#contact");
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-              className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
+
+        <div className="space-y-0">
+          {experiences.map((exp, index) => (
+            <motion.article
+              key={index}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="grid lg:grid-cols-12 gap-8 py-12 border-t border-edge"
             >
-              Let&apos;s Connect
-            </motion.button>
-          </div>
-        </motion.div>
+              {/* Left: period + company */}
+              <div className="lg:col-span-4">
+                <p
+                  className="text-muted mb-1"
+                  style={{ fontSize: "var(--text-sm)" }}
+                >
+                  {exp.period}
+                </p>
+                <p className="text-accent" style={{ fontSize: "var(--text-sm)" }}>
+                  {exp.company}
+                </p>
+              </div>
+
+              {/* Right: details */}
+              <div className="lg:col-span-8">
+                <h3
+                  className="text-primary font-normal mb-4"
+                  style={{ fontSize: "var(--text-xl)" }}
+                >
+                  {exp.title}
+                </h3>
+
+                <p
+                  className="text-secondary leading-[1.7] mb-6"
+                  style={{ fontSize: "var(--text-base)" }}
+                >
+                  {exp.description}
+                </p>
+
+                <ul className="space-y-2">
+                  {exp.outcomes.map((outcome, i) => (
+                    <li
+                      key={i}
+                      className="text-secondary flex items-start gap-3"
+                      style={{ fontSize: "var(--text-sm)" }}
+                    >
+                      <span className="text-accent mt-1.5 flex-shrink-0 block w-1 h-1 rounded-full bg-accent" />
+                      {outcome}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   );

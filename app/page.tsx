@@ -4,40 +4,32 @@ import Navbar from "@/app/components/navbar";
 import HeroSection from "@/app/components/hero-section";
 import AboutSection from "@/app/components/about-section";
 import ExperienceSection from "@/app/components/experience-section";
-import PortfolioSection from "@/app/components/portfolio-section";
+import ExpertiseSection from "@/app/components/expertise-section";
+import NewsletterSection from "@/app/components/newsletter-section";
 import ContactSection from "@/app/components/contact-section";
 import Footer from "@/app/components/footer";
-import ParticleAnimation from "@/app/components/particle-animation";
-import FloatingNav from "@/app/components/floating-nav";
-import ReadingProgress from "@/app/components/reading-progress";
-import DarkModeToggle from "@/app/components/dark-mode-toggle";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      {/* Background Effects */}
-      <ParticleAnimation />
+    <div className="min-h-screen bg-base text-primary overflow-x-hidden">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-base"
+      >
+        Skip to content
+      </a>
 
-      {/* Progress Indicator */}
-      <ReadingProgress />
-
-      {/* Navigation */}
       <Navbar />
-      <FloatingNav />
 
-      {/* Dark Mode Toggle */}
-      <DarkModeToggle />
-
-      {/* Main Content */}
-      <main>
+      <main id="main-content">
         <HeroSection />
         <AboutSection />
         <ExperienceSection />
-        <PortfolioSection />
+        <ExpertiseSection />
+        <NewsletterSection />
         <ContactSection />
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   );

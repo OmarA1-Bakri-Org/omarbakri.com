@@ -1,0 +1,26 @@
+<header class="ir-header" role="banner">
+    <div class="ir-header-inner">
+        <a href="{{@site.url}}" class="ir-header-logo" aria-label="{{@site.title}} — Home">
+            <svg width="34" height="45" viewBox="0 0 150 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <ellipse cx="75" cy="100" rx="64" ry="90" stroke="#C4A265" stroke-width="3" fill="none"/>
+                <text x="75" y="88" text-anchor="middle" font-family="Georgia, serif" font-size="78" font-weight="400" fill="#C4A265">A</text>
+                <line x1="38" y1="102" x2="112" y2="102" stroke="#C4A265" stroke-width="2"/>
+                <text x="75" y="170" text-anchor="middle" font-family="Georgia, serif" font-size="78" font-weight="400" fill="#C4A265">B</text>
+            </svg>
+        </a>
+
+        <nav class="ir-nav" role="navigation" aria-label="Main navigation">
+            {{#foreach navigation}}
+            <a href="{{url}}" class="ir-nav-link {{#if current}}ir-nav-link--active{{/if}}">{{label}}</a>
+            {{/foreach}}
+        </nav>
+
+        <div class="ir-header-actions">
+            {{#unless @member}}
+            <a href="#/portal/signup" class="ir-btn ir-btn--outline" data-portal="signup">Subscribe</a>
+            {{else}}
+            <a href="#/portal/account" class="ir-btn ir-btn--ghost" data-portal="account">Account</a>
+            {{/unless}}
+        </div>
+    </div>
+</header>
