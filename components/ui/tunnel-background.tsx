@@ -32,12 +32,13 @@ function useIsMobile(breakpoint = 768) {
 
 const vertexShader = `void main(){ gl_Position = vec4(position, 1.0); }`;
 
-const fragmentShader = `
+function buildFragmentShader(layers: number) {
+  return `
 uniform float iTime;
 uniform vec3 iResolution;
 
 #define TAU 6.2831853071795865
-#define TUNNEL_LAYERS 96
+#define TUNNEL_LAYERS ${layers}
 #define RING_POINTS 128
 #define POINT_SIZE 1.8
 #define POINT_COLOR_A vec3(0.769, 0.635, 0.396)
@@ -94,6 +95,10 @@ void main(){
   gl_FragColor = vec4(color, 1.0);
 }
 `;
+}
+
+const DESKTOP_LAYERS = 96;
+const MOBILE_LAYERS = 48;
 
 /* ----------------------------- three helpers ----------------------------- */
 
@@ -109,10 +114,11 @@ type ThreeContext = {
 function createThreeForCanvas(
   canvas: HTMLCanvasElement,
   width: number,
-  height: number
+  height: number,
+  layers: number = DESKTOP_LAYERS
 ): ThreeContext {
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: false });
+  const dpr = Math.min(window.devicePixelRatio || 1, layers <= MOBILE_LAYERS ? 1.5 : 2);
   renderer.setPixelRatio(dpr);
   renderer.setSize(width, height);
 
@@ -127,7 +133,7 @@ function createThreeForCanvas(
       },
     },
     vertexShader,
-    fragmentShader,
+    fragmentShader: buildFragmentShader(layers),
   });
 
   const geometry = new THREE.PlaneGeometry(2, 2);
@@ -157,6 +163,7 @@ export default function TunnelBackground() {
   const animRef = useRef<number | null>(null);
   const pausedRef = useRef<boolean>(false);
   const rafResizeRef = useRef<boolean>(false);
+  const isMobile = useIsMobile();
 
   const animate = useCallback((time: number) => {
     if (!ctxRef.current) return;
@@ -176,9 +183,10 @@ export default function TunnelBackground() {
     const canvas = canvasRef.current;
     if (!canvas || typeof window === "undefined") return;
 
+    const layers = isMobile ? MOBILE_LAYERS : DESKTOP_LAYERS;
     const width = window.innerWidth;
     const height = window.innerHeight;
-    const ctx = createThreeForCanvas(canvas, width, height);
+    const ctx = createThreeForCanvas(canvas, width, height, layers);
     ctxRef.current = ctx;
 
     const handleResize = () => {
@@ -189,7 +197,7 @@ export default function TunnelBackground() {
         rafResizeRef.current = false;
         const w = window.innerWidth;
         const h = window.innerHeight;
-        const resizeDpr = Math.min(window.devicePixelRatio || 1, 2);
+        const resizeDpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2);
         ctxRef.current!.renderer.setPixelRatio(resizeDpr);
         ctxRef.current!.renderer.setSize(w, h);
         (
@@ -216,7 +224,7 @@ export default function TunnelBackground() {
         ctxRef.current = null;
       }
     };
-  }, [animate]);
+  }, [animate, isMobile]);
 
   return (
     <canvas
@@ -256,9 +264,10 @@ export function TunnelShowcase() {
     const canvas = canvasRef.current;
     if (!canvas || typeof window === "undefined") return;
 
+    const layers = isMobile ? MOBILE_LAYERS : DESKTOP_LAYERS;
     const width = window.innerWidth;
     const height = window.innerHeight;
-    const ctx = createThreeForCanvas(canvas, width, height);
+    const ctx = createThreeForCanvas(canvas, width, height, layers);
     ctxRef.current = ctx;
 
     const handleResize = () => {
@@ -269,7 +278,7 @@ export function TunnelShowcase() {
         rafResizeRef.current = false;
         const w = window.innerWidth;
         const h = window.innerHeight;
-        const resizeDpr = Math.min(window.devicePixelRatio || 1, 2);
+        const resizeDpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2);
         ctxRef.current!.renderer.setPixelRatio(resizeDpr);
         ctxRef.current!.renderer.setSize(w, h);
         (
@@ -296,7 +305,7 @@ export function TunnelShowcase() {
         ctxRef.current = null;
       }
     };
-  }, [animate]);
+  }, [animate, isMobile]);
 
   return (
     <div className="bg-black text-white min-h-screen overflow-hidden relative">
@@ -366,9 +375,10 @@ export function TunnelTheme() {
     const container = canvas.parentElement;
     if (!container) return;
 
+    const layers = isMobile ? MOBILE_LAYERS : DESKTOP_LAYERS;
     const width = container.clientWidth;
     const height = container.clientHeight;
-    const ctx = createThreeForCanvas(canvas, width, height);
+    const ctx = createThreeForCanvas(canvas, width, height, layers);
     ctxRef.current = ctx;
 
     const resizeObserver = new ResizeObserver(() => {
@@ -379,7 +389,7 @@ export function TunnelTheme() {
         rafResizeRef.current = false;
         const w = container.clientWidth;
         const h = container.clientHeight;
-        const resizeDpr = Math.min(window.devicePixelRatio || 1, 2);
+        const resizeDpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2);
         ctxRef.current!.renderer.setPixelRatio(resizeDpr);
         ctxRef.current!.renderer.setSize(w, h);
         (
@@ -406,7 +416,7 @@ export function TunnelTheme() {
         ctxRef.current = null;
       }
     };
-  }, [animate]);
+  }, [animate, isMobile]);
 
   return (
     <div className="relative w-full h-96 bg-black overflow-hidden rounded-lg">

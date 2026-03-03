@@ -51,8 +51,8 @@ export default function HeroSection() {
           className="text-muted max-w-2xl mx-auto leading-relaxed"
           style={{ fontSize: "var(--text-base)" }}
         >
-          FinTech sales leader bridging the gap between cutting-edge AI and
-          sustainable business growth.
+          FinTech sales leader bridging the gap between cutting-edge AI
+          and sustainable business&nbsp;growth.
         </motion.p>
 
         {/* Scroll indicator */}
