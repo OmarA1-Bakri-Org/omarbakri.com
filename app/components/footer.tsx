@@ -2,16 +2,11 @@
 import React, { memo } from "react";
 import { Icon } from "@iconify/react";
 import Monogram from "./monogram";
+import { scrollToSection } from "@/lib/scroll-utils";
+import { navLinks } from "@/lib/nav-links";
 
 const Footer = memo(function Footer() {
   const currentYear = new Date().getFullYear();
-
-  const scrollToSection = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <footer className="border-t border-edge" role="contentinfo">
@@ -30,19 +25,16 @@ const Footer = memo(function Footer() {
 
           {/* Center: nav links */}
           <div className="flex flex-wrap gap-x-8 gap-y-3">
-            {["#about", "#experience", "#expertise", "#newsletter", "#contact"].map(
-              (href) => (
+            {navLinks.map(({ href, label }) => (
                 <button
                   key={href}
                   onClick={() => scrollToSection(href)}
                   className="text-muted hover:text-secondary transition-colors duration-200"
                   style={{ fontSize: "var(--text-sm)" }}
                 >
-                  {href.replace("#", "").charAt(0).toUpperCase() +
-                    href.replace("#", "").slice(1)}
+                  {label}
                 </button>
-              )
-            )}
+            ))}
           </div>
 
           {/* Right: social */}

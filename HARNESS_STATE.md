@@ -4,7 +4,7 @@ project_mode: BROWNFIELD
 phase: PHASE_8_PRODUCTION_HARDENING
 project_name: Omar Al-Bakri Portfolio
 site_category: Personal brand / executive portfolio
-tech_stack: Next.js 14, React 18, Tailwind CSS 3, Framer Motion, Firebase, TypeScript
+tech_stack: Next.js 14, React 18, Tailwind CSS 3, Framer Motion, PostgreSQL (@neondatabase/serverless), TypeScript
 design_direction_status: APPROVED
 brownfield_debt_map: COMPLETE
 research_status: COMPLETE
@@ -39,7 +39,7 @@ email: oab@omarbakri.com
 - Manual og-image.png references removed from metadata
 
 ## Remaining Items (non-blocking)
-- Firebase env vars needed for production contact form
+- PostgreSQL env vars required in production: POSTGRES_URL (or DATABASE_URL fallback), optional DB_SCHEMA if non-default schema is used; configured for Neon connection strings via @neondatabase/serverless
 - Newsletter section has placeholder content
 - No branded 404 page
 - No analytics

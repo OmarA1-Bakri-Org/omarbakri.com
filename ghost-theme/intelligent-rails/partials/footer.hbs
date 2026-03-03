@@ -20,8 +20,12 @@
             </nav>
 
             <div class="ir-footer-social">
-                <a href="https://omarbakri.com" class="ir-footer-link" target="_blank" rel="noopener noreferrer">Website</a>
-                <a href="https://linkedin.com/in/omaralbakri" class="ir-footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                {{#if @site.twitter}}
+                <a href="{{twitter_url @site.twitter}}" class="ir-footer-link" target="_blank" rel="noopener noreferrer">Twitter</a>
+                {{/if}}
+                {{#if @site.facebook}}
+                <a href="{{facebook_url @site.facebook}}" class="ir-footer-link" target="_blank" rel="noopener noreferrer">Facebook</a>
+                {{/if}}
             </div>
         </div>
 

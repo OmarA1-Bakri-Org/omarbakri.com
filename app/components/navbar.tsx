@@ -2,14 +2,8 @@
 import React, { useState, useEffect, memo } from "react";
 import { Icon } from "@iconify/react";
 import Monogram from "./monogram";
-
-const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#expertise", label: "Expertise" },
-  { href: "#newsletter", label: "Newsletter" },
-  { href: "#contact", label: "Contact" },
-] as const;
+import { scrollToSection } from "@/lib/scroll-utils";
+import { navLinks } from "@/lib/nav-links";
 
 const Navbar = memo(function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,14 +16,6 @@ const Navbar = memo(function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollToSection = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsOpen(false);
-  };
 
   return (
     <nav
@@ -68,7 +54,7 @@ const Navbar = memo(function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen((prev) => !prev)}
-            className="md:hidden p-2 text-secondary hover:text-primary transition-colors duration-200"
+            className="md:hidden p-2 min-h-[44px] min-w-[44px] text-secondary hover:text-primary transition-colors duration-200"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -92,7 +78,10 @@ const Navbar = memo(function Navbar() {
             {navLinks.map(({ href, label }) => (
               <button
                 key={href}
-                onClick={() => scrollToSection(href)}
+                onClick={() => {
+                  scrollToSection(href);
+                  setIsOpen(false);
+                }}
                 className="block w-full text-left px-4 py-3 text-secondary hover:text-primary transition-colors duration-200 text-sm tracking-wide"
               >
                 {label}

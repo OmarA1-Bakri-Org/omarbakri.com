@@ -104,11 +104,10 @@ issues:
   - file: app/components/seo-optimizer.tsx | Unknown — needs inspection
   - file: app/components/sticky-cta.tsx | Unknown — needs inspection
   - file: app/components/text-reveal-effect.tsx | Used only by parallax-footer (which is unused)
-  - BROKEN API PATH: contact-section.tsx:29 posts to '/api/cosmic-database/contact' but route is at 'app/api/database/contact/route.tsx'
-  - file: app/api/layout.tsx + app/api/page.tsx | Creates a visible /api page — should NOT exist in App Router
-  - file: app/admin/pages.tsx | Wrong filename — should be page.tsx for Next.js App Router
-  - file: app/portfolio/pages.tsx | Wrong filename — should be page.tsx for Next.js App Router
-  - file: app/middleware.ts | In app/ directory — should be at project ROOT for Next.js
+  - API PATH UPDATED: contact-section.tsx now posts to '/api/database/contact' and is aligned with the App Router route handler.
+  - RESOLVED: app/api/layout.tsx and app/api/page.tsx removed; no public /api page rendering.
+  - RESOLVED: app/admin/pages.tsx and app/portfolio/pages.tsx removed from active app-router surface in this branch.
+  - RESOLVED: app/middleware.ts removed from app directory; no misplaced middleware artifact remains.
   severity: structural
   action: replace (duplicates) / refactor (bugs)
 
@@ -142,7 +141,7 @@ issues:
 - **Navbar** (app/components/navbar.tsx): Well-structured, good accessibility, proper responsive behavior. Keep structure, restyle colors.
 - **Footer** (app/components/footer.tsx): Clean structure, semantic HTML, accessible. Keep structure, restyle.
 - **Next.js config** (next.config.js): Strong performance config — security headers, code splitting, image optimization. Preserve entirely.
-- **Contact form logic** (contact-section.tsx state/submit pattern): Good form handling pattern with loading/error states. Keep logic, fix API path, restyle.
+- **Contact form logic** (contact-section.tsx state/submit pattern): Good form handling pattern with loading/error states. API path is now corrected to `/api/database/contact`.
 
 ## Priority Debt — Top 5 Highest Impact Fixes
 1. **Identity decision** — user must pick: personal portfolio vs. business site vs. hybrid — estimated impact: HIGH (unlocks everything else)

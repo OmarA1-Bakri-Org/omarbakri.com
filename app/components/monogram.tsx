@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface MonogramProps {
   size?: number;
@@ -14,11 +14,12 @@ export default function Monogram({
   animate = true,
   "aria-hidden": ariaHidden,
 }: MonogramProps) {
+  const prefersReducedMotion = useReducedMotion();
   const color = "#C4A265";
   const height = size;
   const width = Math.round(size * 0.75);
 
-  if (animate) {
+  if (animate && !prefersReducedMotion) {
     return (
       <motion.svg
         width={width}

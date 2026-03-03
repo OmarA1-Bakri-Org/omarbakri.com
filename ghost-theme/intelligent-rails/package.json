@@ -37,6 +37,12 @@
         "default": "Subscribe to Intelligent Rails",
         "description": "CTA text for subscribe prompts",
         "group": "site"
+      },
+      "cta_description": {
+        "type": "text",
+        "default": "Practical insights on AI, FinTech, and business strategy. Delivered to your inbox.",
+        "description": "CTA description text for subscribe prompts",
+        "group": "site"
       }
     }
   }

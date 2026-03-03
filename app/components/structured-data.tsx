@@ -1,4 +1,14 @@
-export default function StructuredData() {
+type StructuredDataProps = {
+  lastModified?: string;
+};
+
+export default function StructuredData({ lastModified }: StructuredDataProps) {
+  const dynamicLastModified =
+    lastModified ??
+    (process.env.BUILD_TIMESTAMP
+      ? new Date(process.env.BUILD_TIMESTAMP).toISOString().split("T")[0]
+      : "2025-01-01");
+
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -45,7 +55,7 @@ export default function StructuredData() {
       url: "https://omarbakri.com",
     },
     dateCreated: "2025-01-01",
-    dateModified: new Date().toISOString().split("T")[0],
+    dateModified: dynamicLastModified,
   };
 
   return (

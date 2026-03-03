@@ -3,7 +3,7 @@ export default function Loading() {
     <div className="min-h-screen flex items-center justify-center bg-base">
       <div className="text-center">
         <div className="w-12 h-12 border-2 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-muted" style={{ fontSize: "var(--text-sm)" }}>
+        <p className="text-muted text-sm">
           Loading...
         </p>
       </div>

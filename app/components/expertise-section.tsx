@@ -82,7 +82,7 @@ export default function ExpertiseSection() {
               key={index}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.06 }}
               viewport={{ once: true }}
               className="bg-base p-8 lg:p-10 group"
             >

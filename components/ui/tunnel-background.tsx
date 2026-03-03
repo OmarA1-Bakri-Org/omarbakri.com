@@ -1,31 +1,7 @@
 "use client";
 
 import * as THREE from "three";
-import { useRef, useEffect, useState, useCallback } from "react";
-
-function useIsMobile(breakpoint = 768) {
-  const [isMobile, setIsMobile] = useState(() =>
-    typeof window !== "undefined" ? window.innerWidth <= breakpoint : false
-  );
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const mq = window.matchMedia(`(max-width: ${breakpoint}px)`);
-    const onChange = (e: MediaQueryListEvent | MediaQueryList) =>
-      setIsMobile("matches" in e ? e.matches : (e as MediaQueryListEvent).matches);
-
-    setIsMobile(mq.matches);
-
-    try {
-      mq.addEventListener("change", onChange as EventListener);
-      return () => mq.removeEventListener("change", onChange as EventListener);
-    } catch {
-      return undefined;
-    }
-  }, [breakpoint]);
-
-  return isMobile;
-}
+import { useRef, useEffect, useCallback } from "react";
 
 const vertexShader = `void main(){ gl_Position = vec4(position, 1.0); }`;
 
@@ -148,12 +124,11 @@ export default function TunnelBackground() {
   const animRef = useRef<number | null>(null);
   const pausedRef = useRef<boolean>(false);
   const rafResizeRef = useRef<boolean>(false);
-  useIsMobile();
 
   const animate = useCallback((time: number) => {
     if (!ctxRef.current) return;
-    animRef.current = requestAnimationFrame(animate);
     if (pausedRef.current) {
+      animRef.current = null;
       lastTimeRef.current = time;
       return;
     }
@@ -162,6 +137,7 @@ export default function TunnelBackground() {
     lastTimeRef.current = time;
     ctxRef.current.material.uniforms.iTime.value += delta * 0.5;
     ctxRef.current.renderer.render(ctxRef.current.scene, ctxRef.current.camera);
+    animRef.current = requestAnimationFrame(animate);
   }, []);
 
   useEffect(() => {
@@ -172,6 +148,13 @@ export default function TunnelBackground() {
     const height = window.innerHeight;
     const ctx = createThreeForCanvas(canvas, width, height);
     ctxRef.current = ctx;
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const startAnimationIfNeeded = () => {
+      if (!pausedRef.current && animRef.current === null) {
+        animRef.current = requestAnimationFrame(animate);
+      }
+    };
 
     const handleResize = () => {
       if (!ctxRef.current) return;
@@ -193,17 +176,34 @@ export default function TunnelBackground() {
     window.addEventListener("resize", handleResize);
 
     const handleVisibility = () => {
-      pausedRef.current = !!document.hidden;
+      pausedRef.current = !!document.hidden || reducedMotionQuery.matches;
+      startAnimationIfNeeded();
     };
+
+    const handleReducedMotionChange = (event: MediaQueryListEvent) => {
+      pausedRef.current = !!document.hidden || event.matches;
+      startAnimationIfNeeded();
+    };
+
+    try {
+      reducedMotionQuery.addEventListener("change", handleReducedMotionChange);
+    } catch {
+      reducedMotionQuery.addListener(handleReducedMotionChange);
+    }
+
     document.addEventListener("visibilitychange", handleVisibility);
     handleVisibility();
-
-    animRef.current = requestAnimationFrame(animate);
+    startAnimationIfNeeded();
 
     return () => {
       if (animRef.current) cancelAnimationFrame(animRef.current);
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("visibilitychange", handleVisibility);
+      try {
+        reducedMotionQuery.removeEventListener("change", handleReducedMotionChange);
+      } catch {
+        reducedMotionQuery.removeListener(handleReducedMotionChange);
+      }
       if (ctxRef.current) {
         disposeThree(ctxRef.current);
         ctxRef.current = null;

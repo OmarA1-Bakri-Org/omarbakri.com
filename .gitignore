@@ -2,4 +2,10 @@ node_modules/
 .next/
 .env
 .playwright-mcp/
-*.png
+generated/*.png
+build/images/*.png
+!public/*.png
+docs/generated/*.md
+*.generated.md
+tsconfig.tsbuildinfo
+lighthouse-report.json

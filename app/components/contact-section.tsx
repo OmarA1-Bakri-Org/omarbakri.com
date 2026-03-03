@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 
@@ -12,6 +12,17 @@ export default function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const resetTimerRef = useRef<number | null>(null);
+  const isMountedRef = useRef(true);
+
+  useEffect(() => {
+    return () => {
+      isMountedRef.current = false;
+      if (resetTimerRef.current !== null) {
+        window.clearTimeout(resetTimerRef.current);
+      }
+    };
+  }, []);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -37,8 +48,17 @@ export default function ContactSection() {
     } catch {
       setSubmitStatus("error");
     } finally {
+      if (!isMountedRef.current) return;
+
       setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus("idle"), 4000);
+      if (resetTimerRef.current !== null) {
+        window.clearTimeout(resetTimerRef.current);
+      }
+      resetTimerRef.current = window.setTimeout(() => {
+        if (isMountedRef.current) {
+          setSubmitStatus("idle");
+        }
+      }, 4000);
     }
   };
 

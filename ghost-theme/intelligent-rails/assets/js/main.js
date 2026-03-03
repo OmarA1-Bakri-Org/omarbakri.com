@@ -7,7 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
     forms.forEach(function (form) {
         form.addEventListener('submit', function () {
             var button = form.querySelector('button[type="submit"]');
-            if (button) button.textContent = 'Sending...';
+            if (button) {
+                if (!form.dataset.originalButtonText) {
+                    form.dataset.originalButtonText = button.textContent || 'Subscribe';
+                }
+                button.textContent = 'Sending...';
+            }
         });
     });
 
@@ -17,11 +22,19 @@ document.addEventListener('DOMContentLoaded', function () {
         mutations.forEach(function (mutation) {
             if (mutation.type === 'attributes') {
                 var el = mutation.target;
-                if (el.hasAttribute('data-members-success') && el.style.display !== 'none') {
+                if (el.hasAttribute('data-members-success')) {
                     el.style.display = 'block';
                 }
                 if (el.hasAttribute('data-members-error') && el.textContent) {
                     el.style.display = 'block';
+                }
+
+                if (el.hasAttribute('data-members-success') || el.hasAttribute('data-members-error')) {
+                    var form = el.closest('[data-members-form]');
+                    var button = form ? form.querySelector('button[type="submit"]') : null;
+                    if (form && button && form.dataset.originalButtonText) {
+                        button.textContent = form.dataset.originalButtonText;
+                    }
                 }
             }
         });

@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import { scrollToSection } from "@/lib/scroll-utils";
 
 const TunnelBackground = dynamic(
   () => import("@/components/ui/tunnel-background"),
@@ -9,13 +10,6 @@ const TunnelBackground = dynamic(
 );
 
 export default function HeroSection() {
-  const scrollToSection = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section
       id="home"

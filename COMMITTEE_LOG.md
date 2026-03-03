@@ -24,8 +24,8 @@ non-negotiable: Newsletter must have real content or be removed before launch.
 #### Winston (Architect)
 score: 8/10
 strengths: Clean component architecture, proper memo usage, good separation of concerns.
-concerns: Firebase config uses demo fallbacks — form will fail without env vars in production.
-non-negotiable: Form API must be verified in production environment.
+concerns: Firebase config uses demo fallbacks — form will fail without env vars in production. [RESOLVED 2026-03-03: migrated to PostgreSQL; Firebase fallbacks removed, form now persists via `/api/database/contact`.]
+non-negotiable: Form API must be verified in production environment. [RESOLVED 2026-03-03: contact API path and persistence flow verified against PostgreSQL-backed route.]
 
 #### Amelia (Developer)
 score: 8/10
