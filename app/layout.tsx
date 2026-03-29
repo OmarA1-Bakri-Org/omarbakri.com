@@ -15,19 +15,22 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://omarbakri.com"),
   title: {
-    default: "Omar Al-Bakri — FinTech & AI",
+    default: "Omar Al-Bakri — AI Product Builder",
     template: "%s | Omar Al-Bakri",
   },
   description:
-    "Omar Al-Bakri — Asia Lead, Partnerships & Client Solutions at RTGS.global. FinTech sales leader with a passion for AI strategy and business transformation.",
+    "Omar Al-Bakri — Applied AI Product Builder. Built three production platforms (ruleIQ, Helios, ThreadOS). Full-stack engineer + enterprise sales leader.",
   keywords: [
     "Omar Al-Bakri",
+    "AI Product Builder",
+    "Agentic AI",
+    "LangGraph",
+    "Neo4j GraphRAG",
+    "Full-Stack Engineering",
+    "Enterprise Sales",
     "FinTech",
-    "AI strategy",
-    "RTGS.global",
-    "customer solutions",
-    "business development",
-    "cross-border payments",
+    "Multi-agent systems",
+    "Compliance automation",
   ],
   authors: [{ name: "Omar Al-Bakri" }],
   creator: "Omar Al-Bakri",
@@ -42,15 +45,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://omarbakri.com",
     siteName: "Omar Al-Bakri",
-    title: "Omar Al-Bakri — FinTech & AI",
+    title: "Omar Al-Bakri — AI Product Builder",
     description:
-      "Asia Lead, Partnerships & Client Solutions at RTGS.global. FinTech sales leader with a passion for AI strategy and business transformation.",
+      "Applied AI Product Builder. Three production platforms shipped solo — ruleIQ, Helios, ThreadOS. Full-stack engineer + 15-year enterprise sales leader.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Omar Al-Bakri — FinTech & AI",
+    title: "Omar Al-Bakri — AI Product Builder",
     description:
-      "Asia Lead, Partnerships & Client Solutions at RTGS.global. FinTech sales leader with a passion for AI strategy and business transformation.",
+      "Applied AI Product Builder. Three production platforms shipped solo — ruleIQ, Helios, ThreadOS. Full-stack engineer + 15-year enterprise sales leader.",
   },
   alternates: {
     canonical: "https://omarbakri.com",

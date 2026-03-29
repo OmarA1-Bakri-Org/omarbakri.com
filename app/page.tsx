@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "@/app/components/navbar";
 import HeroSection from "@/app/components/hero-section";
 import AboutSection from "@/app/components/about-section";
+import ProductsSection from "@/app/components/products-section";
 import ExperienceSection from "@/app/components/experience-section";
 import ExpertiseSection from "@/app/components/expertise-section";
 import NewsletterSection from "@/app/components/newsletter-section";
@@ -24,6 +25,7 @@ export default function HomePage() {
       <main id="main-content">
         <HeroSection />
         <AboutSection />
+        <ProductsSection />
         <ExperienceSection />
         <ExpertiseSection />
         <NewsletterSection />

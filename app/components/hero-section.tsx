@@ -39,8 +39,7 @@ export default function HeroSection() {
           className="text-secondary font-light tracking-wide mb-4"
           style={{ fontSize: "var(--text-xl)" }}
         >
-          Asia Lead, Partnerships & Client Solutions at{" "}
-          <span className="text-accent">RTGS.global</span>
+          <span className="text-accent">Applied AI</span> Product Builder
         </motion.p>
 
         {/* One-liner */}
@@ -51,8 +50,7 @@ export default function HeroSection() {
           className="text-muted max-w-2xl mx-auto leading-relaxed"
           style={{ fontSize: "var(--text-base)" }}
         >
-          FinTech sales leader bridging the gap between cutting-edge AI
-          and sustainable business&nbsp;growth.
+          I build production AI systems and close seven-figure deals. Three platforms shipped. Fifteen years in enterprise sales.
         </motion.p>
 
         {/* Scroll indicator */}

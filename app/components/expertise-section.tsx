@@ -5,39 +5,39 @@ import { Icon } from "@iconify/react";
 
 const areas = [
   {
-    title: "Enterprise Sales & Partnerships",
+    title: "Agentic AI Systems",
     description:
-      "Building and managing enterprise pipelines from first conversation to multi-stakeholder close. MEDDIC-qualified, Salesforce-disciplined, consistently exceeding targets.",
-    icon: "mdi:handshake-outline",
-  },
-  {
-    title: "Payments Infrastructure",
-    description:
-      "Deep domain expertise in real-time settlement, correspondent banking alternatives, PvP networks, and ISO20022 payment rails.",
-    icon: "mdi:earth",
-  },
-  {
-    title: "AI & Automation",
-    description:
-      "Building AI sales tools, multi-agent systems, and leveraging LLMs to optimise the funnel, improve forecast accuracy, and drive intelligent go-to-market strategies.",
+      "LangGraph multi-agent orchestration, RAG pipelines with self-critique, PPALE intelligence loops, trust gradient architectures. Not prototypes — production systems with thousands of tests.",
     icon: "mdi:robot-outline",
   },
   {
-    title: "C-Suite Engagement",
+    title: "Full-Stack Engineering",
     description:
-      "Engaging executives through business value, ROI storytelling, and regulatory insight. 15+ years of boardroom relationships across global banking and FinTech.",
-    icon: "mdi:account-tie-outline",
+      "Python (FastAPI), TypeScript (Next.js, Bun), React, Electron. PostgreSQL, Neo4j, Redis. From API design to desktop apps to graph databases — I build the entire stack.",
+    icon: "mdi:code-braces",
   },
   {
-    title: "Cross-border Payments",
+    title: "Knowledge Graphs & GraphRAG",
     description:
-      "Enabling atomic, borderless, instant money movement. Expertise across liquidity provision, FX, transaction fees, and global onshore liquidity pools.",
-    icon: "mdi:swap-horizontal",
+      "Neo4j with 20+ node types mapping regulatory relationships. Graphiti for persistent agent memory. Graph-powered retrieval that understands connections, not just keywords.",
+    icon: "mdi:graph-outline",
   },
   {
-    title: "Revenue Growth",
+    title: "Enterprise Sales Leadership",
     description:
-      "Proven track record: \u00A31.53M in new fees at Marlin Hawk, \u00A31M deal at Convera, 20% above target at Banking Circle. Data-driven, repeatable playbooks that scale.",
+      "15 years closing seven-figure deals at BNP Paribas, Bank of America ML, Convera, and Banking Circle. MEDDIC-qualified, board-level engagement, data-driven pipeline management.",
+    icon: "mdi:handshake-outline",
+  },
+  {
+    title: "FinTech Infrastructure",
+    description:
+      "Real-time settlement, ISO20022, correspondent banking, cross-border payments. Deep domain knowledge across the payments value chain from rails to revenue.",
+    icon: "mdi:earth",
+  },
+  {
+    title: "Product & Commercial Strategy",
+    description:
+      "I build products that solve problems I understand from the sales side. That feedback loop — builder who sells, seller who builds — is how you ship things people actually buy.",
     icon: "mdi:trending-up",
   },
 ];
@@ -83,8 +83,8 @@ export default function ExpertiseSection() {
             className="text-secondary max-w-2xl mb-20 leading-relaxed"
             style={{ fontSize: "var(--text-base)" }}
           >
-            Combining deep FinTech domain knowledge with AI fluency to drive
-            business outcomes that matter.
+            The technical depth to build production AI systems. The commercial
+            instinct to know what&apos;s worth building.
           </p>
         </motion.div>
 

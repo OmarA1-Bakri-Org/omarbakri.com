@@ -28,7 +28,7 @@ export default function AboutSection() {
                 className="font-light tracking-[-0.02em] text-primary"
                 style={{ fontSize: "var(--text-3xl)" }}
               >
-                15+ years turning complex financial infrastructure into revenue.
+                I write Python, TypeScript, and React. I also present to boards and close enterprise deals.
               </h2>
 
               <div
@@ -36,20 +36,20 @@ export default function AboutSection() {
                 style={{ fontSize: "var(--text-base)" }}
               >
                 <p>
-                  I&apos;m a results-driven Sales &amp; Partnerships executive
-                  with over 15 years in Financial Services — spanning Banking,
-                  FinTech, and SaaS. I specialise in enterprise sales, pipeline
-                  leadership, and C-suite engagement, blending deep sector
-                  knowledge with a strategic, consultative approach grounded in
-                  MEDDIC and data-driven qualification.
+                  I shipped three production AI platforms in under a year.
+                  ruleIQ automates UK compliance with GraphRAG and LangGraph
+                  agents. Helios runs autonomous B2B sales prospecting with
+                  a multi-agent framework. ThreadOS orchestrates engineering
+                  workloads across typed thread hierarchies. All built solo —
+                  FastAPI, Neo4j, Next.js, Electron, PostgreSQL, the full stack.
                 </p>
                 <p>
-                  My strength lies in translating complex banking and compliance
-                  challenges into scalable, revenue-generating solutions —
-                  partnering closely with product and engineering to bridge
-                  business needs with deployable innovation. I use AI, data
-                  analytics, and automation to optimise the funnel and improve
-                  forecast accuracy.
+                  Before that, fifteen years in enterprise financial services —
+                  BNP Paribas, Bank of America ML, Convera, Banking Circle,
+                  RTGS.global. I know how to sell complex infrastructure to
+                  boards and close seven-figure deals. The combination of
+                  building production AI systems and running enterprise sales
+                  pipelines is rare. I understand both sides of the table.
                 </p>
               </div>
 
@@ -76,10 +76,10 @@ export default function AboutSection() {
                   Current Role
                 </p>
                 <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
-                  Asia Lead, Partnerships & Client Solutions
+                  Independent — AI Product Builder
                 </p>
                 <p className="text-accent" style={{ fontSize: "var(--text-sm)" }}>
-                  RTGS.global
+                  Building ruleIQ, Helios, ThreadOS
                 </p>
               </div>
 
@@ -94,8 +94,7 @@ export default function AboutSection() {
                   className="text-secondary leading-relaxed"
                   style={{ fontSize: "var(--text-sm)" }}
                 >
-                  Enterprise Sales &middot; Payments Infrastructure &middot;
-                  Open Banking &middot; AI &amp; Automation
+                  Agentic AI &middot; Full-Stack Engineering &middot; Enterprise Sales &middot; FinTech Infrastructure
                 </p>
               </div>
 

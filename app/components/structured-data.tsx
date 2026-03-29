@@ -14,21 +14,18 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     "@type": "Person",
     name: "Omar Al-Bakri",
     url: "https://omarbakri.com",
-    jobTitle: "Director, Partnerships & Customer Solutions",
-    worksFor: {
-      "@type": "Organization",
-      name: "RTGS.global",
-      url: "https://rtgs.global",
-    },
+    jobTitle: "Applied AI Product Builder",
     description:
-      "FinTech sales leader with 15+ years in Financial Services. Specialising in cross-border payments, AI strategy, and business development across ASIAPAC.",
+      "AI Product Builder who shipped three production platforms (ruleIQ, Helios, ThreadOS). Full-stack engineer with 15+ years enterprise sales leadership in financial services.",
     knowsAbout: [
+      "Agentic AI",
+      "LangGraph",
+      "Neo4j GraphRAG",
+      "Full-Stack Engineering",
+      "Enterprise Sales",
       "FinTech",
-      "Cross-border payments",
-      "AI strategy",
-      "Business development",
-      "Partnership management",
-      "Client solutions",
+      "Multi-agent systems",
+      "Compliance automation",
     ],
     sameAs: ["https://linkedin.com/in/omaralbakri"],
     alumniOf: {
@@ -43,7 +40,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     name: "Omar Al-Bakri",
     url: "https://omarbakri.com",
     description:
-      "Personal site of Omar Al-Bakri — Director at RTGS.global. FinTech, AI strategy, and cross-border payments.",
+      "Personal site of Omar Al-Bakri — AI Product Builder. Agentic AI, full-stack engineering, and enterprise sales.",
   };
 
   const profilePageSchema = {

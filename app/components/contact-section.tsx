@@ -96,8 +96,8 @@ export default function ContactSection() {
                 className="text-secondary leading-[1.7] mb-10"
                 style={{ fontSize: "var(--text-base)" }}
               >
-                Interested in discussing FinTech, AI strategy, or potential
-                collaboration? I&apos;d like to hear from you.
+                Building something with AI, exploring a partnership, or want
+                to talk agentic systems and compliance? I&apos;d like to hear from you.
               </p>
 
               <div className="space-y-6">
