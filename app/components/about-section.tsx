@@ -18,7 +18,7 @@ export default function AboutSection() {
             className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
             style={{ fontSize: "var(--text-xs)" }}
           >
-            About
+            The Story
           </p>
 
           <div className="grid lg:grid-cols-12 gap-16">
@@ -28,7 +28,7 @@ export default function AboutSection() {
                 className="font-light tracking-[-0.02em] text-primary"
                 style={{ fontSize: "var(--text-3xl)" }}
               >
-                I write Python, TypeScript, and React. I also present to boards and close enterprise deals.
+                I got tired of selling things I knew I could build better.
               </h2>
 
               <div
@@ -36,20 +36,33 @@ export default function AboutSection() {
                 style={{ fontSize: "var(--text-base)" }}
               >
                 <p>
-                  I shipped three production AI platforms in under a year.
-                  ruleIQ automates UK compliance with GraphRAG and LangGraph
-                  agents. Helios runs autonomous B2B sales prospecting with
-                  a multi-agent framework. ThreadOS orchestrates engineering
-                  workloads across typed thread hierarchies. All built solo —
-                  FastAPI, Neo4j, Next.js, Electron, PostgreSQL, the full stack.
+                  For fifteen years I sat across the table from CTOs and board
+                  members at the world&apos;s largest banks — BNP Paribas, Bank of
+                  America Merrill Lynch, Convera, Banking Circle, RTGS.global.
+                  I closed seven-figure deals. I understood what the technology
+                  was supposed to do. And increasingly, I understood where it
+                  was failing.
                 </p>
                 <p>
-                  Before that, fifteen years in enterprise financial services —
-                  BNP Paribas, Bank of America ML, Convera, Banking Circle,
-                  RTGS.global. I know how to sell complex infrastructure to
-                  boards and close seven-figure deals. The combination of
-                  building production AI systems and running enterprise sales
-                  pipelines is rare. I understand both sides of the table.
+                  At 40 I made a decision that looked reckless to everyone
+                  around me. I started learning to code. Not a bootcamp.
+                  Not a weekend course. I taught myself Python, TypeScript,
+                  React, FastAPI, Neo4j, LangGraph — the hard way, by building
+                  things that broke and rebuilding them until they didn&apos;t.
+                </p>
+                <p>
+                  Three years later I&apos;d shipped three production platforms
+                  solo. A compliance automation engine with 1,884 tests. An
+                  autonomous sales system with a multi-agent framework. A
+                  thread orchestration runtime with typed dependency graphs.
+                  Not prototypes. Not tutorials. Real systems with real
+                  architecture.
+                </p>
+                <p>
+                  The fifteen years weren&apos;t wasted. They&apos;re the reason I
+                  build things that solve real problems instead of interesting
+                  ones. I know what enterprise buyers actually need because
+                  I&apos;ve spent my career listening to them say it.
                 </p>
               </div>
 
@@ -66,51 +79,50 @@ export default function AboutSection() {
               </a>
             </div>
 
-            {/* Sidebar stats */}
+            {/* Sidebar */}
             <div className="lg:col-span-5 space-y-8 lg:pt-16">
               <div className="border-l border-edge pl-6">
                 <p
                   className="text-muted uppercase tracking-[0.05em] mb-2"
                   style={{ fontSize: "var(--text-xs)" }}
                 >
-                  Current Role
+                  The Sales Career
                 </p>
                 <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
-                  Independent — AI Product Builder
+                  15 years in enterprise FinTech
+                </p>
+                <p className="text-secondary" style={{ fontSize: "var(--text-sm)" }}>
+                  BNP Paribas &middot; Bank of America ML &middot; Convera &middot; Banking Circle &middot; RTGS.global
+                </p>
+              </div>
+
+              <div className="border-l border-edge pl-6">
+                <p
+                  className="text-muted uppercase tracking-[0.05em] mb-2"
+                  style={{ fontSize: "var(--text-xs)" }}
+                >
+                  The Pivot
+                </p>
+                <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
+                  3 years learning to build
+                </p>
+                <p className="text-secondary" style={{ fontSize: "var(--text-sm)" }}>
+                  Python &middot; TypeScript &middot; React &middot; FastAPI &middot; Neo4j &middot; LangGraph
+                </p>
+              </div>
+
+              <div className="border-l border-edge pl-6">
+                <p
+                  className="text-muted uppercase tracking-[0.05em] mb-2"
+                  style={{ fontSize: "var(--text-xs)" }}
+                >
+                  The Proof
+                </p>
+                <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
+                  3 production platforms, shipped solo
                 </p>
                 <p className="text-accent" style={{ fontSize: "var(--text-sm)" }}>
-                  Building ruleIQ, Helios, ThreadOS
-                </p>
-              </div>
-
-              <div className="border-l border-edge pl-6">
-                <p
-                  className="text-muted uppercase tracking-[0.05em] mb-2"
-                  style={{ fontSize: "var(--text-xs)" }}
-                >
-                  Focus Areas
-                </p>
-                <p
-                  className="text-secondary leading-relaxed"
-                  style={{ fontSize: "var(--text-sm)" }}
-                >
-                  Agentic AI &middot; Full-Stack Engineering &middot; Enterprise Sales &middot; FinTech Infrastructure
-                </p>
-              </div>
-
-              <div className="border-l border-edge pl-6">
-                <p
-                  className="text-muted uppercase tracking-[0.05em] mb-2"
-                  style={{ fontSize: "var(--text-xs)" }}
-                >
-                  Background
-                </p>
-                <p
-                  className="text-secondary leading-relaxed"
-                  style={{ fontSize: "var(--text-sm)" }}
-                >
-                  BNP Paribas &middot; Bank of America Merrill Lynch &middot;
-                  Convera &middot; Banking Circle &middot; FiduciaNex|Ai
+                  ruleIQ &middot; Helios &middot; ThreadOS
                 </p>
               </div>
             </div>

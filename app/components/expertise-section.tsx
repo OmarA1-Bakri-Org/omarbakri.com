@@ -7,13 +7,13 @@ const areas = [
   {
     title: "Agentic AI Systems",
     description:
-      "LangGraph multi-agent orchestration, RAG pipelines with self-critique, PPALE intelligence loops, trust gradient architectures. Not prototypes — production systems with thousands of tests.",
+      "LangGraph multi-agent orchestration, RAG pipelines with self-critique, PPALE intelligence loops, trust gradient architectures. Not tutorial projects \u2014 production systems with thousands of tests.",
     icon: "mdi:robot-outline",
   },
   {
     title: "Full-Stack Engineering",
     description:
-      "Python (FastAPI), TypeScript (Next.js, Bun), React, Electron. PostgreSQL, Neo4j, Redis. From API design to desktop apps to graph databases — I build the entire stack.",
+      "Python (FastAPI), TypeScript (Next.js, Bun), React, Electron. PostgreSQL, Neo4j, Redis. Self-taught from zero. I build the entire stack because nobody else was going to build it for me.",
     icon: "mdi:code-braces",
   },
   {
@@ -23,21 +23,21 @@ const areas = [
     icon: "mdi:graph-outline",
   },
   {
-    title: "Enterprise Sales Leadership",
+    title: "Enterprise Sales",
     description:
-      "15 years closing seven-figure deals at BNP Paribas, Bank of America ML, Convera, and Banking Circle. MEDDIC-qualified, board-level engagement, data-driven pipeline management.",
+      "15 years closing seven-figure deals at BNP Paribas, Bank of America ML, Convera, and Banking Circle. I know what buyers need because I spent my career listening to them explain it.",
     icon: "mdi:handshake-outline",
   },
   {
-    title: "FinTech Infrastructure",
+    title: "FinTech & Payments",
     description:
-      "Real-time settlement, ISO20022, correspondent banking, cross-border payments. Deep domain knowledge across the payments value chain from rails to revenue.",
+      "Real-time settlement, ISO20022, correspondent banking, cross-border payments. The domain I sold in for a decade and a half. The domain I now build in.",
     icon: "mdi:earth",
   },
   {
-    title: "Product & Commercial Strategy",
+    title: "The Combination",
     description:
-      "I build products that solve problems I understand from the sales side. That feedback loop — builder who sells, seller who builds — is how you ship things people actually buy.",
+      "Most engineers can\u2019t present to a board. Most salespeople can\u2019t read a codebase. I do both. That\u2019s not a career change \u2014 it\u2019s an unfair advantage.",
     icon: "mdi:trending-up",
   },
 ];
@@ -69,14 +69,14 @@ export default function ExpertiseSection() {
             className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
             style={{ fontSize: "var(--text-xs)" }}
           >
-            Expertise
+            The Advantage
           </p>
 
           <h2
             className="font-light tracking-[-0.02em] text-primary mb-6"
             style={{ fontSize: "var(--text-3xl)" }}
           >
-            What I bring
+            Two careers. One person.
           </h2>
 
           <p
@@ -84,7 +84,8 @@ export default function ExpertiseSection() {
             style={{ fontSize: "var(--text-base)" }}
           >
             The technical depth to build production AI systems. The commercial
-            instinct to know what&apos;s worth building.
+            instinct to know what&apos;s worth building. Fifteen years on one
+            side of the table taught me what to build from the other.
           </p>
         </motion.div>
 

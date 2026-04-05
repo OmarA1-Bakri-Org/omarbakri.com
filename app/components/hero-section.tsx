@@ -31,7 +31,7 @@ export default function HeroSection() {
           Omar Al-Bakri
         </motion.h1>
 
-        {/* Title */}
+        {/* Hook */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,8 @@ export default function HeroSection() {
           className="text-secondary font-light tracking-wide mb-4"
           style={{ fontSize: "var(--text-xl)" }}
         >
-          <span className="text-accent">Applied AI</span> Product Builder
+          I spent 15 years selling technology.{" "}
+          <span className="text-accent">Then I learned to build it.</span>
         </motion.p>
 
         {/* One-liner */}
@@ -50,7 +51,8 @@ export default function HeroSection() {
           className="text-muted max-w-2xl mx-auto leading-relaxed"
           style={{ fontSize: "var(--text-base)" }}
         >
-          I build production AI systems and close seven-figure deals. Three platforms shipped. Fifteen years in enterprise sales.
+          Three years of graft. Three production platforms. From closing
+          seven-figure deals to writing the code myself.
         </motion.p>
 
         {/* Scroll indicator */}

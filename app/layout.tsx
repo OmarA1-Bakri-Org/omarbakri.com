@@ -15,22 +15,22 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://omarbakri.com"),
   title: {
-    default: "Omar Al-Bakri — AI Product Builder",
+    default: "Omar Al-Bakri \u2014 15 Years Selling Tech. Now I Build It.",
     template: "%s | Omar Al-Bakri",
   },
   description:
-    "Omar Al-Bakri — Applied AI Product Builder. Built three production platforms (ruleIQ, Helios, ThreadOS). Full-stack engineer + enterprise sales leader.",
+    "15 years in enterprise FinTech sales. Taught myself to code at 40. Shipped three production AI platforms solo. The full story.",
   keywords: [
     "Omar Al-Bakri",
-    "AI Product Builder",
+    "AI Engineer",
+    "Career Change",
     "Agentic AI",
     "LangGraph",
     "Neo4j GraphRAG",
     "Full-Stack Engineering",
     "Enterprise Sales",
     "FinTech",
-    "Multi-agent systems",
-    "Compliance automation",
+    "Cross-border payments",
   ],
   authors: [{ name: "Omar Al-Bakri" }],
   creator: "Omar Al-Bakri",
@@ -45,15 +45,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://omarbakri.com",
     siteName: "Omar Al-Bakri",
-    title: "Omar Al-Bakri — AI Product Builder",
+    title: "Omar Al-Bakri \u2014 15 Years Selling Tech. Now I Build It.",
     description:
-      "Applied AI Product Builder. Three production platforms shipped solo — ruleIQ, Helios, ThreadOS. Full-stack engineer + 15-year enterprise sales leader.",
+      "Former enterprise FinTech sales leader who taught himself to code and shipped three production AI platforms solo. ruleIQ, Helios, ThreadOS.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Omar Al-Bakri — AI Product Builder",
+    title: "Omar Al-Bakri \u2014 15 Years Selling Tech. Now I Build It.",
     description:
-      "Applied AI Product Builder. Three production platforms shipped solo — ruleIQ, Helios, ThreadOS. Full-stack engineer + 15-year enterprise sales leader.",
+      "Former enterprise FinTech sales leader who taught himself to code and shipped three production AI platforms solo. ruleIQ, Helios, ThreadOS.",
   },
   alternates: {
     canonical: "https://omarbakri.com",

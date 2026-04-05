@@ -12,7 +12,7 @@ const products: Product[] = [
     name: "ruleIQ",
     tagline: "Agentic compliance automation for UK SMBs",
     description:
-      "Enterprise-grade platform that uses intelligent agents to evolve from helpers to autonomous compliance partners. GraphRAG-powered knowledge graphs map regulatory relationships across ISO 27001, GDPR, Cyber Essentials, SOC 2, and PCI DSS.",
+      "I kept watching compliance software fail the same way \u2014 rigid rules engines that couldn\u2019t adapt when regulations changed. So I built one that could. GraphRAG-powered knowledge graphs map regulatory relationships. LangGraph agents evolve from helpers to autonomous partners. The system thinks in connections, not checklists.",
     stack: [
       "Python",
       "FastAPI",
@@ -23,19 +23,19 @@ const products: Product[] = [
       "Next.js 15",
     ],
     highlights: [
-      "IQ Agent with PPALE intelligence loop — Perceive, Plan, Act, Learn, Remember",
+      "IQ Agent with PPALE intelligence loop \u2014 Perceive, Plan, Act, Learn, Remember",
       "RAG Self-Critic for hallucination-resistant compliance answers",
       "20+ Neo4j node types mapping regulatory relationships",
       "1,884+ backend tests, 562+ frontend tests",
-      "Trust Gradient: Helper → Advisor → Autonomous Partner",
+      "Trust Gradient: agents earn autonomy over time, they don\u2019t start with it",
     ],
-    status: "Production",
+    status: "Built",
   },
   {
     name: "Helios",
     tagline: "Autonomous B2B sales prospecting engine",
     description:
-      "Full-stack sales automation system with a desktop app, API server, and Python orchestrator. The B-MAD agent framework handles prospecting, enrichment, and outreach autonomously — with hard safety limits on spend and volume.",
+      "After fifteen years of doing sales manually, I knew exactly what needed automating and where you couldn\u2019t cut corners. Helios runs autonomous prospecting with hard safety limits \u2014 because I\u2019ve seen what happens when sales automation runs without guardrails. Desktop app, API server, Python orchestrator. The whole stack.",
     stack: [
       "Electron 39",
       "React 18",
@@ -53,13 +53,13 @@ const products: Product[] = [
       "Circuit breaker patterns, 30-second cancel windows, $50/cycle spend caps",
       "Graph-RAG memory via Graphiti for persistent agent context",
     ],
-    status: "Production",
+    status: "Built",
   },
   {
     name: "ThreadOS",
-    tagline: "Multi-agent workflow orchestration OS",
+    tagline: "Multi-agent workflow orchestration runtime",
     description:
-      "Local-first runtime for orchestrating engineering workloads across typed thread hierarchies. Six thread types, DAG-validated dependency graphs, policy-enforced execution gates, and model-agnostic LLM routing.",
+      "By the time I was building the third platform, I needed something to orchestrate the complexity of the first two. ThreadOS came out of that necessity \u2014 a typed thread runtime where agents work within policy constraints, dependencies are validated as DAGs, and execution is safe by default.",
     stack: [
       "TypeScript",
       "Bun",
@@ -74,9 +74,9 @@ const products: Product[] = [
       "SAFE/POWER policy engine controlling agent autonomy",
       "CLI-first with 12+ command handlers and JSON I/O",
       "21 API route groups, 14 component directories",
-      "Model-agnostic provider routing — OpenAI, Anthropic, OpenRouter",
+      "Model-agnostic provider routing \u2014 OpenAI, Anthropic, OpenRouter",
     ],
-    status: "Production",
+    status: "Built",
   },
 ];
 

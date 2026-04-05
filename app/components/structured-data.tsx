@@ -14,9 +14,9 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     "@type": "Person",
     name: "Omar Al-Bakri",
     url: "https://omarbakri.com",
-    jobTitle: "Applied AI Product Builder",
+    jobTitle: "AI Engineer & Enterprise Sales Leader",
     description:
-      "AI Product Builder who shipped three production platforms (ruleIQ, Helios, ThreadOS). Full-stack engineer with 15+ years enterprise sales leadership in financial services.",
+      "Former enterprise FinTech sales leader who taught himself to code and shipped three production AI platforms solo. 15 years at BNP Paribas, Bank of America ML, Convera, Banking Circle, RTGS.global.",
     knowsAbout: [
       "Agentic AI",
       "LangGraph",
@@ -24,6 +24,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
       "Full-Stack Engineering",
       "Enterprise Sales",
       "FinTech",
+      "Cross-border payments",
       "Multi-agent systems",
       "Compliance automation",
     ],
@@ -40,7 +41,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     name: "Omar Al-Bakri",
     url: "https://omarbakri.com",
     description:
-      "Personal site of Omar Al-Bakri — AI Product Builder. Agentic AI, full-stack engineering, and enterprise sales.",
+      "15 years selling FinTech. 3 years learning to build. 3 production AI platforms shipped solo.",
   };
 
   const profilePageSchema = {
