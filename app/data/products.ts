@@ -56,7 +56,7 @@ const products: Product[] = [
     status: "Shipped",
   },
   {
-    name: "ThreadOS",
+    name: "thredOS",
     tagline: "Multi-agent workflow orchestration runtime",
     description:
       "A typed thread runtime for orchestrating multi-agent workflows. Agents operate within policy constraints, dependencies are validated as DAGs before execution, and the system defaults to safe mode. Built to coordinate the kind of complexity that emerges when multiple AI agents share state.",

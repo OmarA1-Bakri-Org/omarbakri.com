@@ -9,14 +9,14 @@ export interface Experience {
 const experiences: Experience[] = [
   {
     title: "Independent — AI Product Builder",
-    company: "ruleIQ · Helios · ThreadOS",
+    company: "ruleIQ · Helios · thredOS",
     period: "2024 — Present",
     description:
       "Building three production AI platforms solo. Full-stack engineering across Python, TypeScript, and React — from LangGraph agent orchestration to Electron desktop apps to Neo4j knowledge graphs.",
     outcomes: [
       "ruleIQ: Agentic compliance platform with GraphRAG, PPALE intelligence loop, 1,884+ tests",
       "Helios: Autonomous B2B sales engine with B-MAD agent framework, 26-view Electron app",
-      "ThreadOS: Multi-agent workflow OS with typed thread hierarchies, DAG validation, policy engine",
+      "thredOS: Multi-agent workflow OS with typed thread hierarchies, DAG validation, policy engine",
     ],
   },
   {

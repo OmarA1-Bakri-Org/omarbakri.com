@@ -119,7 +119,7 @@ export default function AboutSection() {
                   3 production platforms &middot; Solo builds
                 </p>
                 <p className="text-accent" style={{ fontSize: "var(--text-sm)" }}>
-                  ruleIQ &middot; Helios &middot; ThreadOS
+                  ruleIQ &middot; Helios &middot; thredOS
                 </p>
               </div>
             </div>

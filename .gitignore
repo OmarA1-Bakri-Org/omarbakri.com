@@ -9,3 +9,5 @@ docs/generated/*.md
 *.generated.md
 tsconfig.tsbuildinfo
 lighthouse-report.json
+
+.vercel

@@ -16,7 +16,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     url: "https://omarbakri.com",
     jobTitle: "AI Product Builder & Enterprise Sales Leader",
     description:
-      "AI product builder combining hands-on engineering with 15 years of enterprise FinTech sales leadership. Three production platforms shipped solo: ruleIQ, Helios, ThreadOS.",
+      "AI product builder combining hands-on engineering with 15 years of enterprise FinTech sales leadership. Three production platforms shipped solo: ruleIQ, Helios, thredOS.",
     knowsAbout: [
       "Agentic AI",
       "LangGraph",
@@ -41,7 +41,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     name: "Omar Al-Bakri",
     url: "https://omarbakri.com",
     description:
-      "AI product builder with enterprise FinTech expertise. Three production platforms: ruleIQ, Helios, ThreadOS.",
+      "AI product builder with enterprise FinTech expertise. Three production platforms: ruleIQ, Helios, thredOS.",
   };
 
   const profilePageSchema = {

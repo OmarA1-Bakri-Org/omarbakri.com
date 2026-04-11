@@ -47,13 +47,13 @@ export const metadata: Metadata = {
     siteName: "Omar Al-Bakri",
     title: "Omar Al-Bakri — AI Product Builder & Enterprise Sales Leader",
     description:
-      "AI product builder with 15 years of enterprise FinTech leadership. Three production platforms shipped solo — ruleIQ, Helios, ThreadOS.",
+      "AI product builder with 15 years of enterprise FinTech leadership. Three production platforms shipped solo — ruleIQ, Helios, thredOS.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Omar Al-Bakri — AI Product Builder & Enterprise Sales Leader",
     description:
-      "AI product builder with 15 years of enterprise FinTech leadership. Three production platforms shipped solo — ruleIQ, Helios, ThreadOS.",
+      "AI product builder with 15 years of enterprise FinTech leadership. Three production platforms shipped solo — ruleIQ, Helios, thredOS.",
   },
   alternates: {
     canonical: "https://omarbakri.com",
