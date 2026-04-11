@@ -22,7 +22,7 @@ const experiences: Experience[] = [
   {
     title: "Director, Partnerships & Customer Solutions",
     company: "RTGS.global",
-    period: "Oct 2024 — Mar 2025",
+    period: "Oct 2024 — Mar 2026",
     description:
       "Drove atomic, borderless, instant cross-border settlement via ISO20022 API — bypassing traditional correspondent banking constraints.",
     outcomes: [
