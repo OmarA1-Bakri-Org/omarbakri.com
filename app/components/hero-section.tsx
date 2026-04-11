@@ -39,8 +39,8 @@ export default function HeroSection() {
           className="text-secondary font-light tracking-wide mb-4"
           style={{ fontSize: "var(--text-xl)" }}
         >
-          I spent 15 years selling technology.{" "}
-          <span className="text-accent">Then I learned to build it.</span>
+          AI product builder.{" "}
+          <span className="text-accent">Enterprise sales veteran.</span>
         </motion.p>
 
         {/* One-liner */}
@@ -51,8 +51,8 @@ export default function HeroSection() {
           className="text-muted max-w-2xl mx-auto leading-relaxed"
           style={{ fontSize: "var(--text-base)" }}
         >
-          Three years of graft. Three production platforms. From closing
-          seven-figure deals to writing the code myself.
+          I build production AI systems informed by 15 years of selling
+          enterprise technology. Three platforms shipped. Full stack.
         </motion.p>
 
         {/* Scroll indicator */}

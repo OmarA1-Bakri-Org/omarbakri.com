@@ -18,7 +18,7 @@ export default function AboutSection() {
             className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
             style={{ fontSize: "var(--text-xs)" }}
           >
-            The Story
+            About
           </p>
 
           <div className="grid lg:grid-cols-12 gap-16">
@@ -28,7 +28,7 @@ export default function AboutSection() {
                 className="font-light tracking-[-0.02em] text-primary"
                 style={{ fontSize: "var(--text-3xl)" }}
               >
-                I got tired of selling things I knew I could build better.
+                Enterprise domain knowledge meets hands-on engineering.
               </h2>
 
               <div
@@ -36,33 +36,30 @@ export default function AboutSection() {
                 style={{ fontSize: "var(--text-base)" }}
               >
                 <p>
-                  For fifteen years I sat across the table from CTOs and board
-                  members at the world&apos;s largest banks — BNP Paribas, Bank of
-                  America Merrill Lynch, Convera, Banking Circle, RTGS.global.
-                  I closed seven-figure deals. I understood what the technology
-                  was supposed to do. And increasingly, I understood where it
-                  was failing.
+                  I spent 15 years in enterprise FinTech — BNP Paribas,
+                  Bank of America Merrill Lynch, Convera, Banking Circle,
+                  RTGS.global. I led sales into Tier 1 banks, closed
+                  seven-figure contracts, and developed a deep understanding
+                  of what enterprise technology needs to do versus what it
+                  actually does.
                 </p>
                 <p>
-                  At 40 I made a decision that looked reckless to everyone
-                  around me. I started learning to code. Not a bootcamp.
-                  Not a weekend course. I taught myself Python, TypeScript,
-                  React, FastAPI, Neo4j, LangGraph — the hard way, by building
-                  things that broke and rebuilding them until they didn&apos;t.
+                  That gap between promise and delivery is what pushed me
+                  into engineering. I taught myself Python, TypeScript, React,
+                  FastAPI, Neo4j, and LangGraph by building production
+                  systems — not coursework, not prototypes.
                 </p>
                 <p>
-                  Three years later I&apos;d shipped three production platforms
-                  solo. A compliance automation engine with 1,884 tests. An
-                  autonomous sales system with a multi-agent framework. A
-                  thread orchestration runtime with typed dependency graphs.
-                  Not prototypes. Not tutorials. Real systems with real
-                  architecture.
+                  The result is three full-stack platforms shipped solo:
+                  a compliance automation engine backed by 1,884 tests,
+                  an autonomous sales system with a multi-agent framework,
+                  and a thread orchestration runtime with typed dependency
+                  graphs.
                 </p>
                 <p>
-                  The fifteen years weren&apos;t wasted. They&apos;re the reason I
-                  build things that solve real problems instead of interesting
-                  ones. I know what enterprise buyers actually need because
-                  I&apos;ve spent my career listening to them say it.
+                  I bring both sides of the table. The engineering to build
+                  production AI systems. The commercial instinct to know
+                  which problems are worth solving.
                 </p>
               </div>
 
@@ -86,10 +83,10 @@ export default function AboutSection() {
                   className="text-muted uppercase tracking-[0.05em] mb-2"
                   style={{ fontSize: "var(--text-xs)" }}
                 >
-                  The Sales Career
+                  Enterprise Sales
                 </p>
                 <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
-                  15 years in enterprise FinTech
+                  15 years &middot; Tier 1 banks &middot; 7-figure contracts
                 </p>
                 <p className="text-secondary" style={{ fontSize: "var(--text-sm)" }}>
                   BNP Paribas &middot; Bank of America ML &middot; Convera &middot; Banking Circle &middot; RTGS.global
@@ -101,10 +98,10 @@ export default function AboutSection() {
                   className="text-muted uppercase tracking-[0.05em] mb-2"
                   style={{ fontSize: "var(--text-xs)" }}
                 >
-                  The Pivot
+                  Engineering
                 </p>
                 <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
-                  3 years learning to build
+                  Full-stack &middot; AI/ML &middot; Multi-agent systems
                 </p>
                 <p className="text-secondary" style={{ fontSize: "var(--text-sm)" }}>
                   Python &middot; TypeScript &middot; React &middot; FastAPI &middot; Neo4j &middot; LangGraph
@@ -116,10 +113,10 @@ export default function AboutSection() {
                   className="text-muted uppercase tracking-[0.05em] mb-2"
                   style={{ fontSize: "var(--text-xs)" }}
                 >
-                  The Proof
+                  Shipped
                 </p>
                 <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
-                  3 production platforms, shipped solo
+                  3 production platforms &middot; Solo builds
                 </p>
                 <p className="text-accent" style={{ fontSize: "var(--text-sm)" }}>
                   ruleIQ &middot; Helios &middot; ThreadOS

@@ -96,9 +96,9 @@ export default function ContactSection() {
                 className="text-secondary leading-[1.7] mb-10"
                 style={{ fontSize: "var(--text-base)" }}
               >
-                Building something in AI or FinTech. Looking for someone
-                who can build it and sell it. Or just want to hear the
-                full story. I&apos;d like to hear from you.
+                Building in AI, FinTech, or enterprise SaaS? Looking for
+                someone who can take a product from architecture to market?
+                Get in touch.
               </p>
 
               <div className="space-y-6">

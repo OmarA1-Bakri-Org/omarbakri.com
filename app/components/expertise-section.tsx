@@ -7,37 +7,37 @@ const areas = [
   {
     title: "Agentic AI Systems",
     description:
-      "LangGraph multi-agent orchestration, RAG pipelines with self-critique, PPALE intelligence loops, trust gradient architectures. Not tutorial projects \u2014 production systems with thousands of tests.",
+      "LangGraph multi-agent orchestration, RAG pipelines with self-critique loops, trust gradient architectures, and PPALE intelligence cycles. Designed for production reliability with comprehensive test coverage.",
     icon: "mdi:robot-outline",
   },
   {
     title: "Full-Stack Engineering",
     description:
-      "Python (FastAPI), TypeScript (Next.js, Bun), React, Electron. PostgreSQL, Neo4j, Redis. Self-taught from zero. I build the entire stack because nobody else was going to build it for me.",
+      "Python (FastAPI), TypeScript (Next.js, Bun), React, Electron. PostgreSQL, Neo4j, Redis. Complete ownership from database schema to deployment pipeline.",
     icon: "mdi:code-braces",
   },
   {
     title: "Knowledge Graphs & GraphRAG",
     description:
-      "Neo4j with 20+ node types mapping regulatory relationships. Graphiti for persistent agent memory. Graph-powered retrieval that understands connections, not just keywords.",
+      "Neo4j implementations with 20+ node types for regulatory and business relationship mapping. Graphiti for persistent agent memory. Graph-powered retrieval that resolves connections, not just keywords.",
     icon: "mdi:graph-outline",
   },
   {
-    title: "Enterprise Sales",
+    title: "Enterprise Sales Leadership",
     description:
-      "15 years closing seven-figure deals at BNP Paribas, Bank of America ML, Convera, and Banking Circle. I know what buyers need because I spent my career listening to them explain it.",
+      "15 years leading sales at BNP Paribas, Bank of America ML, Convera, and Banking Circle. Deep relationships across Tier 1 banks, proven track record with complex, multi-stakeholder deals.",
     icon: "mdi:handshake-outline",
   },
   {
     title: "FinTech & Payments",
     description:
-      "Real-time settlement, ISO20022, correspondent banking, cross-border payments. The domain I sold in for a decade and a half. The domain I now build in.",
+      "Real-time settlement, ISO 20022, correspondent banking, cross-border payments. Domain expertise built over 15 years on the commercial side, now applied to product engineering.",
     icon: "mdi:earth",
   },
   {
-    title: "The Combination",
+    title: "Product Strategy",
     description:
-      "Most engineers can\u2019t present to a board. Most salespeople can\u2019t read a codebase. I do both. That\u2019s not a career change \u2014 it\u2019s an unfair advantage.",
+      "The ability to identify which problems are worth solving, scope them into buildable products, and execute end-to-end. Technical depth paired with commercial judgement.",
     icon: "mdi:trending-up",
   },
 ];
@@ -69,23 +69,23 @@ export default function ExpertiseSection() {
             className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
             style={{ fontSize: "var(--text-xs)" }}
           >
-            The Advantage
+            Expertise
           </p>
 
           <h2
             className="font-light tracking-[-0.02em] text-primary mb-6"
             style={{ fontSize: "var(--text-3xl)" }}
           >
-            Two careers. One person.
+            Engineering depth. Commercial instinct.
           </h2>
 
           <p
             className="text-secondary max-w-2xl mb-20 leading-relaxed"
             style={{ fontSize: "var(--text-base)" }}
           >
-            The technical depth to build production AI systems. The commercial
-            instinct to know what&apos;s worth building. Fifteen years on one
-            side of the table taught me what to build from the other.
+            A rare combination of hands-on AI engineering and enterprise
+            sales leadership, applied across FinTech, compliance, and
+            autonomous systems.
           </p>
         </motion.div>
 

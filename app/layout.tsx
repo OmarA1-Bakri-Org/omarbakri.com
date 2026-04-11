@@ -15,22 +15,22 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://omarbakri.com"),
   title: {
-    default: "Omar Al-Bakri \u2014 15 Years Selling Tech. Now I Build It.",
+    default: "Omar Al-Bakri — AI Product Builder & Enterprise Sales Leader",
     template: "%s | Omar Al-Bakri",
   },
   description:
-    "15 years in enterprise FinTech sales. Taught myself to code at 40. Shipped three production AI platforms solo. The full story.",
+    "AI product builder with 15 years of enterprise FinTech sales leadership. Three production platforms shipped solo — compliance automation, sales AI, and multi-agent orchestration.",
   keywords: [
     "Omar Al-Bakri",
-    "AI Engineer",
-    "Career Change",
+    "AI Product Builder",
     "Agentic AI",
     "LangGraph",
     "Neo4j GraphRAG",
-    "Full-Stack Engineering",
+    "Full-Stack Engineer",
     "Enterprise Sales",
     "FinTech",
     "Cross-border payments",
+    "Multi-agent systems",
   ],
   authors: [{ name: "Omar Al-Bakri" }],
   creator: "Omar Al-Bakri",
@@ -45,15 +45,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://omarbakri.com",
     siteName: "Omar Al-Bakri",
-    title: "Omar Al-Bakri \u2014 15 Years Selling Tech. Now I Build It.",
+    title: "Omar Al-Bakri — AI Product Builder & Enterprise Sales Leader",
     description:
-      "Former enterprise FinTech sales leader who taught himself to code and shipped three production AI platforms solo. ruleIQ, Helios, ThreadOS.",
+      "AI product builder with 15 years of enterprise FinTech leadership. Three production platforms shipped solo — ruleIQ, Helios, ThreadOS.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Omar Al-Bakri \u2014 15 Years Selling Tech. Now I Build It.",
+    title: "Omar Al-Bakri — AI Product Builder & Enterprise Sales Leader",
     description:
-      "Former enterprise FinTech sales leader who taught himself to code and shipped three production AI platforms solo. ruleIQ, Helios, ThreadOS.",
+      "AI product builder with 15 years of enterprise FinTech leadership. Three production platforms shipped solo — ruleIQ, Helios, ThreadOS.",
   },
   alternates: {
     canonical: "https://omarbakri.com",

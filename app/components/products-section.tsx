@@ -30,22 +30,23 @@ export default function ProductsSection() {
             className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
             style={{ fontSize: "var(--text-xs)" }}
           >
-            The Proof
+            Projects
           </p>
 
           <h2
             className="font-light tracking-[-0.02em] text-primary mb-6"
             style={{ fontSize: "var(--text-3xl)" }}
           >
-            What I built to get here
+            Production systems, built solo
           </h2>
 
           <p
             className="text-secondary max-w-2xl mb-20 leading-relaxed"
             style={{ fontSize: "var(--text-base)" }}
           >
-            I didn&apos;t take a course. I built three production systems from
-            scratch to prove I could. The engineering speaks for itself.
+            Three full-stack platforms covering compliance, sales automation,
+            and multi-agent orchestration. Each designed, engineered, and
+            shipped independently.
           </p>
         </motion.div>
 
