@@ -19,7 +19,7 @@ const Footer = memo(function Footer() {
               className="text-muted max-w-xs"
               style={{ fontSize: "var(--text-sm)" }}
             >
-              FinTech &middot; AI Strategy &middot; Business Development
+              Applied AI &middot; Agentic Systems &middot; FinTech
             </p>
           </div>
 

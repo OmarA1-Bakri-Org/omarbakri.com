@@ -8,86 +8,71 @@ export interface Experience {
 
 const experiences: Experience[] = [
   {
-    title: "Independent — AI Product Builder",
+    title: "Independent — Applied AI Product Builder",
     company: "ruleIQ · Helios · thredOS",
-    period: "2024 — Present",
+    period: "2023 — Present",
     description:
-      "Building three production AI platforms solo. Full-stack engineering across Python, TypeScript, and React — from LangGraph agent orchestration to Electron desktop apps to Neo4j knowledge graphs.",
+      "Three production AI platforms, built solo. Full-stack across Python, TypeScript, React, FastAPI, Next.js, and Electron, with PostgreSQL, Neo4j, Redis, and FalkorDB beneath. ~3,000 automated tests across backend, integration, prompt evaluation, and end-to-end workflows.",
     outcomes: [
-      "ruleIQ: Agentic compliance platform with GraphRAG, PPALE intelligence loop, 1,884+ tests",
-      "Helios: Autonomous B2B sales engine with B-MAD agent framework, 26-view Electron app",
-      "thredOS: Multi-agent workflow OS with typed thread hierarchies, DAG validation, policy engine",
+      "ruleIQ — agentic compliance platform on a GraphRAG knowledge layer; supports ISO 27001, GDPR, Cyber Essentials, SOC 2, PCI DSS",
+      "Helios — autonomous B2B sales engine; deployed at RTGS.global with a 25% lift in lead conversion",
+      "thredOS — multi-agent workflow runtime; in final testing ahead of commercial launch",
     ],
   },
   {
-    title: "Director, Partnerships & Customer Solutions",
+    title: "Director, Partnerships & Client Services · Asia Territory Lead · AI Lead",
     company: "RTGS.global",
     period: "Oct 2024 — Mar 2026",
     description:
-      "Drove atomic, borderless, instant cross-border settlement via ISO20022 API — bypassing traditional correspondent banking constraints.",
+      "Led commercial partnerships and AI strategy for a cross-border payments infrastructure business operating across Asia and EMEA.",
     outcomes: [
-      "Real-time 24/7 atomic cross-border settlement partnerships",
-      "Revenue through liquidity provision, transaction fees, and FX income",
-      "Partnerships across payments infrastructure and open banking",
+      "Built and deployed Helios as the company's primary AI-driven commercial platform; +25% lead conversion, replacing manual prospecting",
+      "Led AI strategy for commercial execution — translated automation opportunities into shipped production systems",
+      "Worked across Product, Engineering, Compliance, and Commercial to convert market feedback into structured product improvements",
     ],
   },
   {
-    title: "Founder",
-    company: "FiduciaNex|Ai",
-    period: "Jan 2024 — Oct 2024",
-    description:
-      "Founded an AI venture building intelligent sales tools and multi-agent systems for financial services. This is where the technical building started.",
-    outcomes: [
-      "Built AI sales tools with LLMs and multi-agent orchestration",
-      "Full-stack development with prompt engineering and automation",
-      "Product rollout from concept to market",
-    ],
-  },
-  {
-    title: "Senior Account Relationship Manager",
+    title: "Senior Account Manager",
     company: "Banking Circle",
     period: "Mar 2023 — Sep 2023",
     description:
       "Direct sales and account management for a leading payments bank serving EU financial institutions.",
     outcomes: [
-      "Exceeded yearly targets by 20% in 6 months, doubled MoM revenue to €500k",
-      "Reduced client onboarding time by 50%, grew payment volumes 30%",
-      "Boosted satisfaction 25% across 20-client EU portfolio",
+      "Introduced AI-assisted prospecting and workflow playbooks; +20% response rates",
+      "Led a cross-functional onboarding redesign: -50% onboarding time, supporting 30%+ volume growth",
     ],
   },
   {
-    title: "Head of Bank Sales, EMEA FI Payments",
+    title: "Head of Bank Relationship Sales, EMEA · Senior Business Development Manager",
     company: "Convera",
-    period: "Feb 2021 — Mar 2023",
+    period: "Feb 2021 — Feb 2023",
     description:
       "Led EMEA bank sales for financial institution payments across the correspondent banking landscape.",
     outcomes: [
-      "5x growth in major bank opportunities via strategic domestic payments roadmap",
-      "Secured £1M deal with major bank through data-driven negotiation",
-      "30+ stakeholder meetings monthly to optimise cross-selling and pipeline",
+      "Closed a £1M financial institution partnership through complex commercial negotiations",
+      "Expanded banking partnerships contributing to 30% payment-volume growth",
     ],
   },
   {
-    title: "Principal, Financial Services",
+    title: "Principal Consultant, Wholesale Banking",
     company: "Marlin Hawk",
-    period: "Oct 2018 — Oct 2020",
+    period: "2018 — 2020",
     description:
       "Executive search and advisory for global financial services — building C-suite relationships across banking and FinTech.",
     outcomes: [
-      "10 new global clients including Gruppo Santander and Vanguard",
-      "£1.53M in new fees through strategic business development",
-      "Grew flagship industry event attendance 40% annually",
+      "Won 10 global clients including Santander and Vanguard — £1.53M in fees",
+      "Grew flagship industry event attendance 40% YoY",
     ],
   },
   {
     title: "Earlier Career",
-    company: "Bank of America ML · BNP Paribas",
+    company: "Bank of America Merrill Lynch · BNP Paribas CIB",
     period: "2006 — 2013",
     description:
-      "Foundation years in institutional banking — relationship management, credit analysis, and transaction structuring at two of Europe's largest banks.",
+      "Foundation years in institutional banking — Financial Institutions coverage at BAML, Corporate Coverage at BNP Paribas (~5 years).",
     outcomes: [
       "Financial Institutions Coverage at Bank of America Merrill Lynch",
-      "Corporate Coverage at BNP Paribas — nearly five years",
+      "Corporate Coverage at BNP Paribas CIB — nearly five years",
       "Deep foundation in retail, commercial, and institutional banking operations",
     ],
   },
