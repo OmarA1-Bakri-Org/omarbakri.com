@@ -154,6 +154,33 @@ function disposeThree(ctx: ThreeContext) {
   }
 }
 
+/* ----------------------------- prefers-reduced-motion ----------------------------- */
+
+function usePrefersReducedMotion() {
+  const [reduce, setReduce] = useState(() =>
+    typeof window !== "undefined"
+      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      : false
+  );
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const onChange = (e: MediaQueryListEvent | MediaQueryList) =>
+      setReduce("matches" in e ? e.matches : (e as any).matches);
+    setReduce(mq.matches);
+    try {
+      mq.addEventListener("change", onChange as any);
+      return () => mq.removeEventListener("change", onChange as any);
+    } catch {
+      mq.addListener(onChange as any);
+      return () => mq.removeListener(onChange as any);
+    }
+  }, []);
+
+  return reduce;
+}
+
 /* ----------------------------- TunnelBackground (hero canvas) ----------------------------- */
 
 export default function TunnelBackground() {
@@ -165,6 +192,7 @@ export default function TunnelBackground() {
   const rafResizeRef = useRef<boolean>(false);
   const isInViewRef = useRef<boolean>(false);
   const isMobile = useIsMobile();
+  const reducedMotion = usePrefersReducedMotion();
 
   const startLoop = useCallback(() => {
     if (animRef.current !== null) return;
@@ -191,6 +219,7 @@ export default function TunnelBackground() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas || typeof window === "undefined") return;
+    if (reducedMotion) return;
 
     const layers = isMobile ? MOBILE_LAYERS : DESKTOP_LAYERS;
     const width = window.innerWidth;
@@ -251,7 +280,16 @@ export default function TunnelBackground() {
         ctxRef.current = null;
       }
     };
-  }, [startLoop, stopLoop, isMobile]);
+  }, [startLoop, stopLoop, isMobile, reducedMotion]);
+
+  if (reducedMotion) {
+    return (
+      <div
+        className="absolute inset-0 w-full h-full bg-base"
+        aria-hidden="true"
+      />
+    );
+  }
 
   return (
     <canvas
