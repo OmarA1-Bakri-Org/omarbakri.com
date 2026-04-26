@@ -219,19 +219,23 @@ export default function TunnelBackground() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas || typeof window === "undefined") return;
-    if (reducedMotion) return;
-
     const layers = isMobile ? MOBILE_LAYERS : DESKTOP_LAYERS;
     const width = window.innerWidth;
     const height = window.innerHeight;
     const ctx = createThreeForCanvas(canvas, width, height, layers);
     ctxRef.current = ctx;
 
+    // Reduced motion: render a single static frame (iTime=0) and don't start the loop.
+    if (reducedMotion) {
+      ctx.material.uniforms.iTime.value = 0;
+      ctx.renderer.render(ctx.scene, ctx.camera);
+    }
+
     /* Fully stop/start the render loop based on viewport visibility */
     const observer = new IntersectionObserver(
       ([entry]) => {
         isInViewRef.current = entry.isIntersecting;
-        if (entry.isIntersecting && !pausedRef.current) {
+        if (entry.isIntersecting && !pausedRef.current && !reducedMotion) {
           startLoop();
         } else {
           stopLoop();
@@ -263,7 +267,7 @@ export default function TunnelBackground() {
       pausedRef.current = !!document.hidden;
       if (document.hidden) {
         stopLoop();
-      } else if (isInViewRef.current) {
+      } else if (isInViewRef.current && !reducedMotion) {
         startLoop();
       }
     };
@@ -281,15 +285,6 @@ export default function TunnelBackground() {
       }
     };
   }, [startLoop, stopLoop, isMobile, reducedMotion]);
-
-  if (reducedMotion) {
-    return (
-      <div
-        className="absolute inset-0 w-full h-full bg-base"
-        aria-hidden="true"
-      />
-    );
-  }
 
   return (
     <canvas
