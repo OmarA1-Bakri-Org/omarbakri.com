@@ -4,7 +4,7 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Monogram from "./monogram";
 
 const STORAGE_KEY = "mono-curtain-played";
-const HOLD_MS = 2400;
+const HOLD_MS = 3200; // ligature draws ~2.6s + brief hold
 const FADE_MS = 600;
 
 type Phase = "idle" | "showing" | "done";
