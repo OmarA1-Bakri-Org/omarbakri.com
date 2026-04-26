@@ -54,9 +54,9 @@ export default function HeroSection() {
           className="text-muted max-w-2xl mx-auto leading-relaxed"
           style={{ fontSize: "var(--text-base)" }}
         >
-          Fifteen years selling banks the future. At forty-three I stopped
-          waiting and started writing the code instead. Three production AI
-          platforms later, this is the work.
+          Fifteen years selling banks payments rails. At forty-three, I
+          started writing code instead. Three production AI platforms
+          later &mdash; this is the work.
         </motion.p>
 
         {/* Location strip */}

@@ -28,13 +28,17 @@ export default function AboutSection() {
                 className="font-light tracking-[-0.02em] text-primary"
                 style={{ fontSize: "var(--text-3xl)" }}
               >
-                Three years ago, at forty-three, I started learning Python.
+                At forty-three, I started learning Python.
               </h2>
 
               <div
                 className="space-y-6 text-secondary leading-[1.7]"
                 style={{ fontSize: "var(--text-base)" }}
               >
+                <p>
+                  It wasn&rsquo;t a hobby. It was the first deliberate
+                  move in a longer pivot toward building AI products.
+                </p>
                 <p>
                   By then I&rsquo;d spent fifteen years on the commercial
                   side of enterprise FinTech &mdash; BNP Paribas, Bank of
@@ -44,11 +48,11 @@ export default function AboutSection() {
                   vacated lightly.
                 </p>
                 <p>
-                  I left because the work that interested me had moved.
-                  I&rsquo;d spent fifteen years selling the gap between
+                  I left because the interesting work had moved to the other
+                  side of the table. I&rsquo;d spent fifteen years selling
+                  the gap between
                   what enterprise software promises and what it actually
-                  does, and I had grown sceptical of fixing that from the
-                  buyer side of the table. Late 2023 I sat down to find
+                  does, and I had grown sceptical of fixing that from the buyer side. Late 2023 I sat down to find
                   out whether I could write the code instead.
                 </p>
                 <p>
