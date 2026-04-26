@@ -15,7 +15,7 @@ export default function HeroSection() {
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
-      {/* Tunnel WebGL background */}
+      {/* Tunnel WebGL background — gates on prefers-reduced-motion internally */}
       <TunnelBackground />
 
       {/* Content overlay */}
@@ -31,19 +31,22 @@ export default function HeroSection() {
           Omar Al-Bakri
         </motion.h1>
 
-        {/* Hook */}
+        {/* Tagline */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
-          className="text-secondary font-light tracking-wide mb-4"
+          className="text-secondary font-light tracking-wide mb-6"
           style={{ fontSize: "var(--text-xl)" }}
         >
-          AI product builder.{" "}
-          <span className="text-accent">Enterprise sales veteran.</span>
+          Applied AI Product Builder{" "}
+          <span className="text-muted">·</span>{" "}
+          <span className="text-accent">Agentic Systems</span>{" "}
+          <span className="text-muted">·</span>{" "}
+          Commercial Leadership
         </motion.p>
 
-        {/* One-liner */}
+        {/* The story */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -51,8 +54,20 @@ export default function HeroSection() {
           className="text-muted max-w-2xl mx-auto leading-relaxed"
           style={{ fontSize: "var(--text-base)" }}
         >
-          I build production AI systems informed by 15 years of selling
-          enterprise technology. Three platforms shipped. Full stack.
+          Fifteen years selling banks payments rails. At forty-three, I
+          started writing code instead. Three production AI platforms
+          later &mdash; this is the work.
+        </motion.p>
+
+        {/* Location strip */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 1.4 }}
+          className="text-muted uppercase tracking-[0.15em] mt-10"
+          style={{ fontSize: "var(--text-xs)" }}
+        >
+          London <span className="text-accent">·</span> Southeast Asia
         </motion.p>
 
         {/* Scroll indicator */}
