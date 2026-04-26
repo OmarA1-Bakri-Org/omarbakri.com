@@ -10,6 +10,7 @@ import NewsletterSection from "@/app/components/newsletter-section";
 import ContactSection from "@/app/components/contact-section";
 import Footer from "@/app/components/footer";
 import PageLoadCurtain from "@/app/components/page-load-curtain";
+import PullQuote from "@/app/components/pull-quote";
 
 export default function HomePage() {
   return (
@@ -27,6 +28,10 @@ export default function HomePage() {
         <main id="main-content">
           <HeroSection />
           <AboutSection />
+          <PullQuote>
+            This isn&rsquo;t a pivot. It&rsquo;s both halves of a job that
+            should have been one job all along.
+          </PullQuote>
           <ProductsSection />
           <ExperienceSection />
           <ExpertiseSection />

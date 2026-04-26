@@ -69,7 +69,7 @@ export default function ExpertiseSection() {
             className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
             style={{ fontSize: "var(--text-xs)" }}
           >
-            Expertise
+            <span className="text-muted">04 /</span> Expertise
           </p>
 
           <h2

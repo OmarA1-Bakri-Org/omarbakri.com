@@ -59,7 +59,7 @@ export default function NewsletterSection() {
                 className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
                 style={{ fontSize: "var(--text-xs)" }}
               >
-                Newsletter
+                <span className="text-muted">05 /</span> Newsletter
               </p>
 
               <h2

@@ -18,7 +18,7 @@ export default function AboutSection() {
             className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
             style={{ fontSize: "var(--text-xs)" }}
           >
-            About
+            <span className="text-muted">01 /</span> About
           </p>
 
           <div className="grid lg:grid-cols-12 gap-16">

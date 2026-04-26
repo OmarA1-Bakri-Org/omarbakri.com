@@ -30,7 +30,7 @@ export default function ProductsSection() {
             className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
             style={{ fontSize: "var(--text-xs)" }}
           >
-            Projects
+            <span className="text-muted">02 /</span> Projects
           </p>
 
           <h2
