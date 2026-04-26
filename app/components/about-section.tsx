@@ -28,7 +28,7 @@ export default function AboutSection() {
                 className="font-light tracking-[-0.02em] text-primary"
                 style={{ fontSize: "var(--text-3xl)" }}
               >
-                AI builder, with the commercial mileage to know which problems are worth shipping.
+                Three years ago, at forty-three, I started learning Python.
               </h2>
 
               <div
@@ -36,36 +36,41 @@ export default function AboutSection() {
                 style={{ fontSize: "var(--text-base)" }}
               >
                 <p>
-                  I spent fifteen years selling enterprise technology into
-                  Tier 1 banks — BNP Paribas, Bank of America Merrill Lynch,
-                  Convera, Banking Circle, RTGS.global. I watched the gap
-                  between what enterprise software promises and what it
-                  actually does, in close-up, repeatedly. That gap is what
-                  pulled me into engineering.
+                  By then I&rsquo;d spent fifteen years on the commercial
+                  side of enterprise FinTech &mdash; BNP Paribas, Bank of
+                  America Merrill Lynch, Convera, Banking Circle,
+                  RTGS.global. Tier 1 banks, seven-figure deals, a career
+                  built deliberately. The kind of seat that does not get
+                  vacated lightly.
                 </p>
                 <p>
-                  Since 2023 I&rsquo;ve shipped three production AI
-                  platforms solo.{" "}
+                  I left because the work that interested me had moved.
+                  I&rsquo;d spent fifteen years selling the gap between
+                  what enterprise software promises and what it actually
+                  does, and I had grown sceptical of fixing that from the
+                  buyer side of the table. Late 2023 I sat down to find
+                  out whether I could write the code instead.
+                </p>
+                <p>
+                  Three platforms followed.{" "}
                   <span className="text-primary">ruleIQ</span> &mdash;
-                  a regulatory compliance platform on a GraphRAG knowledge
+                  agentic regulatory compliance on a GraphRAG knowledge
                   layer.{" "}
                   <span className="text-primary">Helios</span> &mdash;
-                  an autonomous B2B sales engine, deployed at RTGS.global
-                  with a 25% lift in lead conversion.{" "}
+                  autonomous B2B sales, deployed in production at
+                  RTGS.global with a 25% lift in lead conversion.{" "}
                   <span className="text-primary">thredOS</span> &mdash;
-                  a multi-agent workflow runtime, currently in final
-                  testing ahead of commercial launch.
+                  a multi-agent workflow runtime, in final testing ahead
+                  of commercial launch. Built solo, end to end, with
+                  around 3,000 automated tests behind them.
                 </p>
                 <p>
-                  Python, TypeScript, FastAPI, Next.js, Electron, with
-                  PostgreSQL, Neo4j, and Redis behind them, and ~3,000
-                  automated tests across the stack. No coursework, no
-                  prototypes &mdash; production builds.
-                </p>
-                <p>
-                  I bring both sides of the table. The engineering to ship
-                  production AI, and the commercial instinct to know which
-                  problems are worth solving in the first place.
+                  The fifteen years weren&rsquo;t wasted. They taught me
+                  which problems matter, which buyers will pay for what,
+                  and what enterprise software has to do before anyone
+                  trusts it with their data. This isn&rsquo;t a pivot.
+                  It&rsquo;s both halves of a job that should have been
+                  one job all along.
                 </p>
               </div>
 
@@ -104,10 +109,10 @@ export default function AboutSection() {
                   className="text-muted uppercase tracking-[0.05em] mb-2"
                   style={{ fontSize: "var(--text-xs)" }}
                 >
-                  Enterprise Sales
+                  The fifteen years
                 </p>
                 <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
-                  15 years &middot; Tier 1 banks &middot; Seven-figure deals
+                  Tier 1 banks &middot; Seven-figure deals
                 </p>
                 <p className="text-secondary" style={{ fontSize: "var(--text-sm)" }}>
                   BNP Paribas &middot; Bank of America ML &middot; Convera &middot; Banking Circle &middot; RTGS.global

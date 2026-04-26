@@ -36,7 +36,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
-          className="text-secondary font-light tracking-wide mb-4"
+          className="text-secondary font-light tracking-wide mb-6"
           style={{ fontSize: "var(--text-xl)" }}
         >
           Applied AI Product Builder{" "}
@@ -46,7 +46,7 @@ export default function HeroSection() {
           Commercial Leadership
         </motion.p>
 
-        {/* One-liner */}
+        {/* The story */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -54,9 +54,9 @@ export default function HeroSection() {
           className="text-muted max-w-2xl mx-auto leading-relaxed"
           style={{ fontSize: "var(--text-base)" }}
         >
-          Three production AI platforms, shipped solo. A compliance graph,
-          an autonomous sales engine, a multi-agent runtime. Fifteen years
-          of enterprise FinTech sit underneath — not on top.
+          Fifteen years selling banks the future. At forty-three I stopped
+          waiting and started writing the code instead. Three production AI
+          platforms later, this is the work.
         </motion.p>
 
         {/* Location strip */}
