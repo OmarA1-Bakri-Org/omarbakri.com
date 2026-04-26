@@ -25,7 +25,7 @@ export default function AboutSection() {
             {/* Main content */}
             <div className="lg:col-span-7 space-y-8">
               <h2
-                className="font-light tracking-[-0.02em] text-primary"
+                className="font-display font-light tracking-[-0.02em] text-primary"
                 style={{ fontSize: "var(--text-3xl)" }}
               >
                 At forty-three, I started learning Python.
