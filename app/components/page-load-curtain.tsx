@@ -4,7 +4,7 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Monogram from "./monogram";
 
 const STORAGE_KEY = "mono-curtain-played";
-const HOLD_MS = 2400; // monogram drawing (~2s) + brief hold
+const HOLD_MS = 2400;
 const FADE_MS = 600;
 
 type Phase = "idle" | "showing" | "done";
@@ -14,8 +14,8 @@ type Phase = "idle" | "showing" | "done";
  * full-screen drawing in over ~2 seconds, then fades out. Subsequent
  * navigations skip via sessionStorage. Respects prefers-reduced-motion.
  *
- * Children are always rendered (SSR-safe); the curtain simply covers
- * them with z-100 for the first ~3 seconds.
+ * Children render always (SSR-safe); the curtain covers them with
+ * z-100 only on the very first visit per session.
  */
 export default function PageLoadCurtain({
   children,
@@ -23,24 +23,34 @@ export default function PageLoadCurtain({
   children: React.ReactNode;
 }) {
   const reduce = useReducedMotion();
-  // Always start "idle" on the server. The curtain decision is taken
-  // on the client inside the effect below — avoids hydration mismatch.
   const [phase, setPhase] = useState<Phase>("idle");
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+
     if (reduce) {
       setPhase("done");
       return;
     }
+
     if (window.sessionStorage.getItem(STORAGE_KEY) === "1") {
       setPhase("done");
       return;
     }
+
     setPhase("showing");
-    window.sessionStorage.setItem(STORAGE_KEY, "1");
-    const timer = window.setTimeout(() => setPhase("done"), HOLD_MS);
-    return () => window.clearTimeout(timer);
+
+    const timer = window.setTimeout(() => {
+      window.sessionStorage.setItem(STORAGE_KEY, "1");
+      setPhase("done");
+    }, HOLD_MS);
+
+    // Note: no cleanup. In React 18 StrictMode dev, the cleanup would
+    // fire between the synthetic unmount/remount and cancel the only
+    // scheduled timer, leaving the curtain mounted forever. The
+    // sessionStorage gate above handles legitimate remounts (route
+    // changes); StrictMode's double-invoke is harmless because the
+    // setTimeout body is idempotent.
   }, [reduce]);
 
   return (
@@ -51,6 +61,7 @@ export default function PageLoadCurtain({
           <motion.div
             key="curtain"
             initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
             exit={{
               opacity: 0,
               transition: { duration: FADE_MS / 1000, ease: "easeOut" },
