@@ -48,12 +48,15 @@ export default function AboutSection() {
                   vacated lightly.
                 </p>
                 <p>
-                  I left because the interesting work had moved to the other
-                  side of the table. I&rsquo;d spent fifteen years selling
-                  the gap between
-                  what enterprise software promises and what it actually
-                  does, and I had grown sceptical of fixing that from the buyer side. Late 2023 I sat down to find
-                  out whether I could write the code instead.
+                  I left because the interesting work had moved to the
+                  other side of the table. Fifteen years selling enterprise
+                  software gave me a clear view of where it actually lives:
+                  in the gap between what the deck promises and what the
+                  product can do. My job was to bridge that gap with
+                  narrative, contracts, and customer success. The people
+                  who could close it for real were the ones writing the
+                  code. Late 2023 I sat down to find out whether I could
+                  be one of them.
                 </p>
                 <p>
                   Three platforms followed.{" "}

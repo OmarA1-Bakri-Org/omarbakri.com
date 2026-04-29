@@ -6,10 +6,12 @@ import type React from "react";
 // hence the deliberately non-keyword name.
 export const PLAYED_MARKER = "mono-curtain-played";
 
-// Phase timings — total ~4.1s on first visit.
-const REVEAL_MS_BASE = 1100; // mark fades in (opacity + scale)
-const HOLD_MS_BASE = 2000;   // mark sits at full presence
-const FADE_MS_BASE = 1000;   // backdrop + mark fade together (slow exhale)
+// Phase timings — total ~4.5s on first visit. Reveal and fade both
+// stretched slightly so the transitions land softly at both ends; the
+// shorter versions read as a "snap" against the dark plate.
+const REVEAL_MS_BASE = 1400; // mark fades in (opacity + slight scale)
+const HOLD_MS_BASE = 1800;   // mark sits at full presence
+const FADE_MS_BASE = 1300;   // backdrop + mark fade together (long exhale)
 
 export const MAX_HERO_SIZE = 540;
 export const CHECKING_HERO_SIZE = 360;

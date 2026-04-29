@@ -16,9 +16,12 @@ interface CurtainOverlayProps {
   onSkip: () => void;
 }
 
-const REVEAL_EASE = [0.22, 1, 0.36, 1] as const;
-const FADE_EASE_MARK = [0.4, 0, 0.6, 1] as const;
-const FADE_EASE_BACKDROP = [0.25, 0.46, 0.45, 0.94] as const;
+// Symmetric ease-in-out curves so neither the reveal nor the fade
+// has an audible "snap" at the start or end. Sine-like for the mark,
+// slightly tighter for the backdrop.
+const REVEAL_EASE = [0.45, 0, 0.55, 1] as const;
+const FADE_EASE_MARK = [0.45, 0, 0.55, 1] as const;
+const FADE_EASE_BACKDROP = [0.4, 0, 0.2, 1] as const;
 
 /**
  * Pure visual layer for the page-load curtain. The parent owns phase
@@ -70,10 +73,10 @@ export function CurtainOverlay({
         <motion.div
           key="mark"
           className="text-accent"
-          initial={{ opacity: 0, scale: 0.96 }}
+          initial={{ opacity: 0, scale: 0.985 }}
           animate={{
             opacity: fading ? 0 : 1,
-            scale: fading ? 1.02 : 1,
+            scale: fading ? 1.01 : 1,
           }}
           transition={{
             opacity: {
