@@ -6,11 +6,10 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import Monogram from "./monogram";
+import { AnimatePresence, useReducedMotion } from "framer-motion";
+import { CurtainOverlay } from "./curtain-overlay";
 import {
   CHECKING_HERO_SIZE,
-  CURTAIN_STYLE,
   FADE_MS,
   HOLD_MS,
   Phase,
@@ -28,7 +27,6 @@ const useIsoLayoutEffect =
  * First-visit-only entry sequence. The OAB ligature reveals quietly at
  * centre — fading in with a slight scale-up — holds for a beat, then
  * fades out together with the dark backdrop. No drawing, no morph.
- * Restraint over decoration.
  *
  * Skip on Esc or click. sessionStorage gate suppresses on subsequent
  * visits in the same session. Skipped entirely under prefers-reduced-motion.
@@ -127,67 +125,18 @@ export default function PageLoadCurtain({
   }, [phase, heroSize]);
 
   const visible = phase !== "done";
-  const fading = phase === "fading";
-  const showMark =
-    phase === "revealing" || phase === "holding" || phase === "fading";
-
-  if (visible && !mounted) {
-    return (
-      <>
-        {children}
-        <div
-          className="fixed inset-0 z-[100] overflow-hidden"
-          style={CURTAIN_STYLE}
-          aria-hidden="true"
-          role="presentation"
-        />
-      </>
-    );
-  }
 
   return (
     <>
       {children}
       <AnimatePresence>
         {visible ? (
-          <motion.div
-            key="curtain"
-            className="fixed inset-0 z-[100] overflow-hidden flex items-center justify-center"
-            style={CURTAIN_STYLE}
-            aria-hidden="true"
-            role="presentation"
-            onClick={skipToFade}
-            initial={{ opacity: 1 }}
-            animate={{ opacity: fading ? 0 : 1 }}
-            transition={{
-              duration: FADE_MS / 1000,
-              ease: [0.25, 0.46, 0.45, 0.94],
-            }}
-          >
-            {showMark && (
-              <motion.div
-                key="mark"
-                className="text-accent"
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{
-                  opacity: fading ? 0 : 1,
-                  scale: fading ? 1.02 : 1,
-                }}
-                transition={{
-                  opacity: {
-                    duration: fading ? FADE_MS / 1000 : REVEAL_MS / 1000,
-                    ease: fading ? [0.4, 0, 0.6, 1] : [0.22, 1, 0.36, 1],
-                  },
-                  scale: {
-                    duration: fading ? FADE_MS / 1000 : REVEAL_MS / 1000,
-                    ease: [0.22, 1, 0.36, 1],
-                  },
-                }}
-              >
-                <Monogram size={heroSize} aria-hidden />
-              </motion.div>
-            )}
-          </motion.div>
+          <CurtainOverlay
+            phase={phase}
+            heroSize={heroSize}
+            mounted={mounted}
+            onSkip={skipToFade}
+          />
         ) : null}
       </AnimatePresence>
     </>
