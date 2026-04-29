@@ -61,8 +61,8 @@ export default function AboutSection() {
                   agentic regulatory compliance on a GraphRAG knowledge
                   layer.{" "}
                   <span className="text-primary">Helios</span> &mdash;
-                  autonomous B2B sales, deployed in production at
-                  RTGS.global with a 25% lift in lead conversion.{" "}
+                  autonomous B2B sales, live in production at RTGS.global
+                  as the company&rsquo;s primary commercial platform.{" "}
                   <span className="text-primary">thredOS</span> &mdash;
                   a multi-agent workflow runtime, in final testing ahead
                   of commercial launch. Built solo, end to end, with

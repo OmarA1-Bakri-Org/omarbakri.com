@@ -34,7 +34,7 @@ const products: Product[] = [
   },
   {
     name: "Helios",
-    tagline: "Autonomous B2B sales engine — deployed at RTGS.global, +25% conversion",
+    tagline: "Autonomous B2B sales engine, live in production at RTGS.global",
     description:
       "End-to-end autonomous prospecting and outreach automation, with safety hard-baked into the architecture: circuit breakers, spend caps, and mandatory cancel windows to prevent runaway automation. A desktop app, an API server, and a Python orchestrator working in concert, integrated with Explorium, Apollo, HubSpot, and Postmark. Replaced a manual prospecting workflow in a live commercial environment.",
     stack: [
@@ -48,7 +48,7 @@ const products: Product[] = [
       "Redis",
     ],
     highlights: [
-      "Deployed in production at RTGS.global; lead conversion +25%, manual prospecting retired",
+      "Live in production at RTGS.global, running the company's outbound sales motion end-to-end",
       "Multi-agent framework with autonomous execution mode and persistent context (Graphiti)",
       "26-view desktop app: Clerk auth, Zustand state management",
       "Integrations: Explorium, Apollo, HubSpot, Postmark",

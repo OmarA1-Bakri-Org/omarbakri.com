@@ -15,7 +15,7 @@ const experiences: Experience[] = [
       "Three production AI platforms, built solo. Full-stack across Python, TypeScript, React, FastAPI, Next.js, and Electron, with PostgreSQL, Neo4j, Redis, and FalkorDB beneath. ~3,000 automated tests across backend, integration, prompt evaluation, and end-to-end workflows.",
     outcomes: [
       "ruleIQ — agentic compliance platform on a GraphRAG knowledge layer; supports ISO 27001, GDPR, Cyber Essentials, SOC 2, PCI DSS",
-      "Helios — autonomous B2B sales engine; deployed at RTGS.global with a 25% lift in lead conversion",
+      "Helios — autonomous B2B sales engine; live in production at RTGS.global",
       "thredOS — multi-agent workflow runtime; in final testing ahead of commercial launch",
     ],
   },
@@ -26,7 +26,7 @@ const experiences: Experience[] = [
     description:
       "Led commercial partnerships and AI strategy for a cross-border payments infrastructure business operating across Asia and EMEA.",
     outcomes: [
-      "Built and deployed Helios as the company's primary AI-driven commercial platform; +25% lead conversion, replacing manual prospecting",
+      "Built and deployed Helios as the company's primary AI-driven commercial platform, running outbound sales end-to-end",
       "Led AI strategy for commercial execution — translated automation opportunities into shipped production systems",
       "Worked across Product, Engineering, Compliance, and Commercial to convert market feedback into structured product improvements",
     ],
