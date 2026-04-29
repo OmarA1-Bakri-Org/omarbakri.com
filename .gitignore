@@ -11,3 +11,14 @@ tsconfig.tsbuildinfo
 lighthouse-report.json
 
 .vercel
+
+# Dev/QA screenshots taken at the repo root during visual validation
+/*.png
+!/public/*.png
+
+# Local dev artifacts
+.next-dev.log
+.next-dev.err
+.omx/
+.review-frames/
+.serena/
