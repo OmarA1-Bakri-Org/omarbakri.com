@@ -14,7 +14,7 @@ const Footer = memo(function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start gap-12">
           {/* Left: monogram + tagline */}
           <div>
-            <Monogram size={56} animate={false} className="mb-4" />
+            <Monogram size={56} className="mb-4" />
             <p
               className="text-muted max-w-xs"
               style={{ fontSize: "var(--text-sm)" }}

@@ -1,45 +1,64 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Monogram from "./monogram";
 
 const STORAGE_KEY = "mono-curtain-played";
 
-// Phase timings — total ~4 seconds on first visit
-const DRAW_MS = 2600;   // ligature draws (O outline → A → crossbar → B spine → B bowls)
-const SETTLE_MS = 600;  // dwell at full size before transitioning
-const EXIT_MS = 900;    // morph to navbar position + backdrop fade
+// Phase timings — total ~4.1s on first visit.
+const REVEAL_MS_BASE = 1100; // mark fades in (opacity + scale)
+const HOLD_MS_BASE = 2000;   // mark sits at full presence
+const FADE_MS_BASE = 1000;   // backdrop + mark fade together (slow exhale)
 
-// Final landing height for the morph: matches navbar Monogram size={36}.
-const NAVBAR_SIZE = 36;
-// Maximum monogram height at centre-stage; capped to avoid overflow on
-// short viewports. Computed at mount time from viewport dimensions.
-const MAX_HERO_SIZE = 480;
+const MAX_HERO_SIZE = 540;
+const CHECKING_HERO_SIZE = 360;
 
-type Phase = "idle" | "showing" | "settled" | "exiting" | "done";
+// Dev-only `?slow=N` slowdown factor for visual QA. Constant-folded out
+// in production builds.
+function getSlowdown() {
+  if (process.env.NODE_ENV === "production") return 1;
+  if (typeof window === "undefined") return 1;
+  const v = parseFloat(new URLSearchParams(window.location.search).get("slow") || "1");
+  return Number.isFinite(v) && v > 0 ? v : 1;
+}
 
-function computeHeroSize() {
+const SLOW = getSlowdown();
+const REVEAL_MS = REVEAL_MS_BASE * SLOW;
+const HOLD_MS = HOLD_MS_BASE * SLOW;
+const FADE_MS = FADE_MS_BASE * SLOW;
+
+const useIsoLayoutEffect =
+  typeof window === "undefined" ? useEffect : useLayoutEffect;
+
+const CURTAIN_STYLE: React.CSSProperties = {
+  willChange: "opacity",
+  background:
+    "radial-gradient(ellipse at 50% 48%, rgba(247, 217, 149, 0.08), rgba(5, 5, 5, 0) 32rem), var(--color-bg)",
+};
+
+type Phase = "checking" | "revealing" | "holding" | "fading" | "done";
+
+function computeHeroSize(): number {
   if (typeof window === "undefined") return MAX_HERO_SIZE;
-  // Monogram width = size * 0.75; size === height. Cap on both dimensions.
-  const byHeight = window.innerHeight * 0.6;
-  const byWidth = (window.innerWidth * 0.6) / 0.75;
-  return Math.max(160, Math.min(byHeight, byWidth, MAX_HERO_SIZE));
+  const byHeight = window.innerHeight * 0.55;
+  const byWidth = (window.innerWidth * 0.45) / 0.75;
+  return Math.max(180, Math.min(byHeight, byWidth, MAX_HERO_SIZE));
 }
 
 /**
- * First-visit-only entry sequence. The OAB ligature draws large at
- * centre, settles for ~600ms at full opacity, then morphs (scale +
- * position) to navbar position while the backdrop fades — feels like
- * the mark "landing" in its permanent spot.
+ * First-visit-only entry sequence. The OAB ligature reveals quietly at
+ * centre — scaling up from a slight 0.94 with opacity fade — holds for
+ * a beat, then fades out together with the dark backdrop. No drawing,
+ * no morph. Restraint over decoration.
  *
- * Skip on Esc or click anywhere on the curtain. sessionStorage gate
- * suppresses the curtain on subsequent visits in the same session.
- * Skipped entirely under prefers-reduced-motion.
- *
- * No useEffect cleanup on the timer chain — in React 18 StrictMode
- * dev mode the cleanup would cancel timers between the synthetic
- * unmount/remount, leaving the curtain stuck. The setPhase calls and
- * sessionStorage write are idempotent.
+ * Skip on Esc or click. sessionStorage gate suppresses on subsequent
+ * visits in the same session. Skipped entirely under prefers-reduced-motion.
  */
 export default function PageLoadCurtain({
   children,
@@ -47,20 +66,30 @@ export default function PageLoadCurtain({
   children: React.ReactNode;
 }) {
   const reduce = useReducedMotion();
-  const [phase, setPhase] = useState<Phase>("idle");
-  const [heroSize, setHeroSize] = useState<number>(MAX_HERO_SIZE);
+  const [phase, setPhase] = useState<Phase>("checking");
+  const [heroSize, setHeroSize] = useState<number>(CHECKING_HERO_SIZE);
+  const [mounted, setMounted] = useState(false);
+  const [sizeReady, setSizeReady] = useState(false);
+  const startedRef = useRef(false);
+  const timersRef = useRef<number[]>([]);
 
-  const skipToExit = useCallback(() => {
+  const skipToFade = useCallback(() => {
+    timersRef.current.forEach((timer) => window.clearTimeout(timer));
     setPhase((prev) =>
-      prev === "showing" || prev === "settled" ? "exiting" : prev
+      prev === "revealing" || prev === "holding" ? "fading" : prev
     );
+    const doneTimer = window.setTimeout(() => {
+      window.sessionStorage.setItem(STORAGE_KEY, "1");
+      setPhase("done");
+    }, FADE_MS);
+    timersRef.current = [doneTimer];
   }, []);
 
-  // Compute hero monogram size based on viewport. Refresh on resize so
-  // mid-curtain rotation/zoom doesn't leave the mark off-screen.
-  useEffect(() => {
+  useIsoLayoutEffect(() => {
     if (typeof window === "undefined") return;
     setHeroSize(computeHeroSize());
+    setMounted(true);
+    setSizeReady(true);
     const onResize = () => setHeroSize(computeHeroSize());
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
@@ -68,58 +97,87 @@ export default function PageLoadCurtain({
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (reduce) {
+    if (!sizeReady) return;
+    const debugBypass =
+      process.env.NODE_ENV !== "production" &&
+      new URLSearchParams(window.location.search).has("forceCurtain");
+    if (reduce && !debugBypass) {
       setPhase("done");
       return;
     }
-    if (window.sessionStorage.getItem(STORAGE_KEY) === "1") {
+    if (
+      !debugBypass &&
+      window.sessionStorage.getItem(STORAGE_KEY) === "1"
+    ) {
       setPhase("done");
       return;
     }
+    if (startedRef.current) return;
 
-    setPhase("showing");
+    startedRef.current = true;
+    setPhase("revealing");
 
-    window.setTimeout(
-      () => setPhase((p) => (p === "showing" ? "settled" : p)),
-      DRAW_MS
+    const holdTimer = window.setTimeout(
+      () => setPhase((p) => (p === "revealing" ? "holding" : p)),
+      REVEAL_MS
     );
-    window.setTimeout(
-      () => setPhase((p) => (p === "settled" || p === "showing" ? "exiting" : p)),
-      DRAW_MS + SETTLE_MS
+    const fadeTimer = window.setTimeout(
+      () => setPhase((p) => (p === "holding" || p === "revealing" ? "fading" : p)),
+      REVEAL_MS + HOLD_MS
     );
-    window.setTimeout(() => {
+    const doneTimer = window.setTimeout(() => {
       window.sessionStorage.setItem(STORAGE_KEY, "1");
       setPhase("done");
-    }, DRAW_MS + SETTLE_MS + EXIT_MS);
-  }, [reduce]);
+    }, REVEAL_MS + HOLD_MS + FADE_MS);
+
+    timersRef.current = [holdTimer, fadeTimer, doneTimer];
+
+    return () => {
+      timersRef.current.forEach((timer) => window.clearTimeout(timer));
+      timersRef.current = [];
+      startedRef.current = false;
+    };
+  }, [reduce, sizeReady]);
 
   // Skip on Escape — only meaningful while curtain is interactive
   useEffect(() => {
-    if (phase !== "showing" && phase !== "settled") return;
+    if (phase !== "revealing" && phase !== "holding") return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") skipToExit();
+      if (e.key === "Escape") skipToFade();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [phase, skipToExit]);
+  }, [phase, skipToFade]);
 
-  const visible =
-    phase === "showing" || phase === "settled" || phase === "exiting";
+  // DEV-ONLY: expose phase on window for visual diagnostics. Stripped
+  // from production bundle by NODE_ENV constant fold.
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") return;
+    if (typeof window === "undefined") return;
+    (window as unknown as Record<string, unknown>).__curtain = {
+      phase,
+      heroSize,
+      t: Math.round(performance.now()),
+    };
+  }, [phase, heroSize]);
 
-  // Final landing scale: navbar mark / hero mark
-  const exitScale = NAVBAR_SIZE / heroSize;
+  const visible = phase !== "done";
+  const fading = phase === "fading";
+  const showMark = phase === "revealing" || phase === "holding" || phase === "fading";
 
-  // Centred state: place the monogram's centre at viewport centre.
-  // Half-dimensions in px (monogram width = heroSize * 0.75).
-  const heroHalfW = (heroSize * 0.75) / 2;
-  const heroHalfH = heroSize / 2;
-
-  // Exit state: navbar-mark position. The navbar's container has
-  // px-4 (16px) on mobile, sm:px-6 (24px), lg:px-8 (32px). Use 32px
-  // as the most common breakpoint; on smaller viewports the visual
-  // mismatch is a few pixels — invisible during the morph.
-  const navbarLeft = 32;
-  const navbarTop = 14;
+  if (visible && !mounted) {
+    return (
+      <>
+        {children}
+        <div
+          className="fixed inset-0 z-[100] overflow-hidden"
+          style={CURTAIN_STYLE}
+          aria-hidden="true"
+          role="presentation"
+        />
+      </>
+    );
+  }
 
   return (
     <>
@@ -128,51 +186,43 @@ export default function PageLoadCurtain({
         {visible ? (
           <motion.div
             key="curtain"
-            className="fixed inset-0 z-[100] bg-base cursor-pointer"
+            className="fixed inset-0 z-[100] overflow-hidden flex items-center justify-center"
+            style={CURTAIN_STYLE}
             aria-hidden="true"
             role="presentation"
-            onClick={skipToExit}
+            onClick={skipToFade}
             initial={{ opacity: 1 }}
-            animate={{ opacity: phase === "exiting" ? 0 : 1 }}
+            animate={{ opacity: fading ? 0 : 1 }}
             transition={{
-              duration: EXIT_MS / 1000,
+              duration: FADE_MS / 1000,
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            <motion.div
-              className="fixed text-accent"
-              style={{ transformOrigin: "top left" }}
-              initial={{
-                top: "50%",
-                left: "50%",
-                x: -heroHalfW,
-                y: -heroHalfH,
-                scale: 1,
-              }}
-              animate={
-                phase === "exiting"
-                  ? {
-                      top: navbarTop,
-                      left: navbarLeft,
-                      x: 0,
-                      y: 0,
-                      scale: exitScale,
-                    }
-                  : {
-                      top: "50%",
-                      left: "50%",
-                      x: -heroHalfW,
-                      y: -heroHalfH,
-                      scale: 1,
-                    }
-              }
-              transition={{
-                duration: EXIT_MS / 1000,
-                ease: [0.25, 0.46, 0.45, 0.94],
-              }}
-            >
-              <Monogram size={heroSize} animate={phase === "showing"} />
-            </motion.div>
+            {showMark && (
+              <motion.div
+                key="mark"
+                className="text-accent"
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{
+                  opacity: fading ? 0 : 1,
+                  scale: fading ? 1.02 : 1,
+                }}
+                transition={{
+                  opacity: {
+                    duration: fading ? FADE_MS / 1000 : REVEAL_MS / 1000,
+                    ease: fading
+                      ? [0.4, 0, 0.6, 1]
+                      : [0.22, 1, 0.36, 1],
+                  },
+                  scale: {
+                    duration: fading ? FADE_MS / 1000 : REVEAL_MS / 1000,
+                    ease: [0.22, 1, 0.36, 1],
+                  },
+                }}
+              >
+                <Monogram size={heroSize} aria-hidden />
+              </motion.div>
+            )}
           </motion.div>
         ) : null}
       </AnimatePresence>
