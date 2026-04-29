@@ -2,13 +2,18 @@
 project: Omar Al-Bakri — Personal Portfolio
 site_category: Personal brand / executive portfolio
 project_mode: BROWNFIELD
-version: 1.0
-status: PENDING_APPROVAL
+version: 1.1
+status: APPROVED
 
 ---
 
 ## Conceptual Anchor
 **Earned authority expressed through restraint.** Every element demonstrates competence by what it chooses NOT to do.
+
+## Amendments (v1.1, 2026-04-26)
+- Display face Fraunces added for H1 + about H2 only — editorial axis, satisfies the Monocle-anchor declared above. Body remains Inter.
+- WebGL TunnelBackground accepted as the standalone hero signature animation (was originally proposed as an OAB monogram draw-in). Tunnel uses the brand accent palette, gates on prefers-reduced-motion, and pauses out of viewport. The monogram remains the navbar/footer mark and re-appears as a page-load curtain on first visit.
+- Original "no canvas effects" rule is narrowed: no decorative particle effects; one purposeful WebGL hero is allowed.
 
 ## Aesthetic Direction
 Editorial minimalism with warm precision — think the confidence of a Monocle cover crossed with the clarity of Linear's UI. Large, lightweight typography does the work. Color is a scalpel, not a paintbrush. The site should feel like a well-tailored suit: you notice the quality, not the effort.
@@ -40,8 +45,8 @@ Items being deleted: ALL parallax-* variants (unused), hero.tsx (duplicate), dar
 ## SYSTEM SPECIFICATIONS
 
 ### Typography
-Display font: Inter (weights 200–300) — light, elegant, thinner at larger sizes
-Body font: Inter (weight 400) — clear, readable
+Display font: Fraunces (variable serif, weight 200–300, axes SOFT/WONK/opsz) — editorial wedge serif used on H1/H2 only. Adds Monocle-axis character without breaking the refined-minimalism axis.
+Body font: Inter (weights 200–500) — clear, readable, used everywhere except H1 and the about H2
 Monospace: JetBrains Mono (weight 300) — if code/tech content appears
 Type scale (fluid, using clamp):
   --text-xs:    clamp(0.75rem, 0.7rem + 0.25vw, 0.8rem)

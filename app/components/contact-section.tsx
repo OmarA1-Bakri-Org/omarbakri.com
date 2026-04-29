@@ -82,7 +82,7 @@ export default function ContactSection() {
                 className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
                 style={{ fontSize: "var(--text-xs)" }}
               >
-                Contact
+                <span className="text-muted">06 /</span> Contact
               </p>
 
               <h2

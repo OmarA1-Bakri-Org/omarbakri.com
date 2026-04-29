@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import MotionProvider from "./components/motion-provider";
 import StructuredData from "./components/structured-data";
@@ -10,6 +10,15 @@ const inter = Inter({
   preload: true,
   fallback: ["system-ui", "sans-serif"],
   variable: "--font-inter",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  axes: ["SOFT", "WONK", "opsz"],
+  fallback: ["Georgia", "serif"],
+  variable: "--font-fraunces",
 });
 
 export const metadata: Metadata = {
@@ -77,7 +86,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <head>
         <link rel="preconnect" href="https://api.iconify.design" />
         <link rel="dns-prefetch" href="https://api.iconify.design" />

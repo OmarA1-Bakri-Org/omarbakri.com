@@ -37,11 +37,12 @@ const Navbar = memo(function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button
+            data-monogram-target
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center gap-3 min-h-[44px] min-w-[44px] justify-center"
             aria-label="Scroll to top"
           >
-            <Monogram size={36} animate={false} aria-hidden />
+            <Monogram size={36} aria-hidden />
           </button>
 
           {/* Desktop Navigation */}

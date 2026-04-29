@@ -30,7 +30,7 @@ export default function ExperienceSection() {
             className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
             style={{ fontSize: "var(--text-xs)" }}
           >
-            Experience
+            <span className="text-muted">03 /</span> Experience
           </p>
 
           <h2
