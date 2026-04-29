@@ -8,54 +8,27 @@ import React, {
 } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Monogram from "./monogram";
-
-const STORAGE_KEY = "mono-curtain-played";
-
-// Phase timings — total ~4.1s on first visit.
-const REVEAL_MS_BASE = 1100; // mark fades in (opacity + scale)
-const HOLD_MS_BASE = 2000;   // mark sits at full presence
-const FADE_MS_BASE = 1000;   // backdrop + mark fade together (slow exhale)
-
-const MAX_HERO_SIZE = 540;
-const CHECKING_HERO_SIZE = 360;
-
-// Dev-only `?slow=N` slowdown factor for visual QA. Constant-folded out
-// in production builds.
-function getSlowdown() {
-  if (process.env.NODE_ENV === "production") return 1;
-  if (typeof window === "undefined") return 1;
-  const v = parseFloat(new URLSearchParams(window.location.search).get("slow") || "1");
-  return Number.isFinite(v) && v > 0 ? v : 1;
-}
-
-const SLOW = getSlowdown();
-const REVEAL_MS = REVEAL_MS_BASE * SLOW;
-const HOLD_MS = HOLD_MS_BASE * SLOW;
-const FADE_MS = FADE_MS_BASE * SLOW;
+import {
+  CHECKING_HERO_SIZE,
+  CURTAIN_STYLE,
+  FADE_MS,
+  HOLD_MS,
+  Phase,
+  PLAYED_MARKER,
+  REVEAL_MS,
+  computeHeroSize,
+  isDebugBypass,
+  shouldSkipCurtain,
+} from "./page-load-curtain.config";
 
 const useIsoLayoutEffect =
   typeof window === "undefined" ? useEffect : useLayoutEffect;
 
-const CURTAIN_STYLE: React.CSSProperties = {
-  willChange: "opacity",
-  background:
-    "radial-gradient(ellipse at 50% 48%, rgba(247, 217, 149, 0.08), rgba(5, 5, 5, 0) 32rem), var(--color-bg)",
-};
-
-type Phase = "checking" | "revealing" | "holding" | "fading" | "done";
-
-function computeHeroSize(): number {
-  if (typeof window === "undefined") return MAX_HERO_SIZE;
-  const byHeight = window.innerHeight * 0.55;
-  const byWidth = (window.innerWidth * 0.45) / 0.75;
-  return Math.max(180, Math.min(byHeight, byWidth, MAX_HERO_SIZE));
-}
-
 /**
  * First-visit-only entry sequence. The OAB ligature reveals quietly at
- * centre — scaling up from a slight 0.94 with opacity fade — holds for
- * a beat, then fades out together with the dark backdrop. No drawing,
- * no morph. Restraint over decoration.
+ * centre — fading in with a slight scale-up — holds for a beat, then
+ * fades out together with the dark backdrop. No drawing, no morph.
+ * Restraint over decoration.
  *
  * Skip on Esc or click. sessionStorage gate suppresses on subsequent
  * visits in the same session. Skipped entirely under prefers-reduced-motion.
@@ -79,7 +52,7 @@ export default function PageLoadCurtain({
       prev === "revealing" || prev === "holding" ? "fading" : prev
     );
     const doneTimer = window.setTimeout(() => {
-      window.sessionStorage.setItem(STORAGE_KEY, "1");
+      window.sessionStorage.setItem(PLAYED_MARKER, "1");
       setPhase("done");
     }, FADE_MS);
     timersRef.current = [doneTimer];
@@ -96,19 +69,8 @@ export default function PageLoadCurtain({
   }, []);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
     if (!sizeReady) return;
-    const debugBypass =
-      process.env.NODE_ENV !== "production" &&
-      new URLSearchParams(window.location.search).has("forceCurtain");
-    if (reduce && !debugBypass) {
-      setPhase("done");
-      return;
-    }
-    if (
-      !debugBypass &&
-      window.sessionStorage.getItem(STORAGE_KEY) === "1"
-    ) {
+    if (shouldSkipCurtain(Boolean(reduce), isDebugBypass())) {
       setPhase("done");
       return;
     }
@@ -122,11 +84,14 @@ export default function PageLoadCurtain({
       REVEAL_MS
     );
     const fadeTimer = window.setTimeout(
-      () => setPhase((p) => (p === "holding" || p === "revealing" ? "fading" : p)),
+      () =>
+        setPhase((p) =>
+          p === "holding" || p === "revealing" ? "fading" : p
+        ),
       REVEAL_MS + HOLD_MS
     );
     const doneTimer = window.setTimeout(() => {
-      window.sessionStorage.setItem(STORAGE_KEY, "1");
+      window.sessionStorage.setItem(PLAYED_MARKER, "1");
       setPhase("done");
     }, REVEAL_MS + HOLD_MS + FADE_MS);
 
@@ -163,7 +128,8 @@ export default function PageLoadCurtain({
 
   const visible = phase !== "done";
   const fading = phase === "fading";
-  const showMark = phase === "revealing" || phase === "holding" || phase === "fading";
+  const showMark =
+    phase === "revealing" || phase === "holding" || phase === "fading";
 
   if (visible && !mounted) {
     return (
@@ -210,9 +176,7 @@ export default function PageLoadCurtain({
                 transition={{
                   opacity: {
                     duration: fading ? FADE_MS / 1000 : REVEAL_MS / 1000,
-                    ease: fading
-                      ? [0.4, 0, 0.6, 1]
-                      : [0.22, 1, 0.36, 1],
+                    ease: fading ? [0.4, 0, 0.6, 1] : [0.22, 1, 0.36, 1],
                   },
                   scale: {
                     duration: fading ? FADE_MS / 1000 : REVEAL_MS / 1000,
