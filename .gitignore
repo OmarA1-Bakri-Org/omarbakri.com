@@ -22,3 +22,5 @@ lighthouse-report.json
 .omx/
 .review-frames/
 .serena/
+
+.vercel
