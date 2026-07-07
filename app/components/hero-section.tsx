@@ -69,7 +69,7 @@ export default function HeroSection() {
               style={{ fontSize: "var(--text-base)" }}
             >
               Fifteen years selling banks payments rails. At forty-three, I
-              started writing code instead. Three production AI platforms
+              started writing code instead. Multiple production AI platforms
               later &mdash; this is the work.
             </motion.p>
           </div>

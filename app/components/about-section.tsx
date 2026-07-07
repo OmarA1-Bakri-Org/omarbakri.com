@@ -59,17 +59,26 @@ export default function AboutSection() {
                   be one of them.
                 </p>
                 <p>
-                  Three platforms followed.{" "}
+                  Four platforms followed.{" "}
+                  <a
+                    href="https://call-score.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-accent transition-colors duration-200"
+                  >
+                    CallScore
+                  </a>{" "}
+                  &mdash; a crypto creator-intelligence platform that scores
+                  market calls against real price data.{" "}
                   <span className="text-primary">ruleIQ</span> &mdash;
-                  agentic regulatory compliance on a GraphRAG knowledge
-                  layer.{" "}
+                  agentic regulatory compliance on a GraphRAG knowledge layer.{" "}
                   <span className="text-primary">Helios</span> &mdash;
-                  autonomous B2B sales, live in production at RTGS.global
-                  as the company&rsquo;s primary commercial platform.{" "}
+                  autonomous B2B sales, live in production as a commercial
+                  automation platform.{" "}
                   <span className="text-primary">thredOS</span> &mdash;
-                  a multi-agent workflow runtime, in final testing ahead
-                  of commercial launch. Built solo, end to end, with
-                  around 3,000 automated tests behind them.
+                  a multi-agent workflow runtime for long-horizon AI work.
+                  Built solo, end to end, with production systems, automated
+                  tests, data pipelines, and commercial workflows behind them.
                 </p>
                 <p>
                   The fifteen years weren&rsquo;t wasted. They taught me
@@ -134,10 +143,10 @@ export default function AboutSection() {
                   Shipped
                 </p>
                 <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
-                  3 production platforms
+                  4 production platforms
                 </p>
                 <p className="text-accent" style={{ fontSize: "var(--text-sm)" }}>
-                  ruleIQ &middot; Helios &middot; thredOS
+                  CallScore &middot; ruleIQ &middot; Helios &middot; thredOS
                 </p>
               </div>
             </div>

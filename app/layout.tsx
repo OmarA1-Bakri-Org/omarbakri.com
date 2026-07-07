@@ -22,24 +22,28 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://omarbakri.com"),
+  metadataBase: new URL("https://www.omarbakri.com"),
   title: {
-    default: "Omar Al-Bakri — AI Product Builder & Enterprise Sales Leader",
+    default: "Omar Al-Bakri — Applied AI Engineer & Product Builder",
     template: "%s | Omar Al-Bakri",
   },
   description:
-    "AI product builder with 15 years of enterprise FinTech sales leadership. Three production platforms shipped solo — compliance automation, sales AI, and multi-agent orchestration.",
+    "Applied AI engineer and FinTech operator building production AI products across creator intelligence, compliance automation, sales automation, and multi-agent systems.",
   keywords: [
     "Omar Al-Bakri",
+    "Applied AI Engineer",
     "AI Product Builder",
     "Agentic AI",
+    "CallScore",
+    "Crypto Creator Intelligence",
+    "Crypto Market Calls Tracker",
     "LangGraph",
-    "Neo4j GraphRAG",
-    "Full-Stack Engineer",
-    "Enterprise Sales",
-    "FinTech",
-    "Cross-border payments",
+    "GraphRAG",
+    "Full-Stack AI Engineer",
+    "Enterprise FinTech",
+    "AI Automation",
     "Multi-agent systems",
+    "Cross-border payments",
   ],
   authors: [{ name: "Omar Al-Bakri" }],
   creator: "Omar Al-Bakri",
@@ -52,20 +56,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://omarbakri.com",
+    url: "https://www.omarbakri.com",
     siteName: "Omar Al-Bakri",
-    title: "Omar Al-Bakri — AI Product Builder & Enterprise Sales Leader",
+    title: "Omar Al-Bakri — Applied AI Engineer & Product Builder",
     description:
-      "AI product builder with 15 years of enterprise FinTech leadership. Three production platforms shipped solo — ruleIQ, Helios, thredOS.",
+      "Applied AI engineer and FinTech operator building production AI products including CallScore, ruleIQ, Helios, and thredOS.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Omar Al-Bakri — AI Product Builder & Enterprise Sales Leader",
+    title: "Omar Al-Bakri — Applied AI Engineer & Product Builder",
     description:
-      "AI product builder with 15 years of enterprise FinTech leadership. Three production platforms shipped solo — ruleIQ, Helios, thredOS.",
+      "Applied AI engineer and FinTech operator building production AI products including CallScore, ruleIQ, Helios, and thredOS.",
   },
   alternates: {
-    canonical: "https://omarbakri.com",
+    canonical: "https://www.omarbakri.com",
   },
   robots: {
     index: true,
