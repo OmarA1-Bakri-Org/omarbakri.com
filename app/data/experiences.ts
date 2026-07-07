@@ -9,14 +9,15 @@ export interface Experience {
 const experiences: Experience[] = [
   {
     title: "Independent — Applied AI Product Builder",
-    company: "ruleIQ · Helios · thredOS",
+    company: "CallScore · ruleIQ · Helios · thredOS",
     period: "2023 — Present",
     description:
-      "Three production AI platforms, built solo. Full-stack across Python, TypeScript, React, FastAPI, Next.js, and Electron, with PostgreSQL, Neo4j, Redis, and FalkorDB beneath. ~3,000 automated tests across backend, integration, prompt evaluation, and end-to-end workflows.",
+      "Production AI platforms built solo across TypeScript, Python, Next.js, FastAPI, PostgreSQL, Neo4j, Redis, LangGraph, LLM extraction, data pipelines, and agentic workflow orchestration.",
     outcomes: [
-      "ruleIQ — agentic compliance platform on a GraphRAG knowledge layer; supports ISO 27001, GDPR, Cyber Essentials, SOC 2, PCI DSS",
-      "Helios — autonomous B2B sales engine; live in production at RTGS.global",
-      "thredOS — multi-agent workflow runtime; in final testing ahead of commercial launch",
+      "CallScore — crypto creator-intelligence platform scoring public market calls against real price outcomes",
+      "ruleIQ — agentic compliance platform on a GraphRAG knowledge layer",
+      "Helios — autonomous B2B sales engine for AI-driven commercial execution",
+      "thredOS — multi-agent workflow runtime for policy-controlled long-horizon work",
     ],
   },
   {
