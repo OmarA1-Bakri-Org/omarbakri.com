@@ -5,9 +5,39 @@ export interface Product {
   stack: string[];
   highlights: string[];
   status: string;
+  url?: string;
+  repoUrl?: string;
 }
 
 const products: Product[] = [
+  {
+    name: "CallScore",
+    tagline: "Crypto creator intelligence platform — market calls scored against real price data",
+    description:
+      "CallScore tracks public crypto creator market calls and scores them against real price outcomes. It extracts eligible predictions from creator content, links them to timestamped evidence, applies a transparent scoring methodology, and ranks creators by alpha, accuracy, consistency, and self-correction. Built as a production-grade AI/data platform with ingestion pipelines, scoring jobs, creator profiles, leaderboard views, paid-tier features, API access, alerts, backtests, and webhook delivery.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "PostgreSQL",
+      "LangGraph",
+      "LLM extraction",
+      "Binance market data",
+      "Whop",
+      "Webhooks",
+      "Remotion",
+    ],
+    highlights: [
+      "AI-assisted extraction pipeline for public creator market calls, with confidence filtering and evidence traceability",
+      "Deterministic scoring against real price windows, including alpha, win rate, consistency, and self-correction signals",
+      "Public leaderboard, creator profiles, methodology, alerts, exports, API keys, webhooks, and backtesting workflows",
+      "Production-grade observability and automation across ingestion, scoring, audits, freshness checks, and video workflows",
+      "Built solo as a full-stack AI/data product from ingestion to monetisation",
+    ],
+    status: "Live · In production",
+    url: "https://call-score.com",
+    repoUrl: "https://github.com/OmarA1-Bakri/CallScore",
+  },
   {
     name: "ruleIQ",
     tagline: "Agentic regulatory compliance for UK financial services",

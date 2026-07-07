@@ -7,28 +7,35 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     lastModified ??
     (process.env.BUILD_TIMESTAMP
       ? new Date(process.env.BUILD_TIMESTAMP).toISOString().split("T")[0]
-      : "2025-01-01");
+      : "2026-07-07");
 
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Omar Al-Bakri",
-    url: "https://omarbakri.com",
-    jobTitle: "AI Product Builder & Enterprise Sales Leader",
+    url: "https://www.omarbakri.com",
+    jobTitle: "Applied AI Engineer & Product Builder",
     description:
-      "AI product builder combining hands-on engineering with 15 years of enterprise FinTech sales leadership. Three production platforms shipped solo: ruleIQ, Helios, thredOS.",
+      "Applied AI engineer and FinTech operator building production AI products across crypto creator intelligence, compliance automation, sales automation, and multi-agent systems.",
     knowsAbout: [
+      "Applied AI engineering",
       "Agentic AI",
       "LangGraph",
-      "Neo4j GraphRAG",
-      "Full-Stack Engineering",
-      "Enterprise Sales",
+      "GraphRAG",
+      "AI automation",
+      "Crypto creator intelligence",
+      "Market call scoring",
+      "Full-stack TypeScript",
+      "Python",
       "FinTech",
       "Cross-border payments",
       "Multi-agent systems",
-      "Compliance automation",
     ],
-    sameAs: ["https://linkedin.com/in/omaralbakri"],
+    sameAs: [
+      "https://linkedin.com/in/omaralbakri",
+      "https://github.com/OmarA1-Bakri",
+      "https://call-score.com",
+    ],
     alumniOf: {
       "@type": "EducationalOrganization",
       name: "Nottingham Trent University",
@@ -39,9 +46,9 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Omar Al-Bakri",
-    url: "https://omarbakri.com",
+    url: "https://www.omarbakri.com",
     description:
-      "AI product builder with enterprise FinTech expertise. Three production platforms: ruleIQ, Helios, thredOS.",
+      "Applied AI engineering portfolio covering crypto creator intelligence, compliance automation, commercial AI automation, and multi-agent systems.",
   };
 
   const profilePageSchema = {
@@ -50,26 +57,77 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     mainEntity: {
       "@type": "Person",
       name: "Omar Al-Bakri",
-      url: "https://omarbakri.com",
+      url: "https://www.omarbakri.com",
     },
     dateCreated: "2025-01-01",
     dateModified: dynamicLastModified,
   };
 
+  const projectsSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Omar Al-Bakri AI product portfolio",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@type": "WebApplication",
+          name: "CallScore",
+          applicationCategory: "FinanceApplication",
+          operatingSystem: "Web",
+          url: "https://call-score.com",
+          description:
+            "Crypto creator-intelligence platform that scores public market calls against real price data.",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@type": "SoftwareApplication",
+          name: "ruleIQ",
+          applicationCategory: "BusinessApplication",
+          description:
+            "Agentic compliance automation platform using GraphRAG and regulatory knowledge graphs.",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        item: {
+          "@type": "SoftwareApplication",
+          name: "Helios",
+          applicationCategory: "BusinessApplication",
+          description:
+            "Autonomous B2B sales automation platform for AI-driven commercial execution.",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        item: {
+          "@type": "SoftwareApplication",
+          name: "thredOS",
+          applicationCategory: "DeveloperApplication",
+          description:
+            "Multi-agent workflow runtime for policy-controlled long-horizon AI work.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
-      />
+      {[personSchema, websiteSchema, profilePageSchema, projectsSchema].map(
+        (schema, index) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ),
+      )}
     </>
   );
 }

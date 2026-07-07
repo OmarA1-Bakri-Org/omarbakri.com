@@ -3,9 +3,8 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://omarbakri.com/sitemap.xml
+Sitemap: https://www.omarbakri.com/sitemap.xml
 
-# LLMs / AI Agents
-# https://llmstxt.org
-# llms.txt: https://omarbakri.com/llms.txt
-# llms-full.txt: https://omarbakri.com/llms-full.txt
+# LLM-facing summaries
+# llms.txt: https://www.omarbakri.com/llms.txt
+# llms-full.txt: https://www.omarbakri.com/llms-full.txt

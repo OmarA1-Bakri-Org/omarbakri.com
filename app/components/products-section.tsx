@@ -44,9 +44,9 @@ export default function ProductsSection() {
             className="text-secondary max-w-2xl mb-20 leading-relaxed"
             style={{ fontSize: "var(--text-base)" }}
           >
-            Three full-stack platforms covering compliance, sales automation,
-            and multi-agent orchestration. Each designed, engineered, and
-            shipped independently.
+            Production-grade AI systems spanning crypto creator intelligence,
+            compliance automation, sales automation, and multi-agent orchestration.
+            Each designed, engineered, and shipped independently.
           </p>
         </motion.div>
 
@@ -120,6 +120,35 @@ export default function ProductsSection() {
                     </li>
                   ))}
                 </ul>
+
+                {(product.url || product.repoUrl) && (
+                  <div className="flex flex-wrap gap-3 mt-6">
+                    {product.url && (
+                      <a
+                        href={product.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-accent hover:text-accent-hover transition-colors duration-200"
+                        style={{ fontSize: "var(--text-sm)" }}
+                        aria-label={`View ${product.name} project`}
+                      >
+                        View project <span aria-hidden="true">→</span>
+                      </a>
+                    )}
+                    {product.repoUrl && (
+                      <a
+                        href={product.repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-muted hover:text-secondary transition-colors duration-200"
+                        style={{ fontSize: "var(--text-sm)" }}
+                        aria-label={`View ${product.name} repository`}
+                      >
+                        View repo <span aria-hidden="true">↗</span>
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </motion.article>
           ))}
