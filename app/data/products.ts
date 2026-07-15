@@ -14,7 +14,7 @@ const products: Product[] = [
     name: "CallScore",
     tagline: "Crypto creator intelligence platform — market calls scored against real price data",
     description:
-      "CallScore tracks public crypto creator market calls and scores them against real price outcomes. It extracts eligible predictions from creator content, links them to timestamped evidence, applies a transparent scoring methodology, and ranks creators by alpha, accuracy, consistency, and self-correction. Built as a production-grade AI/data platform with ingestion pipelines, scoring jobs, creator profiles, leaderboard views, paid-tier features, API access, alerts, backtests, and webhook delivery.",
+      "CallScore is a public AI product for evidence-backed creator intelligence. It connects creator statements with timestamped market evidence and presents transparent scoring and analysis workflows.",
     stack: [
       "Next.js",
       "TypeScript",
@@ -31,10 +31,10 @@ const products: Product[] = [
       "AI-assisted extraction pipeline for public creator market calls, with confidence filtering and evidence traceability",
       "Deterministic scoring against real price windows, including alpha, win rate, consistency, and self-correction signals",
       "Public leaderboard, creator profiles, methodology, alerts, exports, API keys, webhooks, and backtesting workflows",
-      "Production-grade observability and automation across ingestion, scoring, audits, freshness checks, and video workflows",
-      "Built solo as a full-stack AI/data product from ingestion to monetisation",
+      "Automated ingestion, scoring, audits, freshness checks, and publishing workflows",
+      "Built end to end as a full-stack AI and data product",
     ],
-    status: "Live · In production",
+    status: "Public product",
     url: "https://call-score.com",
     repoUrl: "https://github.com/OmarA1-Bakri/CallScore",
   },
@@ -42,7 +42,7 @@ const products: Product[] = [
     name: "ruleIQ",
     tagline: "Agentic regulatory compliance for UK financial services",
     description:
-      "Compliance platforms typically run on static rule engines that fracture every time regulation moves. ruleIQ uses a GraphRAG knowledge layer to map frameworks, obligations, and controls into a queryable graph, with LangGraph agents handling research, analysis, and draft generation under explicit hallucination controls. Frameworks supported include ISO 27001, GDPR, Cyber Essentials, SOC 2, and PCI DSS.",
+      "ruleIQ is an AI compliance platform using graph and retrieval patterns to connect frameworks, obligations, controls, and evidence. Agent workflows support research, analysis, and draft generation with explicit review points.",
     stack: [
       "Python",
       "FastAPI",
@@ -56,17 +56,17 @@ const products: Product[] = [
     highlights: [
       "GraphRAG knowledge layer mapping frameworks → obligations → controls → evidence",
       "LangGraph agents for research, analysis, and draft generation, with self-critic hallucination controls",
-      "Trust Gradient architecture — agents earn autonomy through demonstrated accuracy",
-      "20+ Neo4j node types modelling regulatory relationships",
-      "1,884 backend tests, 562 frontend tests",
+      "Policy-controlled workflows designed around review and evidence",
+      "Graph modelling for regulatory relationships",
+      "Automated validation across backend and frontend workflows",
     ],
     status: "Shipped",
   },
   {
     name: "Helios",
-    tagline: "Autonomous B2B sales engine, live in production at RTGS.global",
+    tagline: "AI-assisted B2B commercial workflow platform",
     description:
-      "End-to-end autonomous prospecting and outreach automation, with safety hard-baked into the architecture: circuit breakers, spend caps, and mandatory cancel windows to prevent runaway automation. A desktop app, an API server, and a Python orchestrator working in concert, integrated with Explorium, Apollo, HubSpot, and Postmark. Replaced a manual prospecting workflow in a live commercial environment.",
+      "Helios is a commercial workflow platform connecting a desktop interface, API services, orchestration, and sales-tool integrations. Its design places explicit controls around automated actions.",
     stack: [
       "Electron",
       "React",
@@ -78,13 +78,12 @@ const products: Product[] = [
       "Redis",
     ],
     highlights: [
-      "Live in production at RTGS.global, running the company's outbound sales motion end-to-end",
-      "Multi-agent framework with autonomous execution mode and persistent context (Graphiti)",
-      "26-view desktop app: Clerk auth, Zustand state management",
+      "Multi-agent workflows with persistent context",
+      "Desktop workflows with authenticated access and managed state",
       "Integrations: Explorium, Apollo, HubSpot, Postmark",
-      "Safety architecture: circuit breakers, 30-second cancel windows, $50/cycle spend caps",
+      "Safety architecture with circuit breakers, cancel windows, and spend controls",
     ],
-    status: "Shipped · In production",
+    status: "Built",
   },
   {
     name: "thredOS",

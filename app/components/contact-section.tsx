@@ -96,12 +96,15 @@ export default function ContactSection() {
                 className="text-secondary leading-[1.7] mb-10"
                 style={{ fontSize: "var(--text-base)" }}
               >
-                Building in AI, FinTech, or enterprise SaaS? Looking for
-                someone who can take a product from architecture to market?
-                Get in touch.
+                Hiring for applied AI or forward-deployed engineering? Need a
+                focused AI delivery sprint or fractional technical lead? Send
+                the role, problem, or desired outcome.
               </p>
 
               <div className="space-y-6">
+                <p className="text-primary" style={{ fontSize: "var(--text-sm)" }}>
+                  Available immediately · remote-first · UK work authorised
+                </p>
                 <a
                   href="https://linkedin.com/in/omaralbakri"
                   target="_blank"

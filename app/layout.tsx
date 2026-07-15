@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Omar Al-Bakri",
   },
   description:
-    "Applied AI engineer and FinTech operator building production AI products across creator intelligence, compliance automation, sales automation, and multi-agent systems.",
+    "Applied AI engineer combining hands-on agent systems, full-stack delivery, and enterprise payments experience. Available for senior roles and focused consulting engagements.",
   keywords: [
     "Omar Al-Bakri",
     "Applied AI Engineer",
@@ -44,6 +44,9 @@ export const metadata: Metadata = {
     "AI Automation",
     "Multi-agent systems",
     "Cross-border payments",
+    "Forward-Deployed AI Engineer",
+    "AI Consultant",
+    "RAG Evaluation",
   ],
   authors: [{ name: "Omar Al-Bakri" }],
   creator: "Omar Al-Bakri",
@@ -60,13 +63,13 @@ export const metadata: Metadata = {
     siteName: "Omar Al-Bakri",
     title: "Omar Al-Bakri — Applied AI Engineer & Product Builder",
     description:
-      "Applied AI engineer and FinTech operator building production AI products including CallScore, ruleIQ, Helios, and thredOS.",
+      "Applied AI engineer building agent systems and full-stack AI products, with enterprise payments experience and focused consulting offers.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Omar Al-Bakri — Applied AI Engineer & Product Builder",
     description:
-      "Applied AI engineer and FinTech operator building production AI products including CallScore, ruleIQ, Helios, and thredOS.",
+      "Applied AI engineer building agent systems and full-stack AI products, with enterprise payments experience and focused consulting offers.",
   },
   alternates: {
     canonical: "https://www.omarbakri.com",

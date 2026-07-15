@@ -30,23 +30,23 @@ export default function ProductsSection() {
             className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
             style={{ fontSize: "var(--text-xs)" }}
           >
-            <span className="text-muted">02 /</span> Projects
+            <span className="text-muted">02 /</span> Selected work
           </p>
 
           <h2
             className="font-light tracking-[-0.02em] text-primary mb-6"
             style={{ fontSize: "var(--text-3xl)" }}
           >
-            Production systems, built solo
+            Applied AI systems, built end to end
           </h2>
 
           <p
             className="text-secondary max-w-2xl mb-20 leading-relaxed"
             style={{ fontSize: "var(--text-base)" }}
           >
-            Production-grade AI systems spanning crypto creator intelligence,
-            compliance automation, sales automation, and multi-agent orchestration.
-            Each designed, engineered, and shipped independently.
+            Public and private projects spanning creator intelligence,
+            compliance, commercial workflows, and multi-agent orchestration.
+            Claims below are deliberately conservative and evidence-led.
           </p>
         </motion.div>
 

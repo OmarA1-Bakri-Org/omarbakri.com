@@ -1,33 +1,32 @@
 # Omar Al-Bakri
 
-> Applied AI engineer and FinTech operator building production AI products across crypto creator intelligence, compliance automation, commercial AI automation, and multi-agent systems.
+> Applied AI engineer combining hands-on agent systems and full-stack delivery with enterprise payments and commercial experience.
 
-## About
+## Positioning
 
-Omar Al-Bakri is an applied AI engineer and product builder with 15+ years of enterprise FinTech and payments experience. He builds production AI systems using TypeScript, Python, Next.js, FastAPI, PostgreSQL, Neo4j, Redis, LangGraph, GraphRAG, LLM extraction pipelines, and agentic workflow orchestration.
+Omar builds applied AI systems end to end across Python and TypeScript. His work covers agent orchestration, retrieval, evaluation, integrations, data workflows, APIs, and user-facing product delivery.
 
-## Key Projects
+He is open to senior applied AI, agent engineering, forward-deployed, architecture, and FinTech AI roles, as well as fixed-scope and fractional consulting. He is based in Thailand, works remote-first, is available immediately, and has unrestricted UK work authorisation.
 
-- [CallScore](https://call-score.com): Crypto creator-intelligence platform that tracks public crypto market calls, scores them against real price data, and ranks creators by alpha, accuracy, consistency, and self-correction.
-- ruleIQ: Agentic compliance automation platform using GraphRAG and regulatory knowledge graphs.
-- Helios: Autonomous B2B sales automation platform for AI-driven commercial execution.
-- thredOS: Multi-agent workflow runtime for policy-controlled long-horizon AI work.
+## Selected work
 
-## Expertise
+- [CallScore](https://call-score.com): public AI product for evidence-backed creator intelligence.
+- ruleIQ: AI compliance platform using graph and retrieval patterns.
+- Helios: AI-assisted commercial workflow platform.
+- thredOS: multi-agent workflow runtime for long-horizon work.
 
-- Applied AI engineering
-- Agentic systems
-- LangGraph workflows
-- LLM extraction and evaluation
-- GraphRAG and knowledge graphs
-- Full-stack TypeScript and Python engineering
-- FinTech and cross-border payments
-- Commercial AI automation
-- Product strategy and technical execution
+## Services
+
+- AI Opportunity Audit
+- Agent Prototype Sprint
+- RAG and Evaluation Hardening
+- FinTech GTM Automation
+- Fractional Applied AI Lead
+- Payments AI Advisory
 
 ## Links
 
 - Website: https://www.omarbakri.com
-- CallScore: https://call-score.com
 - LinkedIn: https://linkedin.com/in/omaralbakri
 - GitHub: https://github.com/OmarA1-Bakri
+- Email: oab@omarbakri.com

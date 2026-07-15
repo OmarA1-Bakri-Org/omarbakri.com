@@ -28,7 +28,7 @@ export default function AboutSection() {
                 className="font-display font-light tracking-[-0.02em] text-primary"
                 style={{ fontSize: "var(--text-3xl)" }}
               >
-                At forty-three, I started learning Python.
+                I moved from buying and selling enterprise technology to building it.
               </h2>
 
               <div
@@ -36,27 +36,20 @@ export default function AboutSection() {
                 style={{ fontSize: "var(--text-base)" }}
               >
                 <p>
-                  It wasn&rsquo;t a hobby. It was the first deliberate
-                  move in a longer pivot toward building AI products.
+                  My work now sits where applied AI engineering, product
+                  judgement, and complex commercial delivery meet.
                 </p>
                 <p>
-                  By then I&rsquo;d spent fifteen years on the commercial
-                  side of enterprise FinTech &mdash; BNP Paribas, Bank of
-                  America Merrill Lynch, Convera, Banking Circle,
-                  RTGS.global. Tier 1 banks, seven-figure deals, a career
-                  built deliberately. The kind of seat that does not get
-                  vacated lightly.
+                  Experience across BNP Paribas, Bank of America Merrill
+                  Lynch, Convera, Banking Circle, and RTGS.global gave me a
+                  practical view of payments, enterprise buying, and the gap
+                  between a product promise and a product that earns trust.
                 </p>
                 <p>
-                  I left because the interesting work had moved to the
-                  other side of the table. Fifteen years selling enterprise
-                  software gave me a clear view of where it actually lives:
-                  in the gap between what the deck promises and what the
-                  product can do. My job was to bridge that gap with
-                  narrative, contracts, and customer success. The people
-                  who could close it for real were the ones writing the
-                  code. Late 2023 I sat down to find out whether I could
-                  be one of them.
+                  I chose to close that gap directly. Today I build applied
+                  AI systems across Python and TypeScript, from orchestration
+                  and retrieval to APIs, data, evaluation, and user-facing
+                  product delivery.
                 </p>
                 <p>
                   Four platforms followed.{" "}
@@ -73,15 +66,14 @@ export default function AboutSection() {
                   <span className="text-primary">ruleIQ</span> &mdash;
                   agentic regulatory compliance on a GraphRAG knowledge layer.{" "}
                   <span className="text-primary">Helios</span> &mdash;
-                  autonomous B2B sales, live in production as a commercial
-                  automation platform.{" "}
+                  an AI-assisted commercial workflow platform.{" "}
                   <span className="text-primary">thredOS</span> &mdash;
                   a multi-agent workflow runtime for long-horizon AI work.
-                  Built solo, end to end, with production systems, automated
-                  tests, data pipelines, and commercial workflows behind them.
+                  Built end to end, with automated tests, data pipelines, and
+                  commercial workflows behind them.
                 </p>
                 <p>
-                  The fifteen years weren&rsquo;t wasted. They taught me
+                  The commercial years taught me
                   which problems matter, which buyers will pay for what,
                   and what enterprise software has to do before anyone
                   trusts it with their data. This isn&rsquo;t a pivot.
@@ -128,7 +120,7 @@ export default function AboutSection() {
                   The fifteen years
                 </p>
                 <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
-                  Tier 1 banks &middot; Seven-figure deals
+                  Enterprise payments &middot; Complex buying groups
                 </p>
                 <p className="text-secondary" style={{ fontSize: "var(--text-sm)" }}>
                   BNP Paribas &middot; Bank of America ML &middot; Convera &middot; Banking Circle &middot; RTGS.global
@@ -143,7 +135,7 @@ export default function AboutSection() {
                   Shipped
                 </p>
                 <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
-                  4 production platforms
+                  Four applied AI systems
                 </p>
                 <p className="text-accent" style={{ fontSize: "var(--text-sm)" }}>
                   CallScore &middot; ruleIQ &middot; Helios &middot; thredOS

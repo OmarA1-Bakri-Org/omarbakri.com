@@ -16,7 +16,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     url: "https://www.omarbakri.com",
     jobTitle: "Applied AI Engineer & Product Builder",
     description:
-      "Applied AI engineer and FinTech operator building production AI products across crypto creator intelligence, compliance automation, sales automation, and multi-agent systems.",
+      "Applied AI engineer and FinTech operator building AI products across creator intelligence, compliance, commercial workflows, and multi-agent systems.",
     knowsAbout: [
       "Applied AI engineering",
       "Agentic AI",
@@ -36,10 +36,37 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
       "https://github.com/OmarA1-Bakri",
       "https://call-score.com",
     ],
+    knowsLanguage: ["English"],
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Applied AI Engineer",
+      occupationLocation: {
+        "@type": "Country",
+        name: "United Kingdom",
+      },
+    },
     alumniOf: {
       "@type": "EducationalOrganization",
       name: "Nottingham Trent University",
     },
+  };
+
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Applied AI consulting services",
+    itemListElement: [
+      "AI Opportunity Audit",
+      "Agent Prototype Sprint",
+      "RAG and Evaluation Hardening",
+      "FinTech GTM Automation",
+      "Fractional Applied AI Lead",
+      "Payments AI Advisory",
+    ].map((name, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: { "@type": "Service", name, provider: { "@type": "Person", name: "Omar Al-Bakri" } },
+    })),
   };
 
   const websiteSchema = {
@@ -119,7 +146,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
 
   return (
     <>
-      {[personSchema, websiteSchema, profilePageSchema, projectsSchema].map(
+      {[personSchema, websiteSchema, profilePageSchema, projectsSchema, servicesSchema].map(
         (schema, index) => (
           <script
             key={index}

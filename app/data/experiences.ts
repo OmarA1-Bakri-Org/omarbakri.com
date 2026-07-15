@@ -12,7 +12,7 @@ const experiences: Experience[] = [
     company: "CallScore · ruleIQ · Helios · thredOS",
     period: "2023 — Present",
     description:
-      "Production AI platforms built solo across TypeScript, Python, Next.js, FastAPI, PostgreSQL, Neo4j, Redis, LangGraph, LLM extraction, data pipelines, and agentic workflow orchestration.",
+      "Applied AI systems built end to end across TypeScript, Python, Next.js, FastAPI, data stores, retrieval, and agent workflow orchestration.",
     outcomes: [
       "CallScore — crypto creator-intelligence platform scoring public market calls against real price outcomes",
       "ruleIQ — agentic compliance platform on a GraphRAG knowledge layer",
@@ -27,8 +27,8 @@ const experiences: Experience[] = [
     description:
       "Led commercial partnerships and AI strategy for a cross-border payments infrastructure business operating across Asia and EMEA.",
     outcomes: [
-      "Built and deployed Helios as the company's primary AI-driven commercial platform, running outbound sales end-to-end",
-      "Led AI strategy for commercial execution — translated automation opportunities into shipped production systems",
+      "Built the Helios AI-assisted commercial workflow platform",
+      "Translated commercial automation opportunities into working systems",
       "Worked across Product, Engineering, Compliance, and Commercial to convert market feedback into structured product improvements",
     ],
   },
@@ -39,8 +39,8 @@ const experiences: Experience[] = [
     description:
       "Direct sales and account management for a leading payments bank serving EU financial institutions.",
     outcomes: [
-      "Introduced AI-assisted prospecting and workflow playbooks; +20% response rates",
-      "Led a cross-functional onboarding redesign: -50% onboarding time, supporting 30%+ volume growth",
+      "Introduced AI-assisted prospecting and workflow playbooks",
+      "Worked cross-functionally on customer onboarding improvements",
     ],
   },
   {
@@ -50,8 +50,8 @@ const experiences: Experience[] = [
     description:
       "Led EMEA bank sales for financial institution payments across the correspondent banking landscape.",
     outcomes: [
-      "Closed a £1M financial institution partnership through complex commercial negotiations",
-      "Expanded banking partnerships contributing to 30% payment-volume growth",
+      "Led complex commercial negotiations with financial institutions",
+      "Expanded banking partnerships across the EMEA market",
     ],
   },
   {
@@ -61,8 +61,8 @@ const experiences: Experience[] = [
     description:
       "Executive search and advisory for global financial services — building C-suite relationships across banking and FinTech.",
     outcomes: [
-      "Won 10 global clients including Santander and Vanguard — £1.53M in fees",
-      "Grew flagship industry event attendance 40% YoY",
+      "Built C-suite relationships across banking and financial services",
+      "Led executive-search and advisory engagements for global clients",
     ],
   },
   {

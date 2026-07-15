@@ -7,7 +7,7 @@ const areas = [
   {
     title: "Agentic AI Systems",
     description:
-      "LangGraph multi-agent orchestration, RAG pipelines with self-critique loops, trust gradient architectures, and PPALE intelligence cycles. Designed for production reliability with comprehensive test coverage.",
+      "LangGraph-style orchestration, RAG pipelines, evaluation loops, policy controls, and evidence-led agent workflows.",
     icon: "mdi:robot-outline",
   },
   {
@@ -19,19 +19,19 @@ const areas = [
   {
     title: "Knowledge Graphs & GraphRAG",
     description:
-      "Neo4j implementations with 20+ node types for regulatory and business relationship mapping. Graphiti for persistent agent memory. Graph-powered retrieval that resolves connections, not just keywords.",
+      "Graph modelling for regulatory and business relationships, persistent agent context, and retrieval that resolves connections rather than keywords alone.",
     icon: "mdi:graph-outline",
   },
   {
     title: "Enterprise Sales Leadership",
     description:
-      "15 years leading sales at BNP Paribas, Bank of America ML, Convera, and Banking Circle. Deep relationships across Tier 1 banks, proven track record with complex, multi-stakeholder deals.",
+      "Enterprise commercial experience across banking, payments, and FinTech, with a practical understanding of complex buying groups and delivery constraints.",
     icon: "mdi:handshake-outline",
   },
   {
     title: "FinTech & Payments",
     description:
-      "Real-time settlement, ISO 20022, correspondent banking, cross-border payments. Domain expertise built over 15 years on the commercial side, now applied to product engineering.",
+      "Real-time settlement, ISO 20022, correspondent banking, and cross-border payments experience applied to product engineering.",
     icon: "mdi:earth",
   },
   {

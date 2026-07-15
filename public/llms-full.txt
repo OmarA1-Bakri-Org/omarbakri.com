@@ -1,52 +1,48 @@
-# Omar Al-Bakri — Full LLM Context
+# Omar Al-Bakri — Applied AI Engineer
 
-## Summary
+Omar Al-Bakri builds applied AI systems end to end across Python and TypeScript. He combines hands-on engineering across orchestration, retrieval, evaluation, APIs, data, integrations, and product delivery with enterprise payments and commercial experience.
 
-Omar Al-Bakri is an applied AI engineer and product builder with a commercial background in enterprise FinTech, payments, and cross-border settlement. His work combines full-stack engineering, agentic systems, product strategy, and commercial execution.
+## Opportunity fit
 
-## Core Positioning
+- Applied AI Engineer
+- AI Agent / Agent Platform Engineer
+- Forward-Deployed AI / Solutions Engineer
+- FinTech and Payments AI
+- AI Architect / Transformation Consultant
+- GTM and Commercial AI Engineer
 
-Omar builds production AI products rather than prototypes. His focus areas include applied AI engineering, LangGraph workflows, GraphRAG, LLM extraction pipelines, knowledge graphs, workflow automation, commercial AI systems, and FinTech infrastructure.
+Omar is available immediately, works remote-first, is based in Thailand, and has unrestricted UK work authorisation.
 
-## Projects
+## Selected systems
 
 ### CallScore
 
-CallScore is a crypto creator-intelligence platform that tracks public crypto market calls, scores predictions against real price data, and ranks creators by alpha, accuracy, consistency, and self-correction. It includes a public leaderboard, creator profiles, transparent methodology, alerts, backtests, API access, webhooks, and paid-tier workflows.
-
-Primary URL: https://call-score.com
+A public AI product for evidence-backed creator intelligence. It connects creator statements with timestamped market evidence and supports transparent scoring and analysis workflows.
 
 ### ruleIQ
 
-ruleIQ is an agentic compliance automation platform using GraphRAG and regulatory knowledge graphs to map frameworks, obligations, controls, and evidence. It is designed for regulated workflows where accuracy, traceability, and control matter.
+An AI compliance platform using graph and retrieval patterns to connect frameworks, obligations, controls, and evidence.
 
 ### Helios
 
-Helios is an autonomous B2B sales automation platform for AI-driven commercial execution. It combines prospecting, workflow automation, CRM-oriented execution, and guardrails for controlled commercial automation.
+An AI-assisted commercial workflow platform connecting user interfaces, API services, orchestration, and sales-tool integrations.
 
 ### thredOS
 
-thredOS is a multi-agent workflow runtime for policy-controlled long-horizon AI work. It is designed around typed workflows, agent coordination, policy boundaries, and replayable execution.
+A typed multi-agent workflow runtime for policy-controlled, long-horizon work.
 
-## Expertise
+## Consulting offers
 
-- Applied AI engineering
-- Full-stack TypeScript and Python
-- Next.js, React, FastAPI, PostgreSQL, Neo4j, Redis
-- LangGraph and agent orchestration
-- GraphRAG and knowledge graphs
-- LLM extraction and evaluation
-- Commercial AI automation
-- FinTech and cross-border payments
-- Enterprise product strategy
+- AI Opportunity Audit — from £1,500
+- Agent Prototype Sprint — from £4,500
+- RAG and Evaluation Hardening — from £3,000
+- FinTech GTM Automation — from £3,500
+- Fractional Applied AI Lead — from £5,000/month
+- Payments AI Advisory — from £1,250/day
 
-## Public Links
+## Contact
 
-- Personal website: https://www.omarbakri.com
-- CallScore: https://call-score.com
+- Website: https://www.omarbakri.com
 - LinkedIn: https://linkedin.com/in/omaralbakri
 - GitHub: https://github.com/OmarA1-Bakri
-
-## Boundary
-
-This file is intended to help language models and search systems understand Omar Al-Bakri's public work. It excludes non-public operational material.
+- Email: oab@omarbakri.com

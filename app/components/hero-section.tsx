@@ -33,7 +33,7 @@ export default function HeroSection() {
         </motion.h1>
 
         {/* Bottom row — location left, tagline + story right */}
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12 items-end">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12 items-end pb-10 md:pb-0">
           {/* Bottom-left location */}
           <motion.p
             initial={{ opacity: 0 }}
@@ -42,7 +42,7 @@ export default function HeroSection() {
             className="text-muted uppercase tracking-[0.15em]"
             style={{ fontSize: "var(--text-xs)" }}
           >
-            London <span className="text-accent">·</span> Southeast Asia
+            Thailand based <span className="text-accent">·</span> UK work authorised
           </motion.p>
 
           {/* Bottom-right tagline + story */}
@@ -54,11 +54,11 @@ export default function HeroSection() {
               className="text-secondary font-light tracking-wide"
               style={{ fontSize: "var(--text-xl)" }}
             >
-              Applied AI Product Builder{" "}
+              Applied AI Engineer{" "}
               <span className="text-muted">·</span>{" "}
               <span className="text-accent">Agentic Systems</span>{" "}
               <span className="text-muted">·</span>{" "}
-              Commercial Leadership
+              Payments &amp; FinTech
             </motion.p>
 
             <motion.p
@@ -68,10 +68,30 @@ export default function HeroSection() {
               className="text-muted leading-relaxed md:ml-auto md:max-w-xl"
               style={{ fontSize: "var(--text-base)" }}
             >
-              Fifteen years selling banks payments rails. At forty-three, I
-              started writing code instead. Multiple production AI platforms
-              later &mdash; this is the work.
+              I build applied AI products end to end across Python and
+              TypeScript, combining hands-on engineering with enterprise
+              payments and commercial experience.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 1.3 }}
+              className="flex flex-col sm:flex-row gap-3 md:justify-end pt-2"
+            >
+              <button
+                onClick={() => scrollToSection("#contact")}
+                className="px-6 py-3 bg-accent text-base font-medium hover:bg-accent-hover transition-colors"
+              >
+                Discuss a role
+              </button>
+              <button
+                onClick={() => scrollToSection("#services")}
+                className="px-6 py-3 border border-edge text-primary hover:border-accent transition-colors"
+              >
+                Explore consulting
+              </button>
+            </motion.div>
           </div>
         </div>
       </div>

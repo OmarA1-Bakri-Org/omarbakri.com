@@ -3,6 +3,7 @@ import Navbar from "@/app/components/navbar";
 import HeroSection from "@/app/components/hero-section";
 import AboutSection from "@/app/components/about-section";
 import ProductsSection from "@/app/components/products-section";
+import ServicesSection from "@/app/components/services-section";
 import ExperienceSection from "@/app/components/experience-section";
 import ExpertiseSection from "@/app/components/expertise-section";
 import NewsletterSection from "@/app/components/newsletter-section";
@@ -32,6 +33,7 @@ export default function HomePage() {
             should have been one job all along.
           </PullQuote>
           <ProductsSection />
+          <ServicesSection />
           <ExperienceSection />
           <ExpertiseSection />
           <NewsletterSection />
