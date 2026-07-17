@@ -17,7 +17,7 @@ const cardVariants = {
 
 export default function ProductsSection() {
   return (
-    <section id="products" className="py-32 lg:py-40 bg-subtle">
+    <section id="work" className="py-32 lg:py-40 bg-subtle">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -30,7 +30,7 @@ export default function ProductsSection() {
             className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
             style={{ fontSize: "var(--text-xs)" }}
           >
-            <span className="text-muted">02 /</span> Selected work
+            <span className="text-muted">01 /</span> Selected work
           </p>
 
           <h2
@@ -130,9 +130,8 @@ export default function ProductsSection() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-accent hover:text-accent-hover transition-colors duration-200"
                         style={{ fontSize: "var(--text-sm)" }}
-                        aria-label={`View ${product.name} project`}
-                      >
-                        View project <span aria-hidden="true">→</span>
+                        >
+                        View {product.name} <span aria-hidden="true">→</span>
                       </a>
                     )}
                     {product.repoUrl && (
@@ -142,9 +141,8 @@ export default function ProductsSection() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-muted hover:text-secondary transition-colors duration-200"
                         style={{ fontSize: "var(--text-sm)" }}
-                        aria-label={`View ${product.name} repository`}
-                      >
-                        View repo <span aria-hidden="true">↗</span>
+                        >
+                        View {product.name} repository <span aria-hidden="true">↗</span>
                       </a>
                     )}
                   </div>

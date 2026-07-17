@@ -1,11 +1,12 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-32 lg:py-40">
+    <section id="story" className="py-32 lg:py-40">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -13,22 +14,21 @@ export default function AboutSection() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          {/* Section label */}
           <p
             className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
             style={{ fontSize: "var(--text-xs)" }}
           >
-            <span className="text-muted">01 /</span> About
+            <span className="text-muted">02 /</span> Reinvention story
           </p>
 
           <div className="grid lg:grid-cols-12 gap-16">
-            {/* Main content */}
-            <div className="lg:col-span-7 space-y-8">
+            <div className="lg:col-span-8 space-y-8">
               <h2
                 className="font-display font-light tracking-[-0.02em] text-primary"
                 style={{ fontSize: "var(--text-3xl)" }}
               >
-                I moved from buying and selling enterprise technology to building it.
+                I learned to build the systems I had spent years buying, selling
+                and explaining.
               </h2>
 
               <div
@@ -36,53 +36,36 @@ export default function AboutSection() {
                 style={{ fontSize: "var(--text-base)" }}
               >
                 <p>
-                  My work now sits where applied AI engineering, product
-                  judgement, and complex commercial delivery meet.
+                  For fifteen years, I worked across banking, payments and
+                  enterprise technology. The recurring problem was rarely the
+                  pitch. It was translating a valuable idea into a product people
+                  could trust.
                 </p>
                 <p>
-                  Experience across BNP Paribas, Bank of America Merrill
-                  Lynch, Convera, Banking Circle, and RTGS.global gave me a
-                  practical view of payments, enterprise buying, and the gap
-                  between a product promise and a product that earns trust.
+                  In my forties, I traded seniority for beginner status and began
+                  learning Python and TypeScript through the practical cycle of
+                  building, testing, breaking and rebuilding. The work now spans
+                  compliance, commercial workflows, creator intelligence and
+                  multi-agent orchestration.
                 </p>
                 <p>
-                  I chose to close that gap directly. Today I build applied
-                  AI systems across Python and TypeScript, from orchestration
-                  and retrieval to APIs, data, evaluation, and user-facing
-                  product delivery.
-                </p>
-                <p>
-                  Four platforms followed.{" "}
-                  <a
-                    href="https://call-score.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:text-accent transition-colors duration-200"
-                  >
-                    CallScore
-                  </a>{" "}
-                  &mdash; a crypto creator-intelligence platform that scores
-                  market calls against real price data.{" "}
-                  <span className="text-primary">ruleIQ</span> &mdash;
-                  agentic regulatory compliance on a GraphRAG knowledge layer.{" "}
-                  <span className="text-primary">Helios</span> &mdash;
-                  an AI-assisted commercial workflow platform.{" "}
-                  <span className="text-primary">thredOS</span> &mdash;
-                  a multi-agent workflow runtime for long-horizon AI work.
-                  Built end to end, with automated tests, data pipelines, and
-                  commercial workflows behind them.
-                </p>
-                <p>
-                  The commercial years taught me
-                  which problems matter, which buyers will pay for what,
-                  and what enterprise software has to do before anyone
-                  trusts it with their data. This isn&rsquo;t a pivot.
-                  It&rsquo;s both halves of a job that should have been
-                  one job all along.
+                  Today the two careers work together. The commercial experience
+                  helps me choose the right problem and navigate complex
+                  organisations. The engineering lets me carry that problem
+                  through to working software.
                 </p>
               </div>
 
-              {/* LinkedIn link */}
+              <blockquote className="border-l border-accent pl-6 py-2">
+                <p
+                  className="font-display font-light text-primary"
+                  style={{ fontSize: "var(--text-xl)", lineHeight: "1.45" }}
+                >
+                  Commercial judgement tells me what deserves to exist.
+                  Engineering lets me make it real.
+                </p>
+              </blockquote>
+
               <a
                 href="https://linkedin.com/in/omaralbakri"
                 target="_blank"
@@ -90,58 +73,36 @@ export default function AboutSection() {
                 className="inline-flex items-center gap-2 text-accent hover:text-accent-hover transition-colors duration-200"
                 style={{ fontSize: "var(--text-sm)" }}
               >
-                <Icon icon="mdi:linkedin" className="w-4 h-4" />
+                <Icon icon="mdi:linkedin" className="w-4 h-4" aria-hidden="true" />
                 <span>Connect on LinkedIn</span>
               </a>
             </div>
 
-            {/* Sidebar */}
-            <div className="lg:col-span-5 space-y-8 lg:pt-16">
+            <aside className="lg:col-span-4 space-y-8 lg:pt-16">
               <div className="border-l border-edge pl-6">
-                <p
-                  className="text-muted uppercase tracking-[0.05em] mb-2"
-                  style={{ fontSize: "var(--text-xs)" }}
-                >
+                <p className="text-muted uppercase tracking-[0.05em] mb-2" style={{ fontSize: "var(--text-xs)" }}>
                   Engineering
                 </p>
                 <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
-                  Full-stack &middot; Agentic systems &middot; Solo builds
+                  Full-stack · Agent systems · Product delivery
                 </p>
                 <p className="text-secondary" style={{ fontSize: "var(--text-sm)" }}>
-                  Python &middot; TypeScript &middot; React &middot; FastAPI &middot; Neo4j &middot; LangGraph
+                  Python · TypeScript · React · FastAPI · PostgreSQL · LangGraph
                 </p>
               </div>
 
               <div className="border-l border-edge pl-6">
-                <p
-                  className="text-muted uppercase tracking-[0.05em] mb-2"
-                  style={{ fontSize: "var(--text-xs)" }}
-                >
-                  The fifteen years
+                <p className="text-muted uppercase tracking-[0.05em] mb-2" style={{ fontSize: "var(--text-xs)" }}>
+                  Commercial grounding
                 </p>
                 <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
-                  Enterprise payments &middot; Complex buying groups
+                  Enterprise payments · Complex buying groups
                 </p>
                 <p className="text-secondary" style={{ fontSize: "var(--text-sm)" }}>
-                  BNP Paribas &middot; Bank of America ML &middot; Convera &middot; Banking Circle &middot; RTGS.global
+                  BNP Paribas · Bank of America Merrill Lynch · Convera · Banking Circle · RTGS.global
                 </p>
               </div>
-
-              <div className="border-l border-edge pl-6">
-                <p
-                  className="text-muted uppercase tracking-[0.05em] mb-2"
-                  style={{ fontSize: "var(--text-xs)" }}
-                >
-                  Shipped
-                </p>
-                <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
-                  Four applied AI systems
-                </p>
-                <p className="text-accent" style={{ fontSize: "var(--text-sm)" }}>
-                  CallScore &middot; ruleIQ &middot; Helios &middot; thredOS
-                </p>
-              </div>
-            </div>
+            </aside>
           </div>
         </motion.div>
       </div>

@@ -82,7 +82,7 @@ export default function ContactSection() {
                 className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
                 style={{ fontSize: "var(--text-xs)" }}
               >
-                <span className="text-muted">06 /</span> Contact
+                <span className="text-muted">07 /</span> Contact
               </p>
 
               <h2
@@ -103,7 +103,7 @@ export default function ContactSection() {
 
               <div className="space-y-6">
                 <p className="text-primary" style={{ fontSize: "var(--text-sm)" }}>
-                  Available immediately · remote-first · UK work authorised
+                  Bangkok-based · open to remote roles, consulting and contracting globally
                 </p>
                 <a
                   href="https://linkedin.com/in/omaralbakri"
@@ -228,12 +228,12 @@ export default function ContactSection() {
                 </button>
 
                 {submitStatus === "success" && (
-                  <p className="text-success" style={{ fontSize: "var(--text-sm)" }}>
+                  <p role="status" aria-live="polite" className="text-success" style={{ fontSize: "var(--text-sm)" }}>
                     Message sent successfully.
                   </p>
                 )}
                 {submitStatus === "error" && (
-                  <p className="text-error" style={{ fontSize: "var(--text-sm)" }}>
+                  <p role="alert" className="text-error" style={{ fontSize: "var(--text-sm)" }}>
                     Failed to send. Please try again.
                   </p>
                 )}
