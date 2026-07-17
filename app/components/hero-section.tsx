@@ -1,8 +1,8 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-import { scrollToSection } from "@/lib/scroll-utils";
 
 const TunnelBackground = dynamic(
   () => import("@/components/ui/tunnel-background"),
@@ -11,20 +11,14 @@ const TunnelBackground = dynamic(
 
 export default function HeroSection() {
   return (
-    <section
-      id="home"
-      className="relative min-h-screen overflow-hidden"
-    >
-      {/* Tunnel WebGL background — gates on prefers-reduced-motion internally */}
+    <section id="home" className="relative min-h-screen overflow-hidden">
       <TunnelBackground />
 
-      {/* Content overlay */}
-      <div className="relative z-10 max-w-container mx-auto h-screen px-4 sm:px-6 lg:px-8 py-24 grid grid-rows-[1fr_auto] text-center md:text-left">
-        {/* Top-left name */}
+      <div className="relative z-10 max-w-container mx-auto min-h-screen px-4 sm:px-6 lg:px-8 py-24 grid grid-rows-[1fr_auto] text-center md:text-left">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
           className="font-display font-extralight tracking-[-0.03em] self-start"
           style={{ fontSize: "var(--text-hero)", lineHeight: "0.95" }}
         >
@@ -32,98 +26,64 @@ export default function HeroSection() {
           <span className="block">Al-Bakri</span>
         </motion.h1>
 
-        {/* Bottom row — location left, tagline + story right */}
         <div className="grid md:grid-cols-3 gap-8 md:gap-12 items-end pb-10 md:pb-0">
-          {/* Bottom-left location */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 1.4 }}
-            className="text-muted uppercase tracking-[0.15em]"
-            style={{ fontSize: "var(--text-xs)" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.7 }}
+            className="text-muted tracking-[0.04em]"
+            style={{ fontSize: "var(--text-sm)" }}
           >
-            Thailand based <span className="text-accent">·</span> UK work authorised
+            Bangkok-based <span className="text-accent">·</span> open to remote roles,
+            consulting and contracting globally
           </motion.p>
 
-          {/* Bottom-right tagline + story */}
-          <div className="md:col-start-2 md:col-span-2 md:text-right space-y-4">
+          <div className="md:col-start-2 md:col-span-2 md:text-right space-y-5">
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
-              className="text-secondary font-light tracking-wide"
-              style={{ fontSize: "var(--text-xl)" }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.45 }}
+              className="text-primary font-light md:ml-auto md:max-w-2xl"
+              style={{ fontSize: "var(--text-xl)", lineHeight: "1.35" }}
             >
-              Applied AI Engineer{" "}
-              <span className="text-muted">·</span>{" "}
-              <span className="text-accent">Agentic Systems</span>{" "}
-              <span className="text-muted">·</span>{" "}
-              Payments &amp; FinTech
+              Applied AI engineer building production AI products for complex,
+              regulated markets.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 1.1 }}
-              className="text-muted leading-relaxed md:ml-auto md:max-w-xl"
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+              className="text-muted leading-relaxed md:ml-auto md:max-w-2xl"
               style={{ fontSize: "var(--text-base)" }}
             >
-              I build applied AI products end to end across Python and
-              TypeScript, combining hands-on engineering with enterprise
-              payments and commercial experience.
+              I combine hands-on Python and TypeScript engineering with fifteen
+              years in enterprise payments, so I can understand the buyer, shape
+              the product and ship the system.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 1.3 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.75 }}
               className="flex flex-col sm:flex-row gap-3 md:justify-end pt-2"
             >
-              <button
-                onClick={() => scrollToSection("#contact")}
-                className="px-6 py-3 bg-accent text-base font-medium hover:bg-accent-hover transition-colors"
+              <a
+                href="#contact"
+                className="px-6 py-3 bg-accent text-base font-medium hover:bg-accent-hover transition-colors text-center"
               >
                 Discuss a role
-              </button>
-              <button
-                onClick={() => scrollToSection("#services")}
-                className="px-6 py-3 border border-edge text-primary hover:border-accent transition-colors"
+              </a>
+              <a
+                href="#work-together"
+                className="px-6 py-3 border border-edge text-primary hover:border-accent transition-colors text-center"
               >
-                Explore consulting
-              </button>
+                Discuss a project
+              </a>
             </motion.div>
           </div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8 }}
-        onClick={() => scrollToSection("#about")}
-        className="absolute z-10 bottom-8 left-1/2 -translate-x-1/2 text-muted hover:text-secondary transition-colors duration-200"
-        aria-label="Scroll to about section"
-      >
-        <motion.span
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          className="block"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M5 8l5 5 5-5" />
-          </svg>
-        </motion.span>
-      </motion.button>
     </section>
   );
 }

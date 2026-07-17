@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import Monogram from "./monogram";
@@ -16,78 +17,50 @@ interface CurtainOverlayProps {
   onSkip: () => void;
 }
 
-// Symmetric ease-in-out curves so neither the reveal nor the fade
-// has an audible "snap" at the start or end. Sine-like for the mark,
-// slightly tighter for the backdrop.
 const REVEAL_EASE = [0.45, 0, 0.55, 1] as const;
-const FADE_EASE_MARK = [0.45, 0, 0.55, 1] as const;
-const FADE_EASE_BACKDROP = [0.4, 0, 0.2, 1] as const;
+const FADE_EASE = [0.4, 0, 0.2, 1] as const;
 
-/**
- * Pure visual layer for the page-load curtain. The parent owns phase
- * transitions; this component just renders what each phase looks like.
- *
- * Pre-mount: render an opaque dark plate so first paint doesn't flash
- * the page underneath. Post-mount: framer-motion handles the reveal
- * and fade with phase-aware transition props.
- */
 export function CurtainOverlay({
   phase,
   heroSize,
   mounted,
   onSkip,
-}: CurtainOverlayProps): React.ReactElement {
+}: CurtainOverlayProps): React.ReactElement | null {
+  if (!mounted) return null;
+
   const fading = phase === "fading";
   const showMark =
     phase === "revealing" || phase === "holding" || phase === "fading";
-
-  if (!mounted) {
-    return (
-      <div
-        className="fixed inset-0 z-[100] overflow-hidden"
-        style={CURTAIN_STYLE}
-        aria-hidden="true"
-        role="presentation"
-      />
-    );
-  }
-
-  const markDurationS = (fading ? FADE_MS : REVEAL_MS) / 1000;
+  const markDuration = (fading ? FADE_MS : REVEAL_MS) / 1000;
 
   return (
     <motion.div
       key="curtain"
       className="fixed inset-0 z-[100] overflow-hidden flex items-center justify-center"
       style={CURTAIN_STYLE}
-      aria-hidden="true"
-      role="presentation"
       onClick={onSkip}
       initial={{ opacity: 1 }}
       animate={{ opacity: fading ? 0 : 1 }}
-      transition={{
-        duration: FADE_MS / 1000,
-        ease: FADE_EASE_BACKDROP,
-      }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: FADE_MS / 1000, ease: FADE_EASE }}
+      aria-label="OAB introduction"
     >
+      <button
+        type="button"
+        onClick={onSkip}
+        className="absolute right-5 top-5 z-10 px-3 py-2 text-muted hover:text-primary border border-edge hover:border-accent transition-colors"
+        style={{ fontSize: "var(--text-xs)" }}
+      >
+        Skip intro
+      </button>
+
       {showMark ? (
         <motion.div
-          key="mark"
           className="text-accent"
           initial={{ opacity: 0, scale: 0.985 }}
-          animate={{
-            opacity: fading ? 0 : 1,
-            scale: fading ? 1.01 : 1,
-          }}
-          transition={{
-            opacity: {
-              duration: markDurationS,
-              ease: fading ? FADE_EASE_MARK : REVEAL_EASE,
-            },
-            scale: {
-              duration: markDurationS,
-              ease: REVEAL_EASE,
-            },
-          }}
+          animate={{ opacity: fading ? 0 : 1, scale: fading ? 1.01 : 1 }}
+          transition={{ duration: markDuration, ease: REVEAL_EASE }}
+          aria-hidden="true"
         >
           <Monogram size={heroSize} aria-hidden />
         </motion.div>
