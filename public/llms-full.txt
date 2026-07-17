@@ -1,44 +1,34 @@
 # Omar Al-Bakri — Applied AI Engineer
 
-Omar Al-Bakri builds applied AI systems end to end across Python and TypeScript. He combines hands-on engineering across orchestration, retrieval, evaluation, APIs, data, integrations, and product delivery with enterprise payments and commercial experience.
+Omar Al-Bakri builds production AI products for complex, regulated markets. He combines hands-on Python and TypeScript engineering with fifteen years in enterprise payments, so he can understand the buyer, shape the product and ship the system.
 
-## Opportunity fit
+Bangkok-based · open to remote roles, consulting and contracting globally
 
-- Applied AI Engineer
-- AI Agent / Agent Platform Engineer
-- Forward-Deployed AI / Solutions Engineer
-- FinTech and Payments AI
-- AI Architect / Transformation Consultant
-- GTM and Commercial AI Engineer
+## Remote roles
 
-Omar is available immediately, works remote-first, is based in Thailand, and has unrestricted UK work authorisation.
+Hands-on roles in applied AI, agent platforms, forward-deployed engineering and FinTech AI, particularly where product judgement, client fluency and code ownership need to sit with one person.
+
+## Consulting and contracting
+
+Fixed-scope delivery for teams with a defined AI problem: prototype-to-production builds, retrieval and evaluation hardening, agent-system architecture, or fractional technical leadership.
 
 ## Selected systems
 
 ### CallScore
 
-A public AI product for evidence-backed creator intelligence. It connects creator statements with timestamped market evidence and supports transparent scoring and analysis workflows.
+A creator-intelligence product connecting public market calls with timestamped price evidence and transparent scoring workflows.
 
 ### ruleIQ
 
-An AI compliance platform using graph and retrieval patterns to connect frameworks, obligations, controls, and evidence.
+A compliance platform connecting frameworks, obligations, controls and evidence through graph and retrieval workflows.
 
 ### Helios
 
-An AI-assisted commercial workflow platform connecting user interfaces, API services, orchestration, and sales-tool integrations.
+An AI-assisted commercial workflow platform with explicit controls around automated actions.
 
 ### thredOS
 
-A typed multi-agent workflow runtime for policy-controlled, long-horizon work.
-
-## Consulting offers
-
-- AI Opportunity Audit — from £1,500
-- Agent Prototype Sprint — from £4,500
-- RAG and Evaluation Hardening — from £3,000
-- FinTech GTM Automation — from £3,500
-- Fractional Applied AI Lead — from £5,000/month
-- Payments AI Advisory — from £1,250/day
+A typed multi-agent workflow runtime with policy-controlled execution and provenance tracking.
 
 ## Contact
 

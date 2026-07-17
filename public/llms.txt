@@ -1,28 +1,24 @@
 # Omar Al-Bakri
 
-> Applied AI engineer combining hands-on agent systems and full-stack delivery with enterprise payments and commercial experience.
+> Applied AI engineer building production AI products for complex, regulated markets.
 
 ## Positioning
 
-Omar builds applied AI systems end to end across Python and TypeScript. His work covers agent orchestration, retrieval, evaluation, integrations, data workflows, APIs, and user-facing product delivery.
+Omar combines hands-on Python and TypeScript engineering with fifteen years in enterprise payments, allowing him to understand the buyer, shape the product and ship the system.
 
-He is open to senior applied AI, agent engineering, forward-deployed, architecture, and FinTech AI roles, as well as fixed-scope and fractional consulting. He is based in Thailand, works remote-first, is available immediately, and has unrestricted UK work authorisation.
+Bangkok-based · open to remote roles, consulting and contracting globally
 
 ## Selected work
 
-- [CallScore](https://call-score.com): public AI product for evidence-backed creator intelligence.
-- ruleIQ: AI compliance platform using graph and retrieval patterns.
+- [CallScore](https://call-score.com): creator-intelligence product connecting public market calls with timestamped price evidence and transparent scoring workflows.
+- ruleIQ: compliance platform using graph and retrieval workflows.
 - Helios: AI-assisted commercial workflow platform.
-- thredOS: multi-agent workflow runtime for long-horizon work.
+- thredOS: typed multi-agent workflow runtime.
 
-## Services
+## Work together
 
-- AI Opportunity Audit
-- Agent Prototype Sprint
-- RAG and Evaluation Hardening
-- FinTech GTM Automation
-- Fractional Applied AI Lead
-- Payments AI Advisory
+- Remote roles
+- Consulting and contracting
 
 ## Links
 

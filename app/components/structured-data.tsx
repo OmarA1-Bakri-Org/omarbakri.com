@@ -7,66 +7,45 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     lastModified ??
     (process.env.BUILD_TIMESTAMP
       ? new Date(process.env.BUILD_TIMESTAMP).toISOString().split("T")[0]
-      : "2026-07-07");
+      : "2026-07-18");
 
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Omar Al-Bakri",
     url: "https://www.omarbakri.com",
-    jobTitle: "Applied AI Engineer & Product Builder",
+    jobTitle: "Applied AI Engineer",
     description:
-      "Applied AI engineer and FinTech operator building AI products across creator intelligence, compliance, commercial workflows, and multi-agent systems.",
+      "Applied AI engineer combining hands-on Python and TypeScript delivery with fifteen years in enterprise payments. Bangkok-based and globally open.",
+    homeLocation: {
+      "@type": "Place",
+      name: "Bangkok, Thailand",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bangkok",
+        addressCountry: "TH",
+      },
+    },
     knowsAbout: [
       "Applied AI engineering",
-      "Agentic AI",
+      "Agent systems",
       "LangGraph",
       "GraphRAG",
-      "AI automation",
-      "Crypto creator intelligence",
-      "Market call scoring",
-      "Full-stack TypeScript",
+      "Retrieval and evaluation",
       "Python",
+      "TypeScript",
       "FinTech",
-      "Cross-border payments",
-      "Multi-agent systems",
+      "Enterprise payments",
     ],
     sameAs: [
       "https://linkedin.com/in/omaralbakri",
       "https://github.com/OmarA1-Bakri",
       "https://call-score.com",
     ],
-    knowsLanguage: ["English"],
-    hasOccupation: {
-      "@type": "Occupation",
-      name: "Applied AI Engineer",
-      occupationLocation: {
-        "@type": "Country",
-        name: "United Kingdom",
-      },
-    },
     alumniOf: {
       "@type": "EducationalOrganization",
       name: "Nottingham Trent University",
     },
-  };
-
-  const servicesSchema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "Applied AI consulting services",
-    itemListElement: [
-      "AI Opportunity Audit",
-      "Agent Prototype Sprint",
-      "RAG and Evaluation Hardening",
-      "FinTech GTM Automation",
-      "Fractional Applied AI Lead",
-      "Payments AI Advisory",
-    ].map((name, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      item: { "@type": "Service", name, provider: { "@type": "Person", name: "Omar Al-Bakri" } },
-    })),
   };
 
   const websiteSchema = {
@@ -75,17 +54,13 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     name: "Omar Al-Bakri",
     url: "https://www.omarbakri.com",
     description:
-      "Applied AI engineering portfolio covering crypto creator intelligence, compliance automation, commercial AI automation, and multi-agent systems.",
+      "Applied AI engineer combining hands-on Python and TypeScript delivery with fifteen years in enterprise payments. Bangkok-based and globally open.",
   };
 
   const profilePageSchema = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    mainEntity: {
-      "@type": "Person",
-      name: "Omar Al-Bakri",
-      url: "https://www.omarbakri.com",
-    },
+    mainEntity: personSchema,
     dateCreated: "2025-01-01",
     dateModified: dynamicLastModified,
   };
@@ -105,7 +80,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
           operatingSystem: "Web",
           url: "https://call-score.com",
           description:
-            "Crypto creator-intelligence platform that scores public market calls against real price data.",
+            "Creator-intelligence product connecting public market calls with timestamped price evidence and transparent scoring workflows.",
         },
       },
       {
@@ -116,7 +91,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
           name: "ruleIQ",
           applicationCategory: "BusinessApplication",
           description:
-            "Agentic compliance automation platform using GraphRAG and regulatory knowledge graphs.",
+            "Compliance platform connecting frameworks, obligations, controls and evidence through graph and retrieval workflows.",
         },
       },
       {
@@ -127,7 +102,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
           name: "Helios",
           applicationCategory: "BusinessApplication",
           description:
-            "Autonomous B2B sales automation platform for AI-driven commercial execution.",
+            "AI-assisted commercial workflow platform with explicit controls around automated actions.",
         },
       },
       {
@@ -138,7 +113,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
           name: "thredOS",
           applicationCategory: "DeveloperApplication",
           description:
-            "Multi-agent workflow runtime for policy-controlled long-horizon AI work.",
+            "Typed multi-agent workflow runtime with policy-controlled execution and provenance tracking.",
         },
       },
     ],
@@ -146,14 +121,14 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
 
   return (
     <>
-      {[personSchema, websiteSchema, profilePageSchema, projectsSchema, servicesSchema].map(
+      {[personSchema, websiteSchema, profilePageSchema, projectsSchema].map(
         (schema, index) => (
           <script
             key={index}
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
-        ),
+        )
       )}
     </>
   );

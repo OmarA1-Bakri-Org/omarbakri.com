@@ -24,11 +24,11 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.omarbakri.com"),
   title: {
-    default: "Omar Al-Bakri — Applied AI Engineer & Product Builder",
+    default: "Omar Al-Bakri — Applied AI Engineer",
     template: "%s | Omar Al-Bakri",
   },
   description:
-    "Applied AI engineer combining hands-on agent systems, full-stack delivery, and enterprise payments experience. Available for senior roles and focused consulting engagements.",
+    "Applied AI engineer combining hands-on Python and TypeScript delivery with fifteen years in enterprise payments. Bangkok-based and globally open.",
   keywords: [
     "Omar Al-Bakri",
     "Applied AI Engineer",
@@ -61,15 +61,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.omarbakri.com",
     siteName: "Omar Al-Bakri",
-    title: "Omar Al-Bakri — Applied AI Engineer & Product Builder",
+    title: "Omar Al-Bakri — Applied AI Engineer",
     description:
-      "Applied AI engineer building agent systems and full-stack AI products, with enterprise payments experience and focused consulting offers.",
+      "Applied AI engineer combining hands-on Python and TypeScript delivery with fifteen years in enterprise payments. Bangkok-based and globally open.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Omar Al-Bakri — Applied AI Engineer & Product Builder",
+    title: "Omar Al-Bakri — Applied AI Engineer",
     description:
-      "Applied AI engineer building agent systems and full-stack AI products, with enterprise payments experience and focused consulting offers.",
+      "Applied AI engineer combining hands-on Python and TypeScript delivery with fifteen years in enterprise payments. Bangkok-based and globally open.",
   },
   alternates: {
     canonical: "https://www.omarbakri.com",
