@@ -96,8 +96,8 @@ export default function ContactSection() {
                 className="text-secondary leading-[1.7] mb-10"
                 style={{ fontSize: "var(--text-base)" }}
               >
-                Send the role, the system or the outcome. Tell me what exists
-                today and what is blocking it. I will tell you whether I fit.
+                Send the role, system or outcome. Include what exists today, the
+                main constraint and what needs to change.
               </p>
 
               <div className="space-y-6">
@@ -233,7 +233,7 @@ export default function ContactSection() {
                 )}
                 {submitStatus === "error" && (
                   <p role="alert" className="text-error" style={{ fontSize: "var(--text-sm)" }}>
-                    Message not sent. Try again or email me directly.
+                    Delivery failed. Try again or email me directly.
                   </p>
                 )}
               </form>

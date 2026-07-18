@@ -77,8 +77,8 @@ export default function HeroSection() {
               className="text-primary font-light md:ml-auto md:max-w-2xl"
               style={{ fontSize: "var(--text-xl)", lineHeight: "1.35" }}
             >
-              AI products fail at the handoff between commercial need and technical
-              execution. I remove the handoff.
+              I spent fifteen years explaining technology. Then I learned to
+              build it.
             </motion.p>
 
             <motion.p
@@ -86,9 +86,9 @@ export default function HeroSection() {
               className="text-muted leading-relaxed md:ml-auto md:max-w-2xl"
               style={{ fontSize: "var(--text-base)" }}
             >
-              Applied AI engineer for financial services and other complex
-              markets. Fifteen years in enterprise payments tells me where the
-              problem is. Python and TypeScript let me carry it into production.
+              Applied AI engineer building agent systems and full-stack products
+              for financial services. Python and TypeScript, grounded in enterprise
+              payments.
             </motion.p>
 
             <motion.div

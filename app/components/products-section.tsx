@@ -37,16 +37,16 @@ export default function ProductsSection() {
             className="font-light tracking-[-0.02em] text-primary mb-6"
             style={{ fontSize: "var(--text-3xl)" }}
           >
-            AI products are easy to describe. Working systems leave evidence.
+            What I have built.
           </h2>
 
           <p
             className="text-secondary max-w-2xl mb-20 leading-relaxed"
             style={{ fontSize: "var(--text-base)" }}
           >
-            These systems span creator intelligence, compliance, sales
-            automation and multi-agent operations. Each description states what
-            is live, what is private and what remains pre-launch.
+            Four systems across creator intelligence, compliance, sales
+            automation and multi-agent operations. Status labels separate what is
+            live, private and pre-launch.
           </p>
         </motion.div>
 

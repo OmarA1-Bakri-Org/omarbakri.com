@@ -16,7 +16,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     url: "https://www.omarbakri.com",
     jobTitle: "Applied AI Engineer",
     description:
-      "Applied AI engineer building agent systems and full-stack products for financial services. Fifteen years in enterprise payments. Hands-on Python and TypeScript delivery.",
+      "Omar Al-Bakri builds AI systems for financial services. Previously 15 years in enterprise FinTech sales across Tier 1 banks and payments infrastructure.",
     homeLocation: {
       "@type": "Place",
       name: "Bangkok, Thailand",
@@ -54,7 +54,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     name: "Omar Al-Bakri",
     url: "https://www.omarbakri.com",
     description:
-      "Applied AI engineer building agent systems and full-stack products for financial services. Fifteen years in enterprise payments. Hands-on Python and TypeScript delivery.",
+      "Omar Al-Bakri builds AI systems for financial services. Previously 15 years in enterprise FinTech sales across Tier 1 banks and payments infrastructure.",
   };
 
   const profilePageSchema = {

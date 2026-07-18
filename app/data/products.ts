@@ -14,7 +14,7 @@ const products: Product[] = [
     name: "CallScore",
     tagline: "Market calls, measured against what happened next",
     description:
-      "Crypto commentary is easy to publish and hard to audit. CallScore ingests creators, videos and transcripts, extracts market calls, matches them to price windows and ranks creators by evidence-backed performance. The live product includes leaderboards, creator profiles, methodology, API and export paths, Whop access and governed operations.",
+      "CallScore turns public crypto commentary into an auditable performance record. It ingests creators, videos and transcripts, extracts market calls, matches them to price windows and ranks creators against timestamped outcomes. The live product includes leaderboards, creator profiles, methodology, API and export paths, Whop access and governed operations.",
     stack: [
       "Next.js",
       "TypeScript",
@@ -41,7 +41,7 @@ const products: Product[] = [
     name: "ruleIQ",
     tagline: "Compliance automation built around evidence, controls and review",
     description:
-      "Compliance does not fail because teams lack another chatbot. It fails when obligations, controls and evidence do not connect. ruleIQ combines FastAPI, Next.js, retrieval and agent workflows, PostgreSQL, Redis, vector search, credential hardening and an extensive automated-test surface.",
+      "ruleIQ links regulatory obligations to controls, evidence and human review. The repository combines FastAPI, Next.js, retrieval and agent workflows, PostgreSQL, Redis, vector search, credential hardening and an extensive automated-test surface.",
     stack: [
       "Python",
       "FastAPI",
@@ -57,18 +57,18 @@ const products: Product[] = [
     ],
     highlights: [
       "Maps assessments, obligations, policies, controls and evidence into one workspace",
-      "Uses retrieval and agent workflows to assist research and drafting without removing review",
-      "Environment and credential controls fail closed rather than start with unsafe defaults",
-      "Backend and frontend tests make the production state inspectable",
+      "Uses retrieval and agent workflows to assist research and drafting while keeping review explicit",
+      "Environment and credential controls fail closed and block unsafe defaults",
+      "Backend and frontend tests make the repository state inspectable",
     ],
     status: "Production-ready repository",
     repoUrl: "https://github.com/OmarA1-Bakri-Org/ruleIQ",
   },
   {
     name: "Helios",
-    tagline: "Sales automation with memory, controls and an operator",
+    tagline: "Governed B2B prospecting from one operator surface",
     description:
-      "Sales automation counts activity. Helios coordinates decisions. It combines an Electron desktop app, Node and Express services, an MCP server, a Python FastAPI orchestrator, Graphiti and Neo4j memory, and CRM and outreach integrations.",
+      "Helios coordinates B2B prospecting, enrichment and outreach from a desktop operator surface. Electron, Node and Express handle the application and API layer. A Python FastAPI orchestrator, Graphiti and Neo4j carry context across MCP, CRM and outreach integrations.",
     stack: [
       "Electron",
       "React",
@@ -97,9 +97,9 @@ const products: Product[] = [
   },
   {
     name: "thredOS",
-    tagline: "Agent work should be inspectable, not trapped in terminal history",
+    tagline: "Local-first control plane for long-horizon agent work",
     description:
-      "Agent work disappears into prompts, shell history and one-off sessions. thredOS makes it explicit through sequences, dependencies, gates, approvals, runs and provenance. The same local-first operating model is available through a UI and CLI.",
+      "thredOS gives long-horizon agent work a local operating model. Sequences define steps, dependencies, gates and approvals. A shared UI and CLI expose runs, surfaces, merges and provenance while workflow state stays inside the workspace.",
     stack: [
       "TypeScript",
       "Bun",

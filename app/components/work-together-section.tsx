@@ -8,7 +8,7 @@ const routes = [
     eyebrow: "Join the team",
     title: "Remote roles",
     summary:
-      "Senior or lead roles where product judgement, AI architecture and hands-on delivery need to sit with one person.",
+      "Senior or lead roles with end-to-end ownership of an applied AI product or workstream.",
     ownership: [
       "Own an applied AI product from the first problem statement to production",
       "Build agent, retrieval and evaluation systems that can be tested and operated",
@@ -21,7 +21,7 @@ const routes = [
     eyebrow: "Deliver an outcome",
     title: "Consulting and contracting",
     summary:
-      "Defined problems with a real delivery surface. Not open-ended transformation theatre.",
+      "Defined AI products, agent workflows and production integrations with a clear delivery surface.",
     ownership: [
       "Design and build an AI product, agent workflow or production integration",
       "Find and fix weak retrieval, evaluation, observability and failure handling",
@@ -68,14 +68,12 @@ export default function WorkTogetherSection() {
               className="lg:col-span-8 font-light tracking-[-0.02em] text-primary"
               style={{ fontSize: "var(--text-3xl)" }}
             >
-              An AI strategy deck is not a delivery model. Someone still has to
-              own the system.
+              Where I fit.
             </h2>
             <div className="lg:col-span-4 space-y-4 text-secondary leading-relaxed">
               <p>
-                I work where product judgement, architecture, code, evaluation
-                and stakeholder delivery meet. That is usually where the handoffs
-                break.
+                I work best where product judgement, architecture, code,
+                evaluation and stakeholder delivery sit close together.
               </p>
               <p className="text-primary">
                 Bangkok-based · open to remote roles, consulting and contracting globally
@@ -158,12 +156,12 @@ export default function WorkTogetherSection() {
               className="text-primary font-normal mb-3"
               style={{ fontSize: "var(--text-lg)" }}
             >
-              Start with the problem
+              A useful first message
             </h3>
             <p className="text-secondary leading-relaxed">
-              Send the role or problem, what exists today, the main constraint
-              and the outcome that matters. I will tell you whether I fit and what
-              I would do next.
+              Send the role or problem, the current state, the main constraint
+              and the desired outcome. I will tell you whether I fit and what I
+              would do next.
             </p>
           </div>
           <div className="lg:col-span-4 lg:text-right">
@@ -171,7 +169,7 @@ export default function WorkTogetherSection() {
               href="#contact"
               className="inline-flex px-6 py-3 border border-accent text-accent hover:bg-accent hover:text-base transition-colors"
             >
-              Send the problem
+              Send the brief
             </a>
           </div>
         </motion.div>

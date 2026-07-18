@@ -73,8 +73,9 @@ export default function NewsletterSection() {
                 className="text-secondary leading-[1.7] mb-8 max-w-lg"
                 style={{ fontSize: "var(--text-base)" }}
               >
-                Announcements explain what launched. Intelligent Rails follows the
-                balance sheet, the operating model and the incentive underneath it.
+                Intelligent Rails examines AI, payments and financial infrastructure
+                through the balance sheet, operating model and incentives underneath
+                them.
               </p>
 
               {/* Subscribe form */}
@@ -153,7 +154,7 @@ export default function NewsletterSection() {
                       className="hover:text-accent transition-colors duration-200"
                       style={{ fontSize: "var(--text-sm)" }}
                     >
-                      Follow the shorter pieces on LinkedIn
+                      Follow Intelligent Rails on LinkedIn
                     </a>
                   </div>
                 </div>

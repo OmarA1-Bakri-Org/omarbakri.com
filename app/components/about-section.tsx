@@ -27,8 +27,7 @@ export default function AboutSection() {
                 className="font-display font-light tracking-[-0.02em] text-primary"
                 style={{ fontSize: "var(--text-3xl)" }}
               >
-                I spent fifteen years explaining technology. Then I learned to
-                build it.
+                From enterprise payments to production AI.
               </h2>
 
               <div
@@ -36,20 +35,20 @@ export default function AboutSection() {
                 style={{ fontSize: "var(--text-base)" }}
               >
                 <p>
-                  For fifteen years, I sold technology across banking and
-                  payments. The hard part was rarely the pitch. It was turning a
-                  plausible idea into a system the buyer could trust.
+                  Before I wrote code, I worked across Tier 1 banks, payments
+                  infrastructure and complex enterprise buying groups. That taught
+                  me how decisions are made, where projects stall and which problems
+                  carry real commercial weight.
                 </p>
                 <p>
-                  In my forties, I stopped standing beside the build and learned
-                  to do it. Python and TypeScript came through the practical loop:
-                  build, test, break, rebuild. The work now spans compliance,
-                  creator intelligence, sales automation and multi-agent systems.
+                  I learned Python and TypeScript in my forties by building real
+                  products. The work now spans creator intelligence, compliance,
+                  sales automation and multi-agent operations.
                 </p>
                 <p>
-                  The two careers now do different jobs. Commercial judgement
-                  tells me which problem matters. Engineering carries it into
-                  working software.
+                  I carry the same problem from commercial case to architecture,
+                  implementation and evaluation. The buyer&apos;s problem stays visible
+                  all the way through.
                 </p>
               </div>
 
@@ -58,8 +57,7 @@ export default function AboutSection() {
                   className="font-display font-light text-primary"
                   style={{ fontSize: "var(--text-xl)", lineHeight: "1.45" }}
                 >
-                  Commercial judgement tells me what deserves to exist.
-                  Engineering lets me make it real.
+                  The buyer&apos;s problem should survive every technical decision.
                 </p>
               </blockquote>
 

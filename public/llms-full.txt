@@ -1,36 +1,36 @@
 # Omar Al-Bakri — Applied AI Engineer
 
-AI products fail at the handoff between commercial need and technical execution. Omar removes the handoff.
+I spent fifteen years explaining technology. Then I learned to build it.
 
-Omar Al-Bakri builds agent systems and full-stack AI products for financial services and other complex markets. Fifteen years in enterprise payments tells him where the problem is. Python and TypeScript let him carry it into production.
+Omar Al-Bakri builds AI systems for financial services. He learned Python and TypeScript in his forties after fifteen years in enterprise FinTech sales across Tier 1 banks and payments infrastructure. His work spans agent systems, full-stack products, retrieval, evaluation and production delivery.
 
 Bangkok-based · open to remote roles, consulting and contracting globally
 
 ## Remote roles
 
-Senior or lead roles where product judgement, AI architecture and hands-on delivery need to sit with one person. Omar can own the product from the first problem statement to production.
+Senior or lead roles with end-to-end ownership of an applied AI product or workstream.
 
 ## Consulting and contracting
 
-Defined problems with a real delivery surface: AI products, agent workflows, production integrations, retrieval, evaluation, observability and failure handling. Not open-ended transformation theatre.
+Defined AI products, agent workflows and production integrations with a clear delivery surface.
 
 ## Selected systems
 
 ### CallScore — Live product
 
-Crypto commentary is easy to publish and hard to audit. CallScore extracts public creator market calls, matches them to timestamped price outcomes and scores evidence-backed performance.
+CallScore extracts public creator market calls, matches them to timestamped price outcomes and scores evidence-backed performance.
 
 ### ruleIQ — Production-ready repository
 
-Compliance does not fail because teams lack another chatbot. It fails when obligations, controls and evidence do not connect.
+ruleIQ connects regulatory obligations to controls, evidence, retrieval and human review.
 
 ### Helios — Private build
 
-Sales automation counts activity. Helios coordinates decisions through an operator surface, MCP services, graph memory and CRM integrations.
+Helios coordinates B2B prospecting, enrichment and outreach through a desktop operator surface, MCP services, graph memory and CRM integrations.
 
 ### thredOS — Pre-launch
 
-Agent work disappears into prompts and terminal history. thredOS makes it explicit through dependencies, gates, approvals, runs and provenance.
+thredOS provides a local-first operating model for agent workflows with dependencies, gates, approvals, runs and provenance.
 
 ## Contact
 

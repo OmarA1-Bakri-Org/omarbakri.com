@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Omar Al-Bakri",
   },
   description:
-    "Applied AI engineer building agent systems and full-stack products for financial services. Fifteen years in enterprise payments. Hands-on Python and TypeScript delivery.",
+    "Omar Al-Bakri builds AI systems for financial services. Previously 15 years in enterprise FinTech sales across Tier 1 banks and payments infrastructure.",
   keywords: [
     "Omar Al-Bakri",
     "Applied AI Engineer",
@@ -63,13 +63,13 @@ export const metadata: Metadata = {
     siteName: "Omar Al-Bakri",
     title: "Omar Al-Bakri — Applied AI Engineer",
     description:
-      "Applied AI engineer building agent systems and full-stack products for financial services. Fifteen years in enterprise payments. Hands-on Python and TypeScript delivery.",
+      "Omar Al-Bakri builds AI systems for financial services. Previously 15 years in enterprise FinTech sales across Tier 1 banks and payments infrastructure.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Omar Al-Bakri — Applied AI Engineer",
     description:
-      "Applied AI engineer building agent systems and full-stack products for financial services. Fifteen years in enterprise payments. Hands-on Python and TypeScript delivery.",
+      "Omar Al-Bakri builds AI systems for financial services. Previously 15 years in enterprise FinTech sales across Tier 1 banks and payments infrastructure.",
   },
   alternates: {
     canonical: "https://www.omarbakri.com",

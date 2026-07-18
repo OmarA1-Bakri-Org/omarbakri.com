@@ -7,7 +7,7 @@ const areas = [
   {
     title: "Agentic AI Systems",
     description:
-      "Agents are easy to demo. Reliable workflows need state, tools, evaluation, policy and failure handling.",
+      "State, tools, evaluation, policy and failure handling for agent workflows that have to run beyond a demo.",
     icon: "mdi:robot-outline",
   },
   {
@@ -19,7 +19,7 @@ const areas = [
   {
     title: "Knowledge Graphs & GraphRAG",
     description:
-      "Use relationships when keyword search is not enough: regulatory obligations, commercial context and persistent agent memory.",
+      "Graph models for regulatory obligations, commercial relationships and persistent agent context.",
     icon: "mdi:graph-outline",
   },
   {
@@ -37,7 +37,7 @@ const areas = [
   {
     title: "Product Strategy",
     description:
-      "A backlog is not a strategy. I choose the problem, define the smallest credible product and carry it into working software.",
+      "Choose the problem, define the smallest credible product and carry it into working software.",
     icon: "mdi:trending-up",
   },
 ];
@@ -76,16 +76,16 @@ export default function ExpertiseSection() {
             className="font-light tracking-[-0.02em] text-primary mb-6"
             style={{ fontSize: "var(--text-3xl)" }}
           >
-            The tools are not the differentiator. The judgement behind them is.
+            The systems and decisions I work across.
           </h2>
 
           <p
             className="text-secondary max-w-2xl mb-20 leading-relaxed"
             style={{ fontSize: "var(--text-base)" }}
           >
-            I work across agent systems, full-stack products, knowledge graphs
-            and financial infrastructure. The point is fewer handoffs between
-            the problem, the architecture and the shipped product.
+            Agent workflows, full-stack products, knowledge graphs, payments
+            infrastructure and product delivery. The technical work stays tied to
+            the commercial and operational context.
           </p>
         </motion.div>
 
