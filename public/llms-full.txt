@@ -1,34 +1,36 @@
 # Omar Al-Bakri — Applied AI Engineer
 
-Omar Al-Bakri builds production AI products for complex, regulated markets. He combines hands-on Python and TypeScript engineering with fifteen years in enterprise payments, so he can understand the buyer, shape the product and ship the system.
+Most AI work separates the commercial problem from the technical system. Omar builds both.
+
+Omar Al-Bakri builds agent systems and full-stack AI products for financial services and other complex markets. Fifteen years in enterprise payments tells him where the problem is. Python and TypeScript let him carry it into production.
 
 Bangkok-based · open to remote roles, consulting and contracting globally
 
 ## Remote roles
 
-Hands-on roles in applied AI, agent platforms, forward-deployed engineering and FinTech AI, particularly where product judgement, client fluency and code ownership need to sit with one person.
+Senior or lead roles where product judgement, AI architecture and hands-on delivery need to sit with one person. Omar can own the product from the first problem statement to production.
 
 ## Consulting and contracting
 
-Fixed-scope delivery for teams with a defined AI problem: prototype-to-production builds, retrieval and evaluation hardening, agent-system architecture, or fractional technical leadership.
+Defined problems with a real delivery surface: AI products, agent workflows, production integrations, retrieval, evaluation, observability and failure handling. Not open-ended transformation theatre.
 
 ## Selected systems
 
-### CallScore
+### CallScore — Live product
 
-A creator-intelligence product connecting public market calls with timestamped price evidence and transparent scoring workflows.
+Crypto commentary is easy to publish and hard to audit. CallScore extracts public creator market calls, matches them to timestamped price outcomes and scores evidence-backed performance.
 
-### ruleIQ
+### ruleIQ — Production-ready repository
 
-A compliance platform connecting frameworks, obligations, controls and evidence through graph and retrieval workflows.
+Most compliance AI starts with a chat box. ruleIQ starts with the obligation, control and evidence trail.
 
-### Helios
+### Helios — Private build
 
-An AI-assisted commercial workflow platform with explicit controls around automated actions.
+Most sales automation scales activity. Helios coordinates prospecting decisions through an operator surface, MCP services, graph memory and CRM integrations.
 
-### thredOS
+### thredOS — Pre-launch
 
-A typed multi-agent workflow runtime with policy-controlled execution and provenance tracking.
+Most multi-agent work disappears into prompts and terminal history. thredOS turns it into explicit workflows with dependencies, gates, approvals, runs and provenance.
 
 ## Contact
 

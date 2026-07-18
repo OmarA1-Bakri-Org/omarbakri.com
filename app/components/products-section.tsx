@@ -37,16 +37,16 @@ export default function ProductsSection() {
             className="font-light tracking-[-0.02em] text-primary mb-6"
             style={{ fontSize: "var(--text-3xl)" }}
           >
-            Applied AI systems, built end to end
+            AI products are easy to describe. Working systems leave evidence.
           </h2>
 
           <p
             className="text-secondary max-w-2xl mb-20 leading-relaxed"
             style={{ fontSize: "var(--text-base)" }}
           >
-            Public and private projects spanning creator intelligence,
-            compliance, commercial workflows, and multi-agent orchestration.
-            Claims below are deliberately conservative and evidence-led.
+            These systems span creator intelligence, compliance, sales
+            automation and multi-agent operations. Each description states what
+            is live, what is private and what remains pre-launch.
           </p>
         </motion.div>
 

@@ -73,9 +73,9 @@ export default function NewsletterSection() {
                 className="text-secondary leading-[1.7] mb-8 max-w-lg"
                 style={{ fontSize: "var(--text-base)" }}
               >
-                My newsletter exploring the intersection of AI, FinTech, and
-                business strategy. Practical insights for leaders navigating
-                technology-driven change.
+                Most writing about AI and financial infrastructure follows the
+                announcement. Intelligent Rails looks at the balance sheet, the
+                operating model and the incentive underneath it.
               </p>
 
               {/* Subscribe form */}
@@ -104,18 +104,18 @@ export default function NewsletterSection() {
                   className="px-6 py-3 bg-accent text-base font-medium hover:bg-accent-hover transition-colors duration-200 disabled:opacity-50 whitespace-nowrap"
                   style={{ fontSize: "var(--text-sm)" }}
                 >
-                  {status === "loading" ? "Subscribing..." : "Subscribe"}
+                  {status === "loading" ? "Joining..." : "Join the list"}
                 </button>
               </form>
 
               {status === "success" && (
                 <p className="text-success mt-3" style={{ fontSize: "var(--text-sm)" }}>
-                  Subscribed successfully.
+                  You are on the list.
                 </p>
               )}
               {status === "error" && (
                 <p className="text-error mt-3" style={{ fontSize: "var(--text-sm)" }}>
-                  Something went wrong. Please try again.
+                  Subscription failed. Try again.
                 </p>
               )}
             </div>
@@ -126,7 +126,7 @@ export default function NewsletterSection() {
                 className="text-muted uppercase tracking-[0.05em] mb-6"
                 style={{ fontSize: "var(--text-xs)" }}
               >
-                Recent Writing
+                Archive in progress
               </p>
 
               <div className="space-y-6">
@@ -140,10 +140,10 @@ export default function NewsletterSection() {
                     className="text-primary group-hover:text-accent transition-colors duration-200 mb-1"
                     style={{ fontSize: "var(--text-sm)" }}
                   >
-                    Articles on LinkedIn
+                    Read recent analysis on LinkedIn
                   </p>
                   <p className="text-muted" style={{ fontSize: "var(--text-xs)" }}>
-                    Thoughts on AI, FinTech, and the future of payments
+                    The original Ghost archive is being rebuilt here. Shorter analysis remains on LinkedIn.
                   </p>
                 </a>
 
@@ -157,7 +157,7 @@ export default function NewsletterSection() {
                       className="hover:text-accent transition-colors duration-200"
                       style={{ fontSize: "var(--text-sm)" }}
                     >
-                      Follow on LinkedIn for updates
+                      Follow the shorter pieces on LinkedIn
                     </a>
                   </div>
                 </div>

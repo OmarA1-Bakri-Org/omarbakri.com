@@ -27,8 +27,8 @@ export default function AboutSection() {
                 className="font-display font-light tracking-[-0.02em] text-primary"
                 style={{ fontSize: "var(--text-3xl)" }}
               >
-                I learned to build the systems I had spent years buying, selling
-                and explaining.
+                I spent fifteen years explaining technology. Then I learned to
+                build it.
               </h2>
 
               <div
@@ -36,23 +36,20 @@ export default function AboutSection() {
                 style={{ fontSize: "var(--text-base)" }}
               >
                 <p>
-                  For fifteen years, I worked across banking, payments and
-                  enterprise technology. The recurring problem was rarely the
-                  pitch. It was translating a valuable idea into a product people
-                  could trust.
+                  For fifteen years, I sold technology across banking and
+                  payments. The hard part was rarely the pitch. It was turning a
+                  plausible idea into a system the buyer could trust.
                 </p>
                 <p>
-                  In my forties, I traded seniority for beginner status and began
-                  learning Python and TypeScript through the practical cycle of
-                  building, testing, breaking and rebuilding. The work now spans
-                  compliance, commercial workflows, creator intelligence and
-                  multi-agent orchestration.
+                  In my forties, I stopped standing beside the build and learned
+                  to do it. Python and TypeScript came through the practical loop:
+                  build, test, break, rebuild. The work now spans compliance,
+                  creator intelligence, sales automation and multi-agent systems.
                 </p>
                 <p>
-                  Today the two careers work together. The commercial experience
-                  helps me choose the right problem and navigate complex
-                  organisations. The engineering lets me carry that problem
-                  through to working software.
+                  The two careers now do different jobs. Commercial judgement
+                  tells me which problem matters. Engineering carries it into
+                  working software.
                 </p>
               </div>
 
@@ -84,7 +81,7 @@ export default function AboutSection() {
                   Engineering
                 </p>
                 <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
-                  Full-stack · Agent systems · Product delivery
+                  Full-stack products · Agent systems · Production delivery
                 </p>
                 <p className="text-secondary" style={{ fontSize: "var(--text-sm)" }}>
                   Python · TypeScript · React · FastAPI · PostgreSQL · LangGraph
@@ -96,7 +93,7 @@ export default function AboutSection() {
                   Commercial grounding
                 </p>
                 <p className="text-primary font-light" style={{ fontSize: "var(--text-lg)" }}>
-                  Enterprise payments · Complex buying groups
+                  Enterprise payments · Tier 1 banks · Complex buying groups
                 </p>
                 <p className="text-secondary" style={{ fontSize: "var(--text-sm)" }}>
                   BNP Paribas · Bank of America Merrill Lynch · Convera · Banking Circle · RTGS.global

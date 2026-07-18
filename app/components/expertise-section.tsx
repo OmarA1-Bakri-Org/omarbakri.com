@@ -7,37 +7,37 @@ const areas = [
   {
     title: "Agentic AI Systems",
     description:
-      "LangGraph-style orchestration, RAG pipelines, evaluation loops, policy controls, and evidence-led agent workflows.",
+      "Agents are easy to demo. Reliable workflows need state, tools, evaluation, policy and failure handling.",
     icon: "mdi:robot-outline",
   },
   {
     title: "Full-Stack Engineering",
     description:
-      "Python (FastAPI), TypeScript (Next.js, Bun), React, Electron. PostgreSQL, Neo4j, Redis. Complete ownership from database schema to deployment pipeline.",
+      "Python and FastAPI on the service side. TypeScript, Next.js, Bun, React and Electron on the product side. PostgreSQL, Neo4j and Redis underneath.",
     icon: "mdi:code-braces",
   },
   {
     title: "Knowledge Graphs & GraphRAG",
     description:
-      "Graph modelling for regulatory and business relationships, persistent agent context, and retrieval that resolves connections rather than keywords alone.",
+      "Use relationships when keyword search is not enough: regulatory obligations, commercial context and persistent agent memory.",
     icon: "mdi:graph-outline",
   },
   {
     title: "Enterprise Sales Leadership",
     description:
-      "Enterprise commercial experience across banking, payments, and FinTech, with a practical understanding of complex buying groups and delivery constraints.",
+      "Fifteen years inside banking and payments buying cycles. I understand the decision, the objections and the delivery constraints.",
     icon: "mdi:handshake-outline",
   },
   {
     title: "FinTech & Payments",
     description:
-      "Real-time settlement, ISO 20022, correspondent banking, and cross-border payments experience applied to product engineering.",
+      "Cross-border payments, correspondent banking, real-time settlement and ISO 20022. Domain context applied to product decisions.",
     icon: "mdi:earth",
   },
   {
     title: "Product Strategy",
     description:
-      "The ability to identify which problems are worth solving, scope them into buildable products, and execute end-to-end. Technical depth paired with commercial judgement.",
+      "A backlog is not a strategy. I choose the problem, define the smallest credible product and carry it into working software.",
     icon: "mdi:trending-up",
   },
 ];
@@ -76,16 +76,16 @@ export default function ExpertiseSection() {
             className="font-light tracking-[-0.02em] text-primary mb-6"
             style={{ fontSize: "var(--text-3xl)" }}
           >
-            Engineering depth. Commercial instinct.
+            The tools are not the differentiator. The judgement behind them is.
           </h2>
 
           <p
             className="text-secondary max-w-2xl mb-20 leading-relaxed"
             style={{ fontSize: "var(--text-base)" }}
           >
-            A rare combination of hands-on AI engineering and enterprise
-            sales leadership, applied across FinTech, compliance, and
-            autonomous systems.
+            I work across agent systems, full-stack products, knowledge graphs
+            and financial infrastructure. The point is fewer handoffs between
+            the problem, the architecture and the shipped product.
           </p>
         </motion.div>
 

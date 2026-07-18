@@ -1,24 +1,24 @@
 # Omar Al-Bakri
 
-> Applied AI engineer building production AI products for complex, regulated markets.
+> Most AI work separates the commercial problem from the technical system. Omar builds both.
 
 ## Positioning
 
-Omar combines hands-on Python and TypeScript engineering with fifteen years in enterprise payments, allowing him to understand the buyer, shape the product and ship the system.
+Omar Al-Bakri builds agent systems and full-stack AI products for financial services and other complex markets. Fifteen years in enterprise payments tells him where the problem is. Python and TypeScript let him carry it into production.
 
 Bangkok-based · open to remote roles, consulting and contracting globally
 
 ## Selected work
 
-- [CallScore](https://call-score.com): creator-intelligence product connecting public market calls with timestamped price evidence and transparent scoring workflows.
-- ruleIQ: compliance platform using graph and retrieval workflows.
-- Helios: AI-assisted commercial workflow platform.
-- thredOS: typed multi-agent workflow runtime.
+- [CallScore](https://call-score.com): extracts public creator market calls, matches them to timestamped price outcomes and scores evidence-backed performance. Live product.
+- [ruleIQ](https://github.com/OmarA1-Bakri-Org/ruleIQ): compliance automation built around obligations, controls, evidence, retrieval and review. Production-ready repository.
+- Helios: governed sales automation with an Electron operator surface, MCP services, graph memory and CRM integrations. Private build.
+- [thredOS](https://github.com/OmarA1-Bakri-Org/thredOS): local-first operating system for structured multi-agent workflows, policy, approvals and provenance. Pre-launch.
 
 ## Work together
 
-- Remote roles
-- Consulting and contracting
+- Remote roles where product judgement, AI architecture and hands-on delivery need to sit with one person.
+- Consulting and contracting for defined AI products, workflows and production problems.
 
 ## Links
 

@@ -77,8 +77,8 @@ export default function HeroSection() {
               className="text-primary font-light md:ml-auto md:max-w-2xl"
               style={{ fontSize: "var(--text-xl)", lineHeight: "1.35" }}
             >
-              Applied AI engineer building production AI products for complex,
-              regulated markets.
+              Most AI work separates the commercial problem from the technical
+              system. I build both.
             </motion.p>
 
             <motion.p
@@ -86,9 +86,9 @@ export default function HeroSection() {
               className="text-muted leading-relaxed md:ml-auto md:max-w-2xl"
               style={{ fontSize: "var(--text-base)" }}
             >
-              I combine hands-on Python and TypeScript engineering with fifteen
-              years in enterprise payments, so I can understand the buyer, shape
-              the product and ship the system.
+              Applied AI engineer for financial services and other complex
+              markets. Fifteen years in enterprise payments tells me where the
+              problem is. Python and TypeScript let me carry it into production.
             </motion.p>
 
             <motion.div

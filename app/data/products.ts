@@ -12,9 +12,9 @@ export interface Product {
 const products: Product[] = [
   {
     name: "CallScore",
-    tagline: "Creator-call intelligence platform for crypto markets",
+    tagline: "Market calls, measured against what happened next",
     description:
-      "CallScore ingests public creator, video and transcript data, extracts market calls, matches them to outcome windows and ranks creators by evidence-backed prediction quality. It is a live product with public leaderboards, creator profiles, methodology surfaces, API/export paths, Whop gating and operations governed through Hermes/Workplane receipts.",
+      "Crypto commentary is easy to publish and hard to audit. CallScore ingests creators, videos and transcripts, extracts market calls, matches them to price windows and ranks creators by evidence-backed performance. The live product includes leaderboards, creator profiles, methodology, API and export paths, Whop access and governed operations.",
     stack: [
       "Next.js",
       "TypeScript",
@@ -28,10 +28,10 @@ const products: Product[] = [
       "Hermes/Workplane",
     ],
     highlights: [
-      "Ingests creator, video and transcript data, then extracts market claims with confidence filtering and evidence traceability",
-      "Matches calls to symbols, time windows and market outcomes before scoring alpha, win rate, consistency and correction behaviour",
-      "Exposes product surfaces including public leaderboards, creator profiles, methodology pages, API keys, exports and webhooks",
-      "Uses pipeline audits, freshness checks, handover records and fail-closed restricted-action gates to keep operations controlled",
+      "Creator, video and transcript ingestion -> call extraction -> symbol and time-window matching -> deterministic scoring",
+      "Scores alpha, win rate, consistency and self-correction from timestamped market outcomes",
+      "Public leaderboards, creator profiles, methodology, API keys, exports and webhooks",
+      "Pipeline audits, freshness checks and fail-closed gates govern restricted actions",
     ],
     status: "Live product",
     url: "https://call-score.com",
@@ -39,9 +39,9 @@ const products: Product[] = [
   },
   {
     name: "ruleIQ",
-    tagline: "Compliance automation platform for regulated financial-services workflows",
+    tagline: "Compliance automation built around evidence, controls and review",
     description:
-      "ruleIQ maps assessments, obligations, policies, controls and evidence into an AI-assisted compliance workspace. The repository shows a production-oriented FastAPI and Next.js platform with RAG/agent workflows, PostgreSQL, Redis, vector-search dependencies, environment hardening and a large automated-test surface.",
+      "Most compliance AI starts with a chat box. ruleIQ starts with the obligation, control and evidence trail. The repository combines FastAPI, Next.js, retrieval and agent workflows, PostgreSQL, Redis, vector search, credential hardening and an extensive automated-test surface.",
     stack: [
       "Python",
       "FastAPI",
@@ -56,19 +56,19 @@ const products: Product[] = [
       "Sentry",
     ],
     highlights: [
-      "Supports compliance assessments, policy workflows and evidence-led review rather than generic chatbot-style compliance advice",
-      "Uses RAG and agent patterns around regulated workflows, with explicit environment setup and credential-safety requirements",
-      "Includes backend/frontend workflow structure, service-completion records and test-policy discipline visible in the repository",
-      "Positions AI as an assistive compliance layer with human review, auditability and controlled generation as core design constraints",
+      "Maps assessments, obligations, policies, controls and evidence into one workspace",
+      "Uses retrieval and agent workflows to assist research and drafting without removing review",
+      "Environment and credential controls fail closed rather than start with unsafe defaults",
+      "Backend and frontend tests make the production state inspectable",
     ],
     status: "Production-ready repository",
     repoUrl: "https://github.com/OmarA1-Bakri-Org/ruleIQ",
   },
   {
     name: "Helios",
-    tagline: "Controlled B2B prospecting and outreach automation platform",
+    tagline: "Sales automation with memory, controls and an operator",
     description:
-      "Helios combines an Electron desktop application, Node/Express API server, MCP server, Python Antigravity orchestrator, Graphiti/Neo4j memory layer and CRM/outreach integrations to discover, enrich and engage B2B leads. It is best described as a governed autonomous-sales system, not a generic commercial workflow tool.",
+      "Most sales automation scales activity. Helios coordinates prospecting decisions. It combines an Electron desktop app, Node and Express services, an MCP server, a Python FastAPI orchestrator, Graphiti and Neo4j memory, and CRM and outreach integrations.",
     stack: [
       "Electron",
       "React",
@@ -88,18 +88,18 @@ const products: Product[] = [
       "Explorium",
     ],
     highlights: [
-      "Electron desktop application with authenticated access, lazy-loaded views and local operator control",
-      "Node/Express API layer with route modules, Sequelize ORM, MCP server support and observability hooks",
-      "Python orchestration layer using FastAPI, Graphiti and Neo4j for graph-memory and prospecting context",
-      "Integrates enrichment, CRM and outreach surfaces while keeping autonomous execution framed around controls and observability",
+      "Discover -> enrich -> qualify -> engage through one governed workflow",
+      "Electron operator surface with authenticated access and local control",
+      "Graph memory carries prospect and campaign context across agent actions",
+      "HubSpot, Postmark and Explorium integrations sit behind observability and execution controls",
     ],
     status: "Private build",
   },
   {
     name: "thredOS",
-    tagline: "Local-first operating system for governed multi-agent work",
+    tagline: "Agent work should be inspectable, not trapped in terminal history",
     description:
-      "thredOS turns ad hoc prompt chains, shell history and one-off agent sessions into explicit workflows. It defines steps, dependencies, gates and approvals, exposes a shared UI and CLI control plane, tracks runs and provenance, and keeps workflow state, policy and audit history inside the local workspace.",
+      "Most multi-agent work disappears into prompts, shell history and one-off sessions. thredOS turns it into explicit sequences with dependencies, gates, approvals, runs and provenance. The same local-first operating model is available through a UI and CLI.",
     stack: [
       "TypeScript",
       "Bun",
@@ -112,10 +112,10 @@ const products: Product[] = [
       "Workflow surfaces",
     ],
     highlights: [
-      "Models agent work as structured sequences with dependencies, gates, approvals and thread types",
-      "Provides a shared UI and CLI control plane for inspecting runs, surfaces, merges and provenance",
-      "Keeps prompts, skills, threads, artifacts, audit history and policy state local under the workspace",
-      "Limits the cloud surface to activation, billing and canonical agent registration rather than hosted workflow execution",
+      "Prompts, skills, threads, surfaces, runs and artefacts stay in the local workspace",
+      "Dependencies and gates are defined before execution",
+      "UI and CLI operate on the same workflow model",
+      "Policy, approvals and audit history live inside .threados/",
     ],
     status: "Pre-launch · active build",
     repoUrl: "https://github.com/OmarA1-Bakri-Org/thredOS",

@@ -8,11 +8,11 @@ const routes = [
     eyebrow: "Join the team",
     title: "Remote roles",
     summary:
-      "For senior or lead positions where one person needs to connect product judgement, AI architecture, hands-on engineering and stakeholder delivery.",
+      "Senior or lead roles where product judgement, AI architecture and hands-on delivery need to sit with one person.",
     ownership: [
-      "Own an applied AI product or workstream from discovery through production",
-      "Build agent, retrieval and evaluation systems with measurable reliability",
-      "Translate commercial, operational and regulatory constraints into technical decisions",
+      "Own an applied AI product from the first problem statement to production",
+      "Build agent, retrieval and evaluation systems that can be tested and operated",
+      "Turn commercial, operational and regulatory constraints into technical decisions",
     ],
     cta: "Discuss a role",
     href: "mailto:oab@omarbakri.com?subject=Discuss%20a%20remote%20AI%20role",
@@ -21,11 +21,11 @@ const routes = [
     eyebrow: "Deliver an outcome",
     title: "Consulting and contracting",
     summary:
-      "For teams that need working software and clear technical ownership rather than another strategy deck.",
+      "Defined problems with a real delivery surface. Not open-ended transformation theatre.",
     ownership: [
-      "Design and implement an AI product, agent workflow or production integration",
-      "Diagnose and harden retrieval, evaluation, observability and failure handling",
-      "Provide hands-on technical leadership across a defined product or transformation problem",
+      "Design and build an AI product, agent workflow or production integration",
+      "Find and fix weak retrieval, evaluation, observability and failure handling",
+      "Take hands-on technical ownership of a defined product or transformation problem",
     ],
     cta: "Discuss an engagement",
     href: "mailto:oab@omarbakri.com?subject=Discuss%20an%20AI%20consulting%20or%20contracting%20engagement",
@@ -68,13 +68,14 @@ export default function WorkTogetherSection() {
               className="lg:col-span-8 font-light tracking-[-0.02em] text-primary"
               style={{ fontSize: "var(--text-3xl)" }}
             >
-              Bring me the role, the product problem, or the AI system that has
-              to work in production.
+              Most teams do not need another AI strategy deck. They need someone
+              to own the system.
             </h2>
             <div className="lg:col-span-4 space-y-4 text-secondary leading-relaxed">
               <p>
-                I am most useful where architecture, product judgement, code,
-                evaluation and stakeholder delivery cannot be separated cleanly.
+                I work where product judgement, architecture, code, evaluation
+                and stakeholder delivery meet. That is usually where the handoffs
+                break.
               </p>
               <p className="text-primary">
                 Bangkok-based · open to remote roles, consulting and contracting globally
@@ -157,12 +158,12 @@ export default function WorkTogetherSection() {
               className="text-primary font-normal mb-3"
               style={{ fontSize: "var(--text-lg)" }}
             >
-              A useful first message
+              Start with the problem
             </h3>
             <p className="text-secondary leading-relaxed">
-              Send the role or problem, what exists today, the main constraints
-              and what success would look like. I will respond with a direct fit
-              assessment and the most practical next step.
+              Send the role or problem, what exists today, the main constraint
+              and the outcome that matters. I will tell you whether I fit and what
+              I would do next.
             </p>
           </div>
           <div className="lg:col-span-4 lg:text-right">
@@ -170,7 +171,7 @@ export default function WorkTogetherSection() {
               href="#contact"
               className="inline-flex px-6 py-3 border border-accent text-accent hover:bg-accent hover:text-base transition-colors"
             >
-              Start the conversation
+              Send the problem
             </a>
           </div>
         </motion.div>

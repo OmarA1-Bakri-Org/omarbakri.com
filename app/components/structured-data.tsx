@@ -16,7 +16,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     url: "https://www.omarbakri.com",
     jobTitle: "Applied AI Engineer",
     description:
-      "Applied AI engineer combining hands-on Python and TypeScript delivery with fifteen years in enterprise payments. Bangkok-based and globally open.",
+      "Applied AI engineer building agent systems and full-stack products for financial services. Fifteen years in enterprise payments. Hands-on Python and TypeScript delivery.",
     homeLocation: {
       "@type": "Place",
       name: "Bangkok, Thailand",
@@ -54,7 +54,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     name: "Omar Al-Bakri",
     url: "https://www.omarbakri.com",
     description:
-      "Applied AI engineer combining hands-on Python and TypeScript delivery with fifteen years in enterprise payments. Bangkok-based and globally open.",
+      "Applied AI engineer building agent systems and full-stack products for financial services. Fifteen years in enterprise payments. Hands-on Python and TypeScript delivery.",
   };
 
   const profilePageSchema = {
@@ -80,7 +80,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
           operatingSystem: "Web",
           url: "https://call-score.com",
           description:
-            "Creator-intelligence product connecting public market calls with timestamped price evidence and transparent scoring workflows.",
+            "Creator-intelligence product that extracts public market calls, matches them to timestamped price outcomes and scores creator performance.",
         },
       },
       {
@@ -91,7 +91,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
           name: "ruleIQ",
           applicationCategory: "BusinessApplication",
           description:
-            "Compliance platform connecting frameworks, obligations, controls and evidence through graph and retrieval workflows.",
+            "Compliance platform built around obligations, controls, evidence, retrieval and explicit review.",
         },
       },
       {
@@ -102,7 +102,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
           name: "Helios",
           applicationCategory: "BusinessApplication",
           description:
-            "AI-assisted commercial workflow platform with explicit controls around automated actions.",
+            "Governed sales-automation system combining prospecting workflows, graph memory and operator controls.",
         },
       },
       {
@@ -113,7 +113,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
           name: "thredOS",
           applicationCategory: "DeveloperApplication",
           description:
-            "Typed multi-agent workflow runtime with policy-controlled execution and provenance tracking.",
+            "Local-first operating system for structured multi-agent workflows, policy, approvals and provenance.",
         },
       },
     ],

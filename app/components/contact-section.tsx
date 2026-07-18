@@ -89,16 +89,15 @@ export default function ContactSection() {
                 className="font-light tracking-[-0.02em] text-primary mb-6"
                 style={{ fontSize: "var(--text-3xl)" }}
               >
-                Let&apos;s talk
+                Start with the problem
               </h2>
 
               <p
                 className="text-secondary leading-[1.7] mb-10"
                 style={{ fontSize: "var(--text-base)" }}
               >
-                Hiring for applied AI or forward-deployed engineering? Need a
-                focused AI delivery sprint or fractional technical lead? Send
-                the role, problem, or desired outcome.
+                Send the role, the system or the outcome. Tell me what exists
+                today and what is blocking it. I will tell you whether I fit.
               </p>
 
               <div className="space-y-6">
@@ -214,7 +213,7 @@ export default function ContactSection() {
                     rows={5}
                     className={`${inputClasses} resize-none`}
                     style={{ fontSize: "var(--text-sm)" }}
-                    placeholder="What would you like to discuss?"
+                    placeholder="What exists today, and what needs to change?"
                   />
                 </div>
 
@@ -224,17 +223,17 @@ export default function ContactSection() {
                   className="px-8 py-3 bg-accent text-base font-medium hover:bg-accent-hover transition-colors duration-200 disabled:opacity-50"
                   style={{ fontSize: "var(--text-sm)" }}
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? "Sending..." : "Send the brief"}
                 </button>
 
                 {submitStatus === "success" && (
                   <p role="status" aria-live="polite" className="text-success" style={{ fontSize: "var(--text-sm)" }}>
-                    Message sent successfully.
+                    Message sent.
                   </p>
                 )}
                 {submitStatus === "error" && (
                   <p role="alert" className="text-error" style={{ fontSize: "var(--text-sm)" }}>
-                    Failed to send. Please try again.
+                    Message not sent. Try again or email me directly.
                   </p>
                 )}
               </form>
