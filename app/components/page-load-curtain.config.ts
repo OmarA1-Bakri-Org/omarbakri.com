@@ -37,6 +37,11 @@ export function computeHeroSize(): number {
   return Math.max(180, Math.min(byHeight, byWidth, MAX_HERO_SIZE));
 }
 
+export function isFullMotionOverride(): boolean {
+  if (typeof window === "undefined") return false;
+  return new URLSearchParams(window.location.search).get("motion") === "full";
+}
+
 export function isDebugBypass(): boolean {
   if (process.env.NODE_ENV === "production") return false;
   if (typeof window === "undefined") return false;
@@ -45,8 +50,9 @@ export function isDebugBypass(): boolean {
 
 export function shouldSkipCurtain(
   reduceMotion: boolean,
-  debugBypass: boolean
+  debugBypass: boolean,
+  fullMotionOverride = false
 ): boolean {
-  if (debugBypass) return false;
+  if (debugBypass || fullMotionOverride) return false;
   return reduceMotion;
 }

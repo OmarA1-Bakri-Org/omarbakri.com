@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react";
 
 export default function AboutSection() {
   return (
-    <section id="story" className="py-32 lg:py-40">
+    <section id="introduction" className="py-32 lg:py-40">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -18,7 +18,7 @@ export default function AboutSection() {
             className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
             style={{ fontSize: "var(--text-xs)" }}
           >
-            <span className="text-muted">02 /</span> Reinvention story
+            <span className="text-muted">01 /</span> Introduction
           </p>
 
           <div className="grid lg:grid-cols-12 gap-16">

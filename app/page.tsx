@@ -26,8 +26,8 @@ export default function HomePage() {
 
         <main id="main-content">
           <HeroSection />
-          <ProductsSection />
           <AboutSection />
+          <ProductsSection />
           <ExperienceSection />
           <ExpertiseSection />
           <WorkTogetherSection />

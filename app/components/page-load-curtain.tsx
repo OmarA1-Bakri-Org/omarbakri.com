@@ -18,11 +18,18 @@ import {
   REVEAL_MS,
   computeHeroSize,
   isDebugBypass,
+  isFullMotionOverride,
   shouldSkipCurtain,
 } from "./page-load-curtain.config";
 
 const useIsoLayoutEffect =
   typeof window === "undefined" ? useEffect : useLayoutEffect;
+
+const IntroCompleteContext = React.createContext(false);
+
+export function useIntroComplete(): boolean {
+  return React.useContext(IntroCompleteContext);
+}
 
 export default function PageLoadCurtain({
   children,
@@ -63,7 +70,13 @@ export default function PageLoadCurtain({
 
   useEffect(() => {
     if (!mounted) return;
-    if (shouldSkipCurtain(Boolean(reduceMotion), isDebugBypass())) {
+    if (
+      shouldSkipCurtain(
+        Boolean(reduceMotion),
+        isDebugBypass(),
+        isFullMotionOverride()
+      )
+    ) {
       setPhase("done");
       return;
     }
@@ -77,12 +90,16 @@ export default function PageLoadCurtain({
       REVEAL_MS
     );
     const fadeTimer = window.setTimeout(
-      () => setPhase((current) =>
-        current === "revealing" || current === "holding" ? "fading" : current
-      ),
+      () =>
+        setPhase((current) =>
+          current === "revealing" || current === "holding" ? "fading" : current
+        ),
       REVEAL_MS + HOLD_MS
     );
-    const doneTimer = window.setTimeout(finish, REVEAL_MS + HOLD_MS + FADE_MS);
+    const doneTimer = window.setTimeout(
+      finish,
+      REVEAL_MS + HOLD_MS + FADE_MS
+    );
     const failSafeTimer = window.setTimeout(finish, FAIL_SAFE_MS);
 
     timersRef.current = [holdTimer, fadeTimer, doneTimer, failSafeTimer];
@@ -102,8 +119,10 @@ export default function PageLoadCurtain({
     return () => window.removeEventListener("keydown", handleKey);
   }, [phase, skipToFade]);
 
+  const introComplete = phase === "fading" || phase === "done";
+
   return (
-    <>
+    <IntroCompleteContext.Provider value={introComplete}>
       {children}
       <AnimatePresence>
         {phase !== "done" ? (
@@ -115,6 +134,6 @@ export default function PageLoadCurtain({
           />
         ) : null}
       </AnimatePresence>
-    </>
+    </IntroCompleteContext.Provider>
   );
 }

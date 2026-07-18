@@ -156,15 +156,24 @@ function disposeThree(ctx: ThreeContext) {
 
 /* ----------------------------- prefers-reduced-motion ----------------------------- */
 
+function hasFullMotionOverride() {
+  if (typeof window === "undefined") return false;
+  return new URLSearchParams(window.location.search).get("motion") === "full";
+}
+
 function usePrefersReducedMotion() {
   const [reduce, setReduce] = useState(() =>
-    typeof window !== "undefined"
+    typeof window !== "undefined" && !hasFullMotionOverride()
       ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
       : false
   );
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    if (hasFullMotionOverride()) {
+      setReduce(false);
+      return;
+    }
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     const onChange = (e: MediaQueryListEvent | MediaQueryList) =>
       setReduce("matches" in e ? e.matches : (e as any).matches);

@@ -1,24 +1,59 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import dynamic from "next/dynamic";
+import { useIntroComplete } from "./page-load-curtain";
 
 const TunnelBackground = dynamic(
   () => import("@/components/ui/tunnel-background"),
   { ssr: false }
 );
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
+const heroGroup: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      delayChildren: 0.06,
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const rise: Variants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.72, ease },
+  },
+};
+
+const fade: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.62, ease },
+  },
+};
+
 export default function HeroSection() {
+  const introComplete = useIntroComplete();
+
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
       <TunnelBackground />
 
-      <div className="relative z-10 max-w-container mx-auto min-h-screen px-4 sm:px-6 lg:px-8 py-24 grid grid-rows-[1fr_auto] text-center md:text-left">
+      <motion.div
+        variants={heroGroup}
+        initial="hidden"
+        animate={introComplete ? "visible" : "hidden"}
+        className="relative z-10 max-w-container mx-auto min-h-screen px-4 sm:px-6 lg:px-8 py-24 grid grid-rows-[1fr_auto] text-center md:text-left"
+      >
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
+          variants={rise}
           className="font-display font-extralight tracking-[-0.03em] self-start"
           style={{ fontSize: "var(--text-hero)", lineHeight: "0.95" }}
         >
@@ -28,9 +63,7 @@ export default function HeroSection() {
 
         <div className="grid md:grid-cols-3 gap-8 md:gap-12 items-end pb-10 md:pb-0">
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.7 }}
+            variants={fade}
             className="text-muted tracking-[0.04em]"
             style={{ fontSize: "var(--text-sm)" }}
           >
@@ -40,9 +73,7 @@ export default function HeroSection() {
 
           <div className="md:col-start-2 md:col-span-2 md:text-right space-y-5">
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.45 }}
+              variants={rise}
               className="text-primary font-light md:ml-auto md:max-w-2xl"
               style={{ fontSize: "var(--text-xl)", lineHeight: "1.35" }}
             >
@@ -51,9 +82,7 @@ export default function HeroSection() {
             </motion.p>
 
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+              variants={rise}
               className="text-muted leading-relaxed md:ml-auto md:max-w-2xl"
               style={{ fontSize: "var(--text-base)" }}
             >
@@ -63,9 +92,7 @@ export default function HeroSection() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.75 }}
+              variants={rise}
               className="flex flex-col sm:flex-row gap-3 md:justify-end pt-2"
             >
               <a
@@ -83,7 +110,7 @@ export default function HeroSection() {
             </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
