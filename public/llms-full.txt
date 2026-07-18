@@ -1,6 +1,6 @@
 # Omar Al-Bakri — Applied AI Engineer
 
-Most AI work separates the commercial problem from the technical system. Omar builds both.
+AI products fail at the handoff between commercial need and technical execution. Omar removes the handoff.
 
 Omar Al-Bakri builds agent systems and full-stack AI products for financial services and other complex markets. Fifteen years in enterprise payments tells him where the problem is. Python and TypeScript let him carry it into production.
 
@@ -22,15 +22,15 @@ Crypto commentary is easy to publish and hard to audit. CallScore extracts publi
 
 ### ruleIQ — Production-ready repository
 
-Most compliance AI starts with a chat box. ruleIQ starts with the obligation, control and evidence trail.
+Compliance does not fail because teams lack another chatbot. It fails when obligations, controls and evidence do not connect.
 
 ### Helios — Private build
 
-Most sales automation scales activity. Helios coordinates prospecting decisions through an operator surface, MCP services, graph memory and CRM integrations.
+Sales automation counts activity. Helios coordinates decisions through an operator surface, MCP services, graph memory and CRM integrations.
 
 ### thredOS — Pre-launch
 
-Most multi-agent work disappears into prompts and terminal history. thredOS turns it into explicit workflows with dependencies, gates, approvals, runs and provenance.
+Agent work disappears into prompts and terminal history. thredOS makes it explicit through dependencies, gates, approvals, runs and provenance.
 
 ## Contact
 

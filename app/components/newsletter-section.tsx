@@ -73,9 +73,8 @@ export default function NewsletterSection() {
                 className="text-secondary leading-[1.7] mb-8 max-w-lg"
                 style={{ fontSize: "var(--text-base)" }}
               >
-                Most writing about AI and financial infrastructure follows the
-                announcement. Intelligent Rails looks at the balance sheet, the
-                operating model and the incentive underneath it.
+                Announcements explain what launched. Intelligent Rails follows the
+                balance sheet, the operating model and the incentive underneath it.
               </p>
 
               {/* Subscribe form */}

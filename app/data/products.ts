@@ -41,7 +41,7 @@ const products: Product[] = [
     name: "ruleIQ",
     tagline: "Compliance automation built around evidence, controls and review",
     description:
-      "Most compliance AI starts with a chat box. ruleIQ starts with the obligation, control and evidence trail. The repository combines FastAPI, Next.js, retrieval and agent workflows, PostgreSQL, Redis, vector search, credential hardening and an extensive automated-test surface.",
+      "Compliance does not fail because teams lack another chatbot. It fails when obligations, controls and evidence do not connect. ruleIQ combines FastAPI, Next.js, retrieval and agent workflows, PostgreSQL, Redis, vector search, credential hardening and an extensive automated-test surface.",
     stack: [
       "Python",
       "FastAPI",
@@ -68,7 +68,7 @@ const products: Product[] = [
     name: "Helios",
     tagline: "Sales automation with memory, controls and an operator",
     description:
-      "Most sales automation scales activity. Helios coordinates prospecting decisions. It combines an Electron desktop app, Node and Express services, an MCP server, a Python FastAPI orchestrator, Graphiti and Neo4j memory, and CRM and outreach integrations.",
+      "Sales automation counts activity. Helios coordinates decisions. It combines an Electron desktop app, Node and Express services, an MCP server, a Python FastAPI orchestrator, Graphiti and Neo4j memory, and CRM and outreach integrations.",
     stack: [
       "Electron",
       "React",
@@ -99,7 +99,7 @@ const products: Product[] = [
     name: "thredOS",
     tagline: "Agent work should be inspectable, not trapped in terminal history",
     description:
-      "Most multi-agent work disappears into prompts, shell history and one-off sessions. thredOS turns it into explicit sequences with dependencies, gates, approvals, runs and provenance. The same local-first operating model is available through a UI and CLI.",
+      "Agent work disappears into prompts, shell history and one-off sessions. thredOS makes it explicit through sequences, dependencies, gates, approvals, runs and provenance. The same local-first operating model is available through a UI and CLI.",
     stack: [
       "TypeScript",
       "Bun",

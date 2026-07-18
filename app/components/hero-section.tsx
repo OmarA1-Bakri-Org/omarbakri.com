@@ -77,8 +77,8 @@ export default function HeroSection() {
               className="text-primary font-light md:ml-auto md:max-w-2xl"
               style={{ fontSize: "var(--text-xl)", lineHeight: "1.35" }}
             >
-              Most AI work separates the commercial problem from the technical
-              system. I build both.
+              AI products fail at the handoff between commercial need and technical
+              execution. I remove the handoff.
             </motion.p>
 
             <motion.p

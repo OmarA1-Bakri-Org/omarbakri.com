@@ -68,8 +68,8 @@ export default function WorkTogetherSection() {
               className="lg:col-span-8 font-light tracking-[-0.02em] text-primary"
               style={{ fontSize: "var(--text-3xl)" }}
             >
-              Most teams do not need another AI strategy deck. They need someone
-              to own the system.
+              An AI strategy deck is not a delivery model. Someone still has to
+              own the system.
             </h2>
             <div className="lg:col-span-4 space-y-4 text-secondary leading-relaxed">
               <p>

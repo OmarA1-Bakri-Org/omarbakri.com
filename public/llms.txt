@@ -1,6 +1,6 @@
 # Omar Al-Bakri
 
-> Most AI work separates the commercial problem from the technical system. Omar builds both.
+> AI products fail at the handoff between commercial need and technical execution. Omar removes the handoff.
 
 ## Positioning
 
