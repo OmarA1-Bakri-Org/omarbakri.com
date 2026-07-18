@@ -37,7 +37,7 @@ export default function ExperienceSection() {
             className="font-light tracking-[-0.02em] text-primary mb-20"
             style={{ fontSize: "var(--text-3xl)" }}
           >
-            Professional journey
+            Fifteen years across banking and payments.
           </h2>
         </motion.div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import * as THREE from "three";
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useRef, useEffect, useState, useCallback, type CSSProperties } from "react";
 
 /* ----------------------------- utilities ----------------------------- */
 
@@ -156,15 +156,24 @@ function disposeThree(ctx: ThreeContext) {
 
 /* ----------------------------- prefers-reduced-motion ----------------------------- */
 
+function hasFullMotionOverride() {
+  if (typeof window === "undefined") return false;
+  return new URLSearchParams(window.location.search).get("motion") === "full";
+}
+
 function usePrefersReducedMotion() {
   const [reduce, setReduce] = useState(() =>
-    typeof window !== "undefined"
+    typeof window !== "undefined" && !hasFullMotionOverride()
       ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
       : false
   );
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    if (hasFullMotionOverride()) {
+      setReduce(false);
+      return;
+    }
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     const onChange = (e: MediaQueryListEvent | MediaQueryList) =>
       setReduce("matches" in e ? e.matches : (e as any).matches);
@@ -183,31 +192,29 @@ function usePrefersReducedMotion() {
 
 /* ----------------------------- TunnelBackground (hero canvas) ----------------------------- */
 
+const TUNNEL_FALLBACK_STYLE: CSSProperties = {
+  backgroundColor: "#0A0A0A",
+  backgroundImage: [
+    "radial-gradient(ellipse at 50% 52%, rgba(196, 162, 101, 0.16), transparent 13%)",
+    "repeating-radial-gradient(ellipse at 50% 52%, transparent 0 8%, rgba(196, 162, 101, 0.18) 8.15% 8.35%, transparent 8.5% 13%)",
+    "linear-gradient(180deg, rgba(10, 10, 10, 0.1), #0A0A0A 86%)",
+  ].join(","),
+};
+
 export default function TunnelBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const ctxRef = useRef<ThreeContext | null>(null);
-  const lastTimeRef = useRef<number>(0);
+  const lastTimeRef = useRef(0);
   const animRef = useRef<number | null>(null);
-  const pausedRef = useRef<boolean>(false);
-  const rafResizeRef = useRef<boolean>(false);
-  const isInViewRef = useRef<boolean>(false);
+  const pausedRef = useRef(false);
+  const failedRef = useRef(false);
+  const renderedRef = useRef(false);
+  const rafResizeRef = useRef(false);
+  const isInViewRef = useRef(false);
+  const [ready, setReady] = useState(false);
+  const [failed, setFailed] = useState(false);
   const isMobile = useIsMobile();
   const reducedMotion = usePrefersReducedMotion();
-
-  const startLoop = useCallback(() => {
-    if (animRef.current !== null) return;
-    const tick = (time: number) => {
-      if (!ctxRef.current) return;
-      time *= 0.001;
-      const delta = time - (lastTimeRef.current || time);
-      lastTimeRef.current = time;
-      ctxRef.current.material.uniforms.iTime.value += delta * 0.5;
-      ctxRef.current.renderer.render(ctxRef.current.scene, ctxRef.current.camera);
-      animRef.current = requestAnimationFrame(tick);
-    };
-    lastTimeRef.current = 0;
-    animRef.current = requestAnimationFrame(tick);
-  }, []);
 
   const stopLoop = useCallback(() => {
     if (animRef.current !== null) {
@@ -216,26 +223,98 @@ export default function TunnelBackground() {
     }
   }, []);
 
+  const markFailed = useCallback(() => {
+    failedRef.current = true;
+    setFailed(true);
+    setReady(false);
+    stopLoop();
+  }, [stopLoop]);
+
+  const renderCurrentFrame = useCallback((): boolean => {
+    const ctx = ctxRef.current;
+    if (!ctx || failedRef.current) return false;
+    try {
+      ctx.renderer.render(ctx.scene, ctx.camera);
+      if (!renderedRef.current) {
+        renderedRef.current = true;
+        setReady(true);
+      }
+      return true;
+    } catch {
+      markFailed();
+      return false;
+    }
+  }, [markFailed]);
+
+  const startLoop = useCallback(() => {
+    if (animRef.current !== null || failedRef.current || reducedMotion) return;
+    const tick = (time: number) => {
+      const ctx = ctxRef.current;
+      if (!ctx || failedRef.current) {
+        animRef.current = null;
+        return;
+      }
+
+      const seconds = time * 0.001;
+      const delta = seconds - (lastTimeRef.current || seconds);
+      lastTimeRef.current = seconds;
+      ctx.material.uniforms.iTime.value += delta * 0.5;
+
+      if (!renderCurrentFrame()) {
+        animRef.current = null;
+        return;
+      }
+      animRef.current = requestAnimationFrame(tick);
+    };
+
+    lastTimeRef.current = 0;
+    animRef.current = requestAnimationFrame(tick);
+  }, [reducedMotion, renderCurrentFrame]);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas || typeof window === "undefined") return;
-    const layers = isMobile ? MOBILE_LAYERS : DESKTOP_LAYERS;
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    const ctx = createThreeForCanvas(canvas, width, height, layers);
-    ctxRef.current = ctx;
 
-    // Reduced motion: render a single static frame (iTime=0) and don't start the loop.
-    if (reducedMotion) {
-      ctx.material.uniforms.iTime.value = 0;
-      ctx.renderer.render(ctx.scene, ctx.camera);
+    failedRef.current = false;
+    renderedRef.current = false;
+    setFailed(false);
+    setReady(false);
+
+    const layers = isMobile ? MOBILE_LAYERS : DESKTOP_LAYERS;
+    let ctx: ThreeContext;
+    try {
+      ctx = createThreeForCanvas(
+        canvas,
+        window.innerWidth,
+        window.innerHeight,
+        layers
+      );
+      ctxRef.current = ctx;
+    } catch {
+      markFailed();
+      return;
     }
 
-    /* Fully stop/start the render loop based on viewport visibility */
+    const handleContextLost = (event: Event) => {
+      event.preventDefault();
+      markFailed();
+    };
+    canvas.addEventListener("webglcontextlost", handleContextLost);
+
+    if (reducedMotion) {
+      ctx.material.uniforms.iTime.value = 0;
+      renderCurrentFrame();
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         isInViewRef.current = entry.isIntersecting;
-        if (entry.isIntersecting && !pausedRef.current && !reducedMotion) {
+        if (
+          entry.isIntersecting &&
+          !pausedRef.current &&
+          !reducedMotion &&
+          !failedRef.current
+        ) {
           startLoop();
         } else {
           stopLoop();
@@ -246,28 +325,40 @@ export default function TunnelBackground() {
     observer.observe(canvas);
 
     const handleResize = () => {
-      if (!ctxRef.current) return;
-      if (rafResizeRef.current) return;
+      if (!ctxRef.current || failedRef.current || rafResizeRef.current) return;
       rafResizeRef.current = true;
       requestAnimationFrame(() => {
         rafResizeRef.current = false;
-        const w = window.innerWidth;
-        const h = window.innerHeight;
-        const resizeDpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2);
-        ctxRef.current!.renderer.setPixelRatio(resizeDpr);
-        ctxRef.current!.renderer.setSize(w, h);
-        (
-          ctxRef.current!.material.uniforms.iResolution.value as THREE.Vector3
-        ).set(w * resizeDpr, h * resizeDpr, 1);
+        const current = ctxRef.current;
+        if (!current || failedRef.current) return;
+        try {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2);
+          current.renderer.setPixelRatio(dpr);
+          current.renderer.setSize(width, height);
+          (current.material.uniforms.iResolution.value as THREE.Vector3).set(
+            width * dpr,
+            height * dpr,
+            1
+          );
+          renderCurrentFrame();
+        } catch {
+          markFailed();
+        }
       });
     };
     window.addEventListener("resize", handleResize);
 
     const handleVisibility = () => {
-      pausedRef.current = !!document.hidden;
+      pausedRef.current = document.hidden;
       if (document.hidden) {
         stopLoop();
-      } else if (isInViewRef.current && !reducedMotion) {
+      } else if (
+        isInViewRef.current &&
+        !reducedMotion &&
+        !failedRef.current
+      ) {
         startLoop();
       }
     };
@@ -277,6 +368,7 @@ export default function TunnelBackground() {
     return () => {
       observer.disconnect();
       stopLoop();
+      canvas.removeEventListener("webglcontextlost", handleContextLost);
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("visibilitychange", handleVisibility);
       if (ctxRef.current) {
@@ -284,14 +376,25 @@ export default function TunnelBackground() {
         ctxRef.current = null;
       }
     };
-  }, [startLoop, stopLoop, isMobile, reducedMotion]);
+  }, [
+    isMobile,
+    markFailed,
+    reducedMotion,
+    renderCurrentFrame,
+    startLoop,
+    stopLoop,
+  ]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="absolute inset-0 w-full h-full"
-      aria-hidden="true"
-    />
+    <div className="absolute inset-0" aria-hidden="true">
+      <div className="absolute inset-0" style={TUNNEL_FALLBACK_STYLE} />
+      <canvas
+        ref={canvasRef}
+        className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${
+          ready && !failed ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    </div>
   );
 }
 

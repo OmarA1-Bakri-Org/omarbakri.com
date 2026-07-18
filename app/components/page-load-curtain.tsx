@@ -1,4 +1,5 @@
 "use client";
+
 import React, {
   useCallback,
   useEffect,
@@ -11,64 +12,71 @@ import { CurtainOverlay } from "./curtain-overlay";
 import {
   CHECKING_HERO_SIZE,
   FADE_MS,
+  FAIL_SAFE_MS,
   HOLD_MS,
   Phase,
-  PLAYED_MARKER,
   REVEAL_MS,
   computeHeroSize,
   isDebugBypass,
+  isFullMotionOverride,
   shouldSkipCurtain,
 } from "./page-load-curtain.config";
 
 const useIsoLayoutEffect =
   typeof window === "undefined" ? useEffect : useLayoutEffect;
 
-/**
- * First-visit-only entry sequence. The OAB ligature reveals quietly at
- * centre — fading in with a slight scale-up — holds for a beat, then
- * fades out together with the dark backdrop. No drawing, no morph.
- *
- * Skip on Esc or click. sessionStorage gate suppresses on subsequent
- * visits in the same session. Skipped entirely under prefers-reduced-motion.
- */
+const IntroCompleteContext = React.createContext(false);
+
+export function useIntroComplete(): boolean {
+  return React.useContext(IntroCompleteContext);
+}
+
 export default function PageLoadCurtain({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const reduce = useReducedMotion();
+  const reduceMotion = useReducedMotion();
   const [phase, setPhase] = useState<Phase>("checking");
-  const [heroSize, setHeroSize] = useState<number>(CHECKING_HERO_SIZE);
+  const [heroSize, setHeroSize] = useState(CHECKING_HERO_SIZE);
   const [mounted, setMounted] = useState(false);
-  const [sizeReady, setSizeReady] = useState(false);
   const startedRef = useRef(false);
   const timersRef = useRef<number[]>([]);
 
-  const skipToFade = useCallback(() => {
+  const clearTimers = useCallback(() => {
     timersRef.current.forEach((timer) => window.clearTimeout(timer));
-    setPhase((prev) =>
-      prev === "revealing" || prev === "holding" ? "fading" : prev
-    );
-    const doneTimer = window.setTimeout(() => {
-      window.sessionStorage.setItem(PLAYED_MARKER, "1");
-      setPhase("done");
-    }, FADE_MS);
-    timersRef.current = [doneTimer];
+    timersRef.current = [];
   }, []);
+
+  const finish = useCallback(() => {
+    clearTimers();
+    setPhase("done");
+  }, [clearTimers]);
+
+  const skipToFade = useCallback(() => {
+    clearTimers();
+    setPhase((current) => (current === "done" ? current : "fading"));
+    timersRef.current = [window.setTimeout(finish, FADE_MS)];
+  }, [clearTimers, finish]);
 
   useIsoLayoutEffect(() => {
     if (typeof window === "undefined") return;
     setHeroSize(computeHeroSize());
     setMounted(true);
-    setSizeReady(true);
-    const onResize = () => setHeroSize(computeHeroSize());
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    const handleResize = () => setHeroSize(computeHeroSize());
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
-    if (!sizeReady) return;
-    if (shouldSkipCurtain(Boolean(reduce), isDebugBypass())) {
+    if (!mounted) return;
+    if (
+      shouldSkipCurtain(
+        Boolean(reduceMotion),
+        isDebugBypass(),
+        isFullMotionOverride()
+      )
+    ) {
       setPhase("done");
       return;
     }
@@ -78,59 +86,46 @@ export default function PageLoadCurtain({
     setPhase("revealing");
 
     const holdTimer = window.setTimeout(
-      () => setPhase((p) => (p === "revealing" ? "holding" : p)),
+      () => setPhase((current) => (current === "revealing" ? "holding" : current)),
       REVEAL_MS
     );
     const fadeTimer = window.setTimeout(
       () =>
-        setPhase((p) =>
-          p === "holding" || p === "revealing" ? "fading" : p
+        setPhase((current) =>
+          current === "revealing" || current === "holding" ? "fading" : current
         ),
       REVEAL_MS + HOLD_MS
     );
-    const doneTimer = window.setTimeout(() => {
-      window.sessionStorage.setItem(PLAYED_MARKER, "1");
-      setPhase("done");
-    }, REVEAL_MS + HOLD_MS + FADE_MS);
+    const doneTimer = window.setTimeout(
+      finish,
+      REVEAL_MS + HOLD_MS + FADE_MS
+    );
+    const failSafeTimer = window.setTimeout(finish, FAIL_SAFE_MS);
 
-    timersRef.current = [holdTimer, fadeTimer, doneTimer];
+    timersRef.current = [holdTimer, fadeTimer, doneTimer, failSafeTimer];
 
     return () => {
-      timersRef.current.forEach((timer) => window.clearTimeout(timer));
-      timersRef.current = [];
+      clearTimers();
       startedRef.current = false;
     };
-  }, [reduce, sizeReady]);
+  }, [clearTimers, finish, mounted, reduceMotion]);
 
-  // Skip on Escape — only meaningful while curtain is interactive
   useEffect(() => {
-    if (phase !== "revealing" && phase !== "holding") return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") skipToFade();
+    if (phase === "done") return;
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") skipToFade();
     };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
   }, [phase, skipToFade]);
 
-  // DEV-ONLY: expose phase on window for visual diagnostics. Stripped
-  // from production bundle by NODE_ENV constant fold.
-  useEffect(() => {
-    if (process.env.NODE_ENV === "production") return;
-    if (typeof window === "undefined") return;
-    (window as unknown as Record<string, unknown>).__curtain = {
-      phase,
-      heroSize,
-      t: Math.round(performance.now()),
-    };
-  }, [phase, heroSize]);
-
-  const visible = phase !== "done";
+  const introComplete = phase === "fading" || phase === "done";
 
   return (
-    <>
+    <IntroCompleteContext.Provider value={introComplete}>
       {children}
       <AnimatePresence>
-        {visible ? (
+        {phase !== "done" ? (
           <CurtainOverlay
             phase={phase}
             heroSize={heroSize}
@@ -139,6 +134,6 @@ export default function PageLoadCurtain({
           />
         ) : null}
       </AnimatePresence>
-    </>
+    </IntroCompleteContext.Provider>
   );
 }

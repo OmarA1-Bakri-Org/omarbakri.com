@@ -1,8 +1,8 @@
 "use client";
-import React, { useState, useEffect, memo } from "react";
+
+import React, { memo, useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import Monogram from "./monogram";
-import { scrollToSection } from "@/lib/scroll-utils";
 import { navLinks } from "@/lib/nav-links";
 
 const Navbar = memo(function Navbar() {
@@ -25,42 +25,39 @@ const Navbar = memo(function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-colors duration-200 ease-out will-change-transform ${
+      className={`fixed w-full z-50 transition-colors duration-200 ease-out ${
         scrolled
           ? "bg-base/95 backdrop-blur-sm border-b border-edge"
           : "bg-transparent"
       }`}
-      role="navigation"
       aria-label="Main navigation"
     >
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <button
+          <a
             data-monogram-target
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            href="#home"
             className="flex items-center gap-3 min-h-[44px] min-w-[44px] justify-center"
-            aria-label="Scroll to top"
+            aria-label="Omar Al-Bakri — home"
           >
             <Monogram size={36} aria-hidden />
-          </button>
+          </a>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map(({ href, label }) => (
-              <button
+              <a
                 key={href}
-                onClick={() => scrollToSection(href)}
+                href={href}
                 className="text-secondary hover:text-primary transition-colors duration-200 text-sm tracking-wide min-h-[44px] flex items-center"
               >
                 {label}
-              </button>
+              </a>
             ))}
           </div>
 
-          {/* Mobile menu button */}
           <button
-            onClick={() => setIsOpen((prev) => !prev)}
+            type="button"
+            onClick={() => setIsOpen((current) => !current)}
             className="md:hidden p-2 min-h-[44px] min-w-[44px] text-secondary hover:text-primary transition-colors duration-200"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -75,28 +72,27 @@ const Navbar = memo(function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div
-          id="mobile-menu"
-          className="md:hidden bg-elevated border-t border-edge"
-        >
-          <div className="px-4 pt-2 pb-4 space-y-1">
-            {navLinks.map(({ href, label }) => (
-              <button
-                key={href}
-                onClick={() => {
-                  scrollToSection(href);
-                  setIsOpen(false);
-                }}
-                className="block w-full text-left px-4 py-3 text-secondary hover:text-primary transition-colors duration-200 text-sm tracking-wide"
-              >
-                {label}
-              </button>
-            ))}
-          </div>
+      <div
+        id="mobile-menu"
+        aria-hidden={!isOpen}
+        className={`md:hidden overflow-hidden bg-elevated border-t border-edge transition-[max-height,opacity] duration-200 ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="px-4 pt-2 pb-4 space-y-1">
+          {navLinks.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              tabIndex={isOpen ? 0 : -1}
+              onClick={() => setIsOpen(false)}
+              className="block w-full px-4 py-3 text-secondary hover:text-primary transition-colors duration-200 text-sm tracking-wide"
+            >
+              {label}
+            </a>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 });

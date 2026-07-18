@@ -1,44 +1,44 @@
 # Omar Al-Bakri — Applied AI Engineer
 
-Omar Al-Bakri builds applied AI systems end to end across Python and TypeScript. He combines hands-on engineering across orchestration, retrieval, evaluation, APIs, data, integrations, and product delivery with enterprise payments and commercial experience.
+I spent fifteen years explaining technology. Then I learned to build it.
 
-## Opportunity fit
+Omar Al-Bakri builds AI systems for financial services. He learned Python and TypeScript in his forties after fifteen years in enterprise FinTech sales across Tier 1 banks and payments infrastructure. His work spans agent systems, full-stack products, retrieval, evaluation and production delivery.
 
-- Applied AI Engineer
-- AI Agent / Agent Platform Engineer
-- Forward-Deployed AI / Solutions Engineer
-- FinTech and Payments AI
-- AI Architect / Transformation Consultant
-- GTM and Commercial AI Engineer
+Bangkok-based · open to remote roles, consulting and contracting globally
 
-Omar is available immediately, works remote-first, is based in Thailand, and has unrestricted UK work authorisation.
+## Remote roles
+
+Senior or lead roles with end-to-end ownership of an applied AI product or workstream.
+
+## Consulting and contracting
+
+Defined AI products, agent workflows and production integrations with a clear delivery surface.
 
 ## Selected systems
 
-### CallScore
+### CallScore — Live product
 
-A public AI product for evidence-backed creator intelligence. It connects creator statements with timestamped market evidence and supports transparent scoring and analysis workflows.
+CallScore extracts public creator market calls, matches them to timestamped price outcomes and scores evidence-backed performance.
 
-### ruleIQ
+### ruleIQ — Production-ready repository
 
-An AI compliance platform using graph and retrieval patterns to connect frameworks, obligations, controls, and evidence.
+ruleIQ connects regulatory obligations to controls, evidence, retrieval and human review.
 
-### Helios
+### Helios — Private build
 
-An AI-assisted commercial workflow platform connecting user interfaces, API services, orchestration, and sales-tool integrations.
+Helios coordinates B2B prospecting, enrichment and outreach through a desktop operator surface, MCP services, graph memory and CRM integrations.
 
-### thredOS
+### thredOS — Pre-launch
 
-A typed multi-agent workflow runtime for policy-controlled, long-horizon work.
+thredOS provides a local-first operating model for agent workflows with dependencies, gates, approvals, runs and provenance.
 
-## Consulting offers
+## Intelligent Rails
 
-- AI Opportunity Audit — from £1,500
-- Agent Prototype Sprint — from £4,500
-- RAG and Evaluation Hardening — from £3,000
-- FinTech GTM Automation — from £3,500
-- Fractional Applied AI Lead — from £5,000/month
-- Payments AI Advisory — from £1,250/day
+Analysis of payments, financial infrastructure and applied AI.
+
+- Archive: https://www.omarbakri.com/newsletter
+- The War for Float: https://www.omarbakri.com/newsletter/the-war-for-float
+- RSS: https://www.omarbakri.com/rss.xml
 
 ## Contact
 

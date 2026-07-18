@@ -31,6 +31,16 @@ const nextConfig = {
   // Production source maps (smaller)
   productionBrowserSourceMaps: false,
 
+  async redirects() {
+    return [
+      {
+        source: '/pricing',
+        destination: '/#work-together',
+        permanent: true,
+      },
+    ];
+  },
+
   // Headers for security and caching
   async headers() {
     return [

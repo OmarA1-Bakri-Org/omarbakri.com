@@ -17,7 +17,7 @@ const cardVariants = {
 
 export default function ProductsSection() {
   return (
-    <section id="products" className="py-32 lg:py-40 bg-subtle">
+    <section id="work" className="py-32 lg:py-40 bg-subtle">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -37,16 +37,16 @@ export default function ProductsSection() {
             className="font-light tracking-[-0.02em] text-primary mb-6"
             style={{ fontSize: "var(--text-3xl)" }}
           >
-            Applied AI systems, built end to end
+            What I have built.
           </h2>
 
           <p
             className="text-secondary max-w-2xl mb-20 leading-relaxed"
             style={{ fontSize: "var(--text-base)" }}
           >
-            Public and private projects spanning creator intelligence,
-            compliance, commercial workflows, and multi-agent orchestration.
-            Claims below are deliberately conservative and evidence-led.
+            Four systems across creator intelligence, compliance, sales
+            automation and multi-agent operations. Status labels separate what is
+            live, private and pre-launch.
           </p>
         </motion.div>
 
@@ -130,9 +130,8 @@ export default function ProductsSection() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-accent hover:text-accent-hover transition-colors duration-200"
                         style={{ fontSize: "var(--text-sm)" }}
-                        aria-label={`View ${product.name} project`}
-                      >
-                        View project <span aria-hidden="true">→</span>
+                        >
+                        View {product.name} <span aria-hidden="true">→</span>
                       </a>
                     )}
                     {product.repoUrl && (
@@ -142,9 +141,8 @@ export default function ProductsSection() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-muted hover:text-secondary transition-colors duration-200"
                         style={{ fontSize: "var(--text-sm)" }}
-                        aria-label={`View ${product.name} repository`}
-                      >
-                        View repo <span aria-hidden="true">↗</span>
+                        >
+                        View {product.name} repository <span aria-hidden="true">↗</span>
                       </a>
                     )}
                   </div>

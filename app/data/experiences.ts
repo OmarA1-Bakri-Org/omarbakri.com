@@ -8,16 +8,16 @@ export interface Experience {
 
 const experiences: Experience[] = [
   {
-    title: "Independent — Applied AI Product Builder",
+    title: "Independent Applied AI Engineer",
     company: "CallScore · ruleIQ · Helios · thredOS",
     period: "2023 — Present",
     description:
-      "Applied AI systems built end to end across TypeScript, Python, Next.js, FastAPI, data stores, retrieval, and agent workflow orchestration.",
+      "Built four AI products across TypeScript, Python, Next.js, FastAPI, PostgreSQL, retrieval and agent orchestration.",
     outcomes: [
-      "CallScore — crypto creator-intelligence platform scoring public market calls against real price outcomes",
-      "ruleIQ — agentic compliance platform on a GraphRAG knowledge layer",
-      "Helios — autonomous B2B sales engine for AI-driven commercial execution",
-      "thredOS — multi-agent workflow runtime for policy-controlled long-horizon work",
+      "CallScore — live creator-intelligence product scoring public market calls against timestamped price outcomes",
+      "ruleIQ — compliance platform connecting obligations, controls, evidence and review",
+      "Helios — governed B2B prospecting and outreach system",
+      "thredOS — local-first control plane for long-horizon agent work",
     ],
   },
   {
@@ -25,11 +25,11 @@ const experiences: Experience[] = [
     company: "RTGS.global",
     period: "Oct 2024 — Mar 2026",
     description:
-      "Led commercial partnerships and AI strategy for a cross-border payments infrastructure business operating across Asia and EMEA.",
+      "Led partnerships, client services and Asia commercial development for cross-border payments infrastructure. Also led internal AI work.",
     outcomes: [
-      "Built the Helios AI-assisted commercial workflow platform",
-      "Translated commercial automation opportunities into working systems",
-      "Worked across Product, Engineering, Compliance, and Commercial to convert market feedback into structured product improvements",
+      "Built the Helios commercial automation platform",
+      "Turned commercial workflow problems into working software",
+      "Worked across Product, Engineering, Compliance and Commercial to convert market feedback into product changes",
     ],
   },
   {
@@ -37,44 +37,44 @@ const experiences: Experience[] = [
     company: "Banking Circle",
     period: "Mar 2023 — Sep 2023",
     description:
-      "Direct sales and account management for a leading payments bank serving EU financial institutions.",
+      "Managed direct sales and strategic accounts for a payments bank serving European financial institutions.",
     outcomes: [
       "Introduced AI-assisted prospecting and workflow playbooks",
-      "Worked cross-functionally on customer onboarding improvements",
+      "Worked across teams on customer onboarding improvements",
     ],
   },
   {
     title: "Head of Bank Relationship Sales, EMEA · Senior Business Development Manager",
     company: "Convera",
-    period: "Feb 2021 — Feb 2023",
+    period: "2019 — 2023",
     description:
-      "Led EMEA bank sales for financial institution payments across the correspondent banking landscape.",
+      "Led EMEA bank sales for financial-institution payments across the correspondent banking market.",
     outcomes: [
       "Led complex commercial negotiations with financial institutions",
-      "Expanded banking partnerships across the EMEA market",
+      "Expanded banking partnerships across EMEA",
     ],
   },
   {
     title: "Principal Consultant, Wholesale Banking",
-    company: "Marlin Hawk",
+    company: "Marlin Hawk Group",
     period: "2018 — 2020",
     description:
-      "Executive search and advisory for global financial services — building C-suite relationships across banking and FinTech.",
+      "Executive search and advisory across wholesale banking and financial services.",
     outcomes: [
-      "Built C-suite relationships across banking and financial services",
-      "Led executive-search and advisory engagements for global clients",
+      "Won 10 global clients, including Santander and Vanguard",
+      "Generated £1.53M in fees",
     ],
   },
   {
-    title: "Earlier Career",
+    title: "Earlier career",
     company: "Bank of America Merrill Lynch · BNP Paribas CIB",
-    period: "2006 — 2013",
+    period: "2008 — 2016",
     description:
-      "Foundation years in institutional banking — Financial Institutions coverage at BAML, Corporate Coverage at BNP Paribas (~5 years).",
+      "Institutional banking roles spanning financial-institution and corporate coverage.",
     outcomes: [
       "Financial Institutions Coverage at Bank of America Merrill Lynch",
-      "Corporate Coverage at BNP Paribas CIB — nearly five years",
-      "Deep foundation in retail, commercial, and institutional banking operations",
+      "Corporate Coverage at BNP Paribas CIB",
+      "Foundation in retail, commercial and institutional banking operations",
     ],
   },
 ];
