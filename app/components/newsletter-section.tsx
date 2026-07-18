@@ -126,7 +126,7 @@ export default function NewsletterSection() {
                 className="text-muted uppercase tracking-[0.05em] mb-6"
                 style={{ fontSize: "var(--text-xs)" }}
               >
-                Archive in progress
+                Recent writing
               </p>
 
               <div className="space-y-6">
@@ -141,9 +141,6 @@ export default function NewsletterSection() {
                     style={{ fontSize: "var(--text-sm)" }}
                   >
                     Read recent analysis on LinkedIn
-                  </p>
-                  <p className="text-muted" style={{ fontSize: "var(--text-xs)" }}>
-                    The original Ghost archive is being rebuilt here. Shorter analysis remains on LinkedIn.
                   </p>
                 </a>
 
