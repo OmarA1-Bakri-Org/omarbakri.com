@@ -56,13 +56,13 @@ const experiences: Experience[] = [
   },
   {
     title: "Principal Consultant, Wholesale Banking",
-    company: "Eames Consulting",
-    period: "2016 — 2019",
+    company: "Marlin Hawk Group",
+    period: "2018 — 2020",
     description:
-      "Delivered executive search and advisory work for global financial-services clients.",
+      "Executive search and advisory across wholesale banking and financial services.",
     outcomes: [
-      "Built C-suite relationships across banking and FinTech",
-      "Led executive-search and advisory engagements for global clients",
+      "Won 10 global clients, including Santander and Vanguard",
+      "Generated £1.53M in fees",
     ],
   },
   {
