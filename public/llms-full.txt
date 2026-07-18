@@ -32,6 +32,14 @@ Helios coordinates B2B prospecting, enrichment and outreach through a desktop op
 
 thredOS provides a local-first operating model for agent workflows with dependencies, gates, approvals, runs and provenance.
 
+## Intelligent Rails
+
+Analysis of payments, financial infrastructure and applied AI.
+
+- Archive: https://www.omarbakri.com/newsletter
+- The War for Float: https://www.omarbakri.com/newsletter/the-war-for-float
+- RSS: https://www.omarbakri.com/rss.xml
+
 ## Contact
 
 - Website: https://www.omarbakri.com

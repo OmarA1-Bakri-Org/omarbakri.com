@@ -15,6 +15,12 @@ Bangkok-based · open to remote roles, consulting and contracting globally
 - Helios: coordinates B2B prospecting, enrichment and outreach through a desktop operator surface, MCP services and graph memory. Private build.
 - [thredOS](https://github.com/OmarA1-Bakri-Org/thredOS): local-first control plane for structured multi-agent workflows, policy, approvals and provenance. Pre-launch.
 
+## Intelligent Rails
+
+- Archive: https://www.omarbakri.com/newsletter
+- Featured article: https://www.omarbakri.com/newsletter/the-war-for-float
+- RSS: https://www.omarbakri.com/rss.xml
+
 ## Work together
 
 - Remote roles with end-to-end ownership of an applied AI product or workstream.

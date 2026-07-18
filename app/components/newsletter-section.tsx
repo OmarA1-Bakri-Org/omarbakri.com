@@ -1,7 +1,11 @@
 "use client";
+
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Icon } from "@iconify/react";
+import publications, { formatPublicationDate } from "@/app/data/publications";
+
+const recentPublications = publications.slice(0, 3);
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -16,8 +20,8 @@ export default function NewsletterSection() {
     };
   }, []);
 
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubscribe = async (event: React.FormEvent) => {
+    event.preventDefault();
     if (!email) return;
 
     setStatus("loading");
@@ -52,9 +56,7 @@ export default function NewsletterSection() {
           viewport={{ once: true }}
         >
           <div className="grid lg:grid-cols-12 gap-16">
-            {/* Left: content */}
-            <div className="lg:col-span-7">
-              {/* Section label */}
+            <div className="lg:col-span-5">
               <p
                 className="text-accent font-medium uppercase tracking-[0.05em] mb-6"
                 style={{ fontSize: "var(--text-xs)" }}
@@ -73,16 +75,27 @@ export default function NewsletterSection() {
                 className="text-secondary leading-[1.7] mb-8 max-w-lg"
                 style={{ fontSize: "var(--text-base)" }}
               >
-                Intelligent Rails examines AI, payments and financial infrastructure
-                through the balance sheet, operating model and incentives underneath
-                them.
+                Analysis of payments, financial infrastructure and applied AI through the balance sheet, operating model and incentives underneath them.
               </p>
 
-              {/* Subscribe form */}
-              <form
-                onSubmit={handleSubscribe}
-                className="flex flex-col sm:flex-row gap-3 max-w-md"
-              >
+              <div className="flex flex-wrap gap-3 mb-10">
+                <Link
+                  href="/newsletter"
+                  className="inline-flex px-6 py-3 border border-accent text-accent hover:bg-accent hover:text-base transition-colors"
+                  style={{ fontSize: "var(--text-sm)" }}
+                >
+                  Read Intelligent Rails
+                </Link>
+                <a
+                  href="/rss.xml"
+                  className="inline-flex px-6 py-3 border border-edge text-secondary hover:border-accent hover:text-primary transition-colors"
+                  style={{ fontSize: "var(--text-sm)" }}
+                >
+                  RSS feed
+                </a>
+              </div>
+
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md">
                 <label htmlFor="newsletter-email" className="sr-only">
                   Email address
                 </label>
@@ -92,7 +105,7 @@ export default function NewsletterSection() {
                   name="email"
                   autoComplete="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(event) => setEmail(event.target.value)}
                   placeholder="your@email.com"
                   required
                   className="flex-1 px-4 py-3 bg-base border border-edge text-primary placeholder-muted focus:border-accent focus:outline-none transition-colors duration-200"
@@ -120,44 +133,46 @@ export default function NewsletterSection() {
               )}
             </div>
 
-            {/* Right: articles / links */}
-            <div className="lg:col-span-5 lg:pt-16">
-              <p
-                className="text-muted uppercase tracking-[0.05em] mb-6"
-                style={{ fontSize: "var(--text-xs)" }}
-              >
-                Recent writing
-              </p>
+            <div className="lg:col-span-7">
+              <div className="flex items-center justify-between gap-5 mb-6">
+                <p className="text-muted uppercase tracking-[0.05em]" style={{ fontSize: "var(--text-xs)" }}>
+                  Publications
+                </p>
+                <Link href="/newsletter" className="text-accent hover:text-accent-hover transition-colors" style={{ fontSize: "var(--text-sm)" }}>
+                  View all <span aria-hidden="true">→</span>
+                </Link>
+              </div>
 
-              <div className="space-y-6">
-                <a
-                  href="https://linkedin.com/in/omaralbakri"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block border-l border-edge pl-6 hover:border-accent transition-colors duration-200"
-                >
-                  <p
-                    className="text-primary group-hover:text-accent transition-colors duration-200 mb-1"
-                    style={{ fontSize: "var(--text-sm)" }}
-                  >
-                    Read recent analysis on LinkedIn
-                  </p>
-                </a>
+              <div className="border-t border-edge">
+                {recentPublications.map((publication) => {
+                  const content = (
+                    <>
+                      <div className="flex flex-wrap gap-x-3 gap-y-1 text-muted uppercase tracking-[0.05em] mb-3" style={{ fontSize: "var(--text-xs)" }}>
+                        <span>{publication.source}</span>
+                        <span aria-hidden="true">·</span>
+                        <time dateTime={publication.publishedAt}>{formatPublicationDate(publication.publishedAt)}</time>
+                      </div>
+                      <h3 className="text-primary group-hover:text-accent transition-colors mb-2" style={{ fontSize: "var(--text-lg)" }}>
+                        {publication.title}
+                      </h3>
+                      <p className="text-muted leading-relaxed" style={{ fontSize: "var(--text-sm)" }}>
+                        {publication.excerpt}
+                      </p>
+                    </>
+                  );
 
-                <div className="border-l border-edge pl-6">
-                  <div className="flex items-center gap-2 text-secondary">
-                    <Icon icon="mdi:linkedin" className="w-4 h-4 text-accent" />
-                    <a
-                      href="https://linkedin.com/in/omaralbakri"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-accent transition-colors duration-200"
-                      style={{ fontSize: "var(--text-sm)" }}
-                    >
-                      Follow Intelligent Rails on LinkedIn
+                  const className = "group block py-6 border-b border-edge";
+
+                  return publication.external ? (
+                    <a key={publication.href} href={publication.href} target="_blank" rel="noopener noreferrer" className={className}>
+                      {content}
                     </a>
-                  </div>
-                </div>
+                  ) : (
+                    <Link key={publication.href} href={publication.href} className={className}>
+                      {content}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>
