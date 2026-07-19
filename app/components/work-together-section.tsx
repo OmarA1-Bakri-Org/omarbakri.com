@@ -8,11 +8,12 @@ const routes = [
     eyebrow: "Join the team",
     title: "Remote roles",
     summary:
-      "Senior or lead roles with end-to-end ownership of an applied AI product or workstream.",
+      "Open to remote roles across applied AI, product engineering, automation and financial services. I can join an existing team, strengthen a defined workstream or help move a product from idea to working system.",
+    ownershipLabel: "What I can contribute",
     ownership: [
-      "Own an applied AI product from the first problem statement to production",
-      "Build agent, retrieval and evaluation systems that can be tested and operated",
-      "Turn commercial, operational and regulatory constraints into technical decisions",
+      "Build and improve agent, retrieval and evaluation systems",
+      "Translate commercial, operational and regulatory requirements into practical technical decisions",
+      "Work across product, engineering and delivery to move AI systems forward",
     ],
     cta: "Discuss a role",
     href: "mailto:oab@omarbakri.com?subject=Discuss%20a%20remote%20AI%20role",
@@ -22,6 +23,7 @@ const routes = [
     title: "Consulting and contracting",
     summary:
       "Defined AI products, agent workflows and production integrations with a clear delivery surface.",
+    ownershipLabel: "What I can own",
     ownership: [
       "Design and build an AI product, agent workflow or production integration",
       "Find and fix weak retrieval, evaluation, observability and failure handling",
@@ -118,7 +120,7 @@ export default function WorkTogetherSection() {
                 className="text-muted uppercase tracking-[0.05em] mb-4"
                 style={{ fontSize: "var(--text-xs)" }}
               >
-                What I can own
+                {route.ownershipLabel}
               </p>
               <ul className="space-y-3 mb-10 flex-1">
                 {route.ownership.map((item) => (
