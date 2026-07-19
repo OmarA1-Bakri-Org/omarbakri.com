@@ -18,7 +18,6 @@ import {
   REVEAL_MS,
   computeHeroSize,
   isDebugBypass,
-  isFullMotionOverride,
   shouldSkipCurtain,
 } from "./page-load-curtain.config";
 
@@ -71,11 +70,7 @@ export default function PageLoadCurtain({
   useEffect(() => {
     if (!mounted) return;
     if (
-      shouldSkipCurtain(
-        Boolean(reduceMotion),
-        isDebugBypass(),
-        isFullMotionOverride()
-      )
+      shouldSkipCurtain(Boolean(reduceMotion), isDebugBypass())
     ) {
       setPhase("done");
       return;

@@ -1,4 +1,5 @@
 import type React from "react";
+import { getMotionPreference, shouldReduceMotion } from "@/lib/motion-preference";
 
 const REVEAL_MS_BASE = 550;
 const HOLD_MS_BASE = 450;
@@ -38,8 +39,7 @@ export function computeHeroSize(): number {
 }
 
 export function isFullMotionOverride(): boolean {
-  if (typeof window === "undefined") return false;
-  return new URLSearchParams(window.location.search).get("motion") === "full";
+  return getMotionPreference() === "full";
 }
 
 export function isDebugBypass(): boolean {
@@ -50,9 +50,8 @@ export function isDebugBypass(): boolean {
 
 export function shouldSkipCurtain(
   reduceMotion: boolean,
-  debugBypass: boolean,
-  fullMotionOverride = false
+  debugBypass: boolean
 ): boolean {
-  if (debugBypass || fullMotionOverride) return false;
-  return reduceMotion;
+  if (debugBypass) return false;
+  return shouldReduceMotion(getMotionPreference(), reduceMotion);
 }

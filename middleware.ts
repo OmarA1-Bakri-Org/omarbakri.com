@@ -10,7 +10,8 @@ export function middleware(request: NextRequest) {
 
   const csp = [
     "default-src 'self'",
-    `script-src 'self' 'unsafe-eval' 'unsafe-inline'`,
+    `script-src 'self' 'unsafe-eval' 'unsafe-inline' https://static.cloudflareinsights.com`,
+    `script-src-elem 'self' 'unsafe-inline' https://static.cloudflareinsights.com`,
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "img-src 'self' data: https:",
     "font-src 'self' https://fonts.gstatic.com data:",
