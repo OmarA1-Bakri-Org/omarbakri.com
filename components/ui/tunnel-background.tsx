@@ -2,6 +2,7 @@
 
 import * as THREE from "three";
 import { useRef, useEffect, useState, useCallback, type CSSProperties } from "react";
+import { getMotionPreference, shouldReduceMotion } from "@/lib/motion-preference";
 
 /* ----------------------------- utilities ----------------------------- */
 
@@ -156,35 +157,25 @@ function disposeThree(ctx: ThreeContext) {
 
 /* ----------------------------- prefers-reduced-motion ----------------------------- */
 
-function hasFullMotionOverride() {
-  if (typeof window === "undefined") return false;
-  return new URLSearchParams(window.location.search).get("motion") === "full";
-}
-
 function usePrefersReducedMotion() {
-  const [reduce, setReduce] = useState(() =>
-    typeof window !== "undefined" && !hasFullMotionOverride()
-      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      : false
-  );
+  const [reduce, setReduce] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (hasFullMotionOverride()) {
-      setReduce(false);
+
+    const preference = getMotionPreference();
+    if (preference !== "system") {
+      setReduce(shouldReduceMotion(preference, false));
       return;
     }
+
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const onChange = (e: MediaQueryListEvent | MediaQueryList) =>
-      setReduce("matches" in e ? e.matches : (e as any).matches);
-    setReduce(mq.matches);
-    try {
-      mq.addEventListener("change", onChange as any);
-      return () => mq.removeEventListener("change", onChange as any);
-    } catch {
-      mq.addListener(onChange as any);
-      return () => mq.removeListener(onChange as any);
-    }
+    const onChange = (event: MediaQueryListEvent) =>
+      setReduce(shouldReduceMotion("system", event.matches));
+
+    setReduce(shouldReduceMotion("system", mq.matches));
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
   }, []);
 
   return reduce;
