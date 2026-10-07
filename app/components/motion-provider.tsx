@@ -12,7 +12,9 @@ export default function MotionProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [preference, setPreference] = React.useState<MotionPreference>("full");
+  const [preference, setPreference] = React.useState<MotionPreference>(
+    () => getMotionPreference()
+  );
 
   React.useEffect(() => {
     const syncPreference = () => setPreference(getMotionPreference());

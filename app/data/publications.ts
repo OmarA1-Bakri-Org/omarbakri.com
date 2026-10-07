@@ -87,6 +87,14 @@ const publications: Publication[] = [
   },
 ];
 
+export function getRequiredPublication(slug: string): Publication {
+  const publication = publications.find((item) => item.slug === slug);
+  if (!publication) {
+    throw new Error(`Required publication "${slug}" is missing from the published inventory.`);
+  }
+  return publication;
+}
+
 export function formatPublicationDate(date: string): string {
   return new Intl.DateTimeFormat("en-GB", {
     day: "numeric",

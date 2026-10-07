@@ -43,12 +43,13 @@
     "lint": "passed",
     "apiTestsPassed": 7,
     "pngEndpoints": "200 and correct dimensions",
-    "browser": "375px and1440px inspected; compact navigation and refined footer verified",
+    "browser": "375px and 1440px inspected; compact navigation and refined footer verified",
     "sourceWhitespace": "git diff --check clean"
   },
   "reviewCorrections": [
     "Article availability and lookup use stable slug",
     "RSS cache documentation scoped separately"
   ],
-  "productionDeployment": "not deployed"
+  "productionDeployment": "not deployed",
+  "checkpoint": "Historical 7 October monogram checkpoint with seven tests; latest release adds the eighth missing-record test"
 }

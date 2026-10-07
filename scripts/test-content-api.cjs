@@ -16,12 +16,28 @@ execFileSync(process.execPath, [require.resolve("typescript/bin/tsc"),
   "app/api/v1/openapi.json/route.ts", "app/feed.json/route.ts", "app/newsletter/the-war-for-float.md/route.ts",
 ], { cwd: root, stdio: "inherit" });
 const content = require(path.join(output, "data/content.js"));
+const publications = require(path.join(output, "data/publications.js"));
 const list = require(path.join(output, "api/v1/content/route.js"));
 const detail = require(path.join(output, "api/v1/content/[slug]/route.js"));
 const feed = require(path.join(output, "feed.json/route.js"));
 const markdown = require(path.join(output, "newsletter/the-war-for-float.md/route.js"));
 const spec = require(path.join(output, "api/v1/openapi.json/route.js"));
 const request = (query = "", options) => new Request(`https://www.omarbakri.com/api/v1/content${query}`, options);
+
+test("required publication lookup reports missing article metadata clearly", () => {
+  const slug = "the-war-for-float";
+  const index = publications.default.findIndex((item) => item.slug === slug);
+  assert.notEqual(index, -1);
+  assert.equal(publications.getRequiredPublication(slug), publications.default[index]);
+  const [removed] = publications.default.splice(index, 1);
+  try {
+    const expected = { name: "Error", message: `Required publication "${slug}" is missing from the published inventory.` };
+    assert.throws(() => publications.getRequiredPublication(slug), expected);
+    assert.throws(() => content.articleMarkdown(), expected);
+  } finally {
+    publications.default.splice(index, 0, removed);
+  }
+});
 
 test("catalog uses unique stable slugs, canonical ids and explicit rights", () => {
   assert.equal(content.contentItems.length, 6);

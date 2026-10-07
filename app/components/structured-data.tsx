@@ -7,7 +7,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     lastModified ??
     (process.env.BUILD_TIMESTAMP
       ? new Date(process.env.BUILD_TIMESTAMP).toISOString().split("T")[0]
-      : "2026-07-18");
+      : "2026-10-08");
 
   const personSchema = {
     "@context": "https://schema.org",

@@ -6,6 +6,10 @@ The site has an identifiable visual voice: warm black, antique gold, a Fraunces 
 
 The live site omits the current confidential investment-management engagement. This branch adds an evidence-limited description to Introduction, Experience and agent summaries. Portfolio work is described as a prototype and trade monitoring as synthetic validation. Neither is promoted into an operationally accepted production system.
 
+## Release follow-up — 8 October 2026
+
+The release candidate closes the unused wrapper, signature-location/canonical-host and missing-publication findings. Muted text is #938C85, measuring 5.97:1 on the base background and 5.25:1 on the subtle background. Motion now defaults to system preference. The remaining audit below records the original 7 October state; broader proof/layout, legacy CSP and form abuse-control work remains separate technical debt.
+
 ## Scope and evidence
 
 Reviewed the live homepage, mobile navigation, writing archive and full article in the Codex browser, including 375 × 812 mobile, 768 × 1024 article and 1440 × 900 desktop views. Mobile menu navigation opened, selected Writing and closed correctly. At the sampled mobile view the document did not exceed the viewport width. These observations do not establish every browser, breakpoint, zoom level or interaction state.

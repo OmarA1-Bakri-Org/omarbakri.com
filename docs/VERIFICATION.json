@@ -87,5 +87,6 @@
     "preserved": true,
     "normalisedCharacters": 4626
   },
-  "deployment": "not deployed"
+  "deployment": "not deployed",
+  "checkpoint": "Historical 7 October initial API checkpoint with six tests; same suite later extended to eight"
 }

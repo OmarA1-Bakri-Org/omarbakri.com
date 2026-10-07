@@ -1,4 +1,4 @@
-import publications from "./publications";
+import publications, { getRequiredPublication } from "./publications";
 import { warForFloatBlocks } from "./war-for-float";
 
 export const SITE_URL = "https://www.omarbakri.com";
@@ -8,7 +8,7 @@ export type ContentType = typeof CONTENT_TYPES[number];
 const FULL_ARTICLE_SLUG = "the-war-for-float";
 
 export function articleMarkdown(): string {
-  const article = publications.find((item) => item.slug === FULL_ARTICLE_SLUG)!;
+  const article = getRequiredPublication(FULL_ARTICLE_SLUG);
   return [`# ${article.title}`, `By Omar Al-Bakri | ${article.publishedAt}`, article.excerpt,
     ...warForFloatBlocks.map((block) => {
       if (block.type === "divider") return "---";

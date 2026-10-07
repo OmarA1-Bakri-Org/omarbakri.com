@@ -3,9 +3,9 @@ import { Fragment } from "react";
 import Link from "next/link";
 import NewsletterShell from "../newsletter-shell";
 import { warForFloatBlocks, type ArticleBlock } from "../../data/war-for-float";
-import publications from "../../data/publications";
+import { getRequiredPublication } from "../../data/publications";
 
-const publication = publications.find((item) => item.slug === "the-war-for-float")!;
+const publication = getRequiredPublication("the-war-for-float");
 const publicationDate = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${publication.publishedAt}T00:00:00Z`));
 
 function inlineText(text: string) {
