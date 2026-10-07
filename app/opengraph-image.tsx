@@ -44,7 +44,7 @@ export default function Image() {
             letterSpacing: "0.05em",
           }}
         >
-          Applied AI Engineer · Bangkok · Global
+          Applied AI Engineer · S.E. Asia · Global
         </div>
       </div>
     ),

@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: "https://www.omarbakri.com",
-      lastModified: new Date("2026-10-07"),
+      lastModified: new Date("2026-10-08"),
       changeFrequency: "monthly",
       priority: 1,
     },

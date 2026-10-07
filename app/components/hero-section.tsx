@@ -67,7 +67,7 @@ export default function HeroSection() {
             className="text-muted tracking-[0.04em]"
             style={{ fontSize: "var(--text-sm)" }}
           >
-            Bangkok-based <span className="text-accent">·</span> open to remote roles,
+            S.E. Asia <span className="text-accent">·</span> open to remote roles,
             consulting and contracting globally
           </motion.p>
 
