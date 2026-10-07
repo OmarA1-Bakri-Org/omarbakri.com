@@ -102,7 +102,7 @@ export default function ContactSection() {
 
               <div className="space-y-6">
                 <p className="text-primary" style={{ fontSize: "var(--text-sm)" }}>
-                  Bangkok-based · open to remote roles, consulting and contracting globally
+                  S.E. Asia · open to remote roles, consulting and contracting globally
                 </p>
                 <a
                   href="https://linkedin.com/in/omaralbakri"

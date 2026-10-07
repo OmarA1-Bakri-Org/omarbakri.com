@@ -7,7 +7,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
     lastModified ??
     (process.env.BUILD_TIMESTAMP
       ? new Date(process.env.BUILD_TIMESTAMP).toISOString().split("T")[0]
-      : "2026-07-18");
+      : "2026-10-08");
 
   const personSchema = {
     "@context": "https://schema.org",
@@ -19,12 +19,7 @@ export default function StructuredData({ lastModified }: StructuredDataProps) {
       "Omar Al-Bakri builds AI systems for financial services. Previously 15 years in enterprise FinTech sales across Tier 1 banks and payments infrastructure.",
     homeLocation: {
       "@type": "Place",
-      name: "Bangkok, Thailand",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Bangkok",
-        addressCountry: "TH",
-      },
+      name: "S.E. Asia",
     },
     knowsAbout: [
       "Applied AI engineering",

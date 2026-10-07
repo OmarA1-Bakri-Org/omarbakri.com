@@ -22,7 +22,7 @@ module.exports = {
         },
         primary: '#F0EDE8',
         secondary: '#A09A90',
-        muted: '#6B6560',
+        muted: '#938C85',
         accent: {
           DEFAULT: '#C4A265',
           hover: '#D4B275',

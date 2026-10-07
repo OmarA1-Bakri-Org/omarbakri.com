@@ -6,7 +6,7 @@
 
 Omar learned Python and TypeScript in his forties after fifteen years selling financial technology. He now builds agent systems and full-stack AI products, carrying the same problem from commercial case to architecture, implementation and evaluation.
 
-Bangkok-based · open to remote roles, consulting and contracting globally
+S.E. Asia · open to remote roles, consulting and contracting globally
 
 ## Selected work
 
@@ -23,10 +23,26 @@ Bangkok-based · open to remote roles, consulting and contracting globally
 
 ## Work together
 
+Current consulting work includes portfolio-analysis prototypes and synthetic
+trade-monitoring workflows for a confidential investment-management client.
+Calculations are deterministic and outputs retain traceable evidence and human
+review. Prototype validation does not establish live integration or operational
+acceptance. No client identity or private client data is published here.
+
 - Remote roles across applied AI, product engineering, automation and financial services, including defined workstreams inside existing teams.
 - Consulting and contracting for defined AI products, agent workflows and production integrations.
 
 ## Links
+
+- Published content API: https://www.omarbakri.com/api/v1/content
+- API description: https://www.omarbakri.com/api/v1/openapi.json
+- JSON Feed: https://www.omarbakri.com/feed.json
+- RSS: https://www.omarbakri.com/rss.xml
+- Article Markdown: https://www.omarbakri.com/newsletter/the-war-for-float.md
+
+The API exposes published content only. External posts contain metadata and
+excerpts; follow their source URLs for the original text. Cite author and
+canonical URL. Public access does not grant a republication licence.
 
 - Website: https://www.omarbakri.com
 - LinkedIn: https://linkedin.com/in/omaralbakri

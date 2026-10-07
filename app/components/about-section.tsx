@@ -50,6 +50,14 @@ export default function AboutSection() {
                   implementation and evaluation. The buyer&apos;s problem stays visible
                   all the way through.
                 </p>
+                <p>
+                  My current consulting work applies that approach to investment
+                  management: portfolio-analysis prototypes, synthetic
+                  trade-monitoring workflows and evidence that a reviewer can
+                  trace back to its source. Calculations stay deterministic;
+                  AI-assisted outputs and consequential decisions stay subject
+                  to review.
+                </p>
               </div>
 
               <blockquote className="border-l border-accent pl-6 py-2">

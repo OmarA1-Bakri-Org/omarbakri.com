@@ -6,8 +6,8 @@ export function getMotionPreference(search?: string): MotionPreference {
     (typeof window !== "undefined" ? window.location.search : "");
   const value = new URLSearchParams(query).get("motion");
 
-  if (value === "reduce" || value === "system") return value;
-  return "full";
+  if (value === "full" || value === "reduce" || value === "system") return value;
+  return "system";
 }
 
 export function shouldReduceMotion(

@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-07",
+  "runtime": "Next.js 14.2.30 production server",
+  "build": "passed",
+  "typecheck": "passed",
+  "lint": "passed",
+  "focusedTests": {
+    "passed": 6,
+    "failed": 0
+  },
+  "http": [
+    {
+      "path": "/api/v1/content",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/api/v1/content?limit=2",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/api/v1/content?type=news",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/api/v1/content?limit=101",
+      "status": 400,
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/api/v1/content?type=bad",
+      "status": 400,
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/api/v1/content?offset=-1",
+      "status": 400,
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/api/v1/content/no-such-post",
+      "status": 404,
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/api/v1/content/the-war-for-float",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/api/v1/openapi.json",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/feed.json",
+      "status": 200,
+      "contentType": "application/feed+json; charset=utf-8"
+    },
+    {
+      "path": "/newsletter/the-war-for-float.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8"
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=UTF-8"
+    },
+    {
+      "path": "/rss.xml",
+      "status": 200,
+      "contentType": "application/rss+xml; charset=utf-8"
+    }
+  ],
+  "publicationCount": 6,
+  "fullArticles": 1,
+  "externalExcerpts": 5,
+  "news": 0,
+  "conditionalGet": 304,
+  "head": 200,
+  "options": 204,
+  "confidentialSourceScan": "no named client or internal identifiers found in tested public responses",
+  "articleDomTextParity": {
+    "preserved": true,
+    "normalisedCharacters": 4626
+  },
+  "deployment": "not deployed",
+  "checkpoint": "Historical 7 October initial API checkpoint with six tests; same suite later extended to eight"
+}

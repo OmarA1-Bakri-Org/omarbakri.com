@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-07",
+  "monogram": {
+    "main": "01 Refined",
+    "navigation": "04 Compact",
+    "sharedGeometry": "lib/monogram.ts",
+    "gold": "#C4A265",
+    "favicon": [
+      32,
+      32
+    ],
+    "appleIcon": [
+      180,
+      180
+    ],
+    "socialCard": [
+      1200,
+      630
+    ],
+    "signaturePng": [
+      206,
+      340
+    ],
+    "signatureDisplay": [
+      97,
+      160
+    ],
+    "cacheVersion": "v=2",
+    "svgWidths": {
+      "refined": [
+        3.6,
+        4.5
+      ],
+      "compact": [
+        5.5,
+        6
+      ]
+    }
+  },
+  "checks": {
+    "productionBuild": "passed",
+    "typecheck": "passed",
+    "lint": "passed",
+    "apiTestsPassed": 7,
+    "pngEndpoints": "200 and correct dimensions",
+    "browser": "375px and 1440px inspected; compact navigation and refined footer verified",
+    "sourceWhitespace": "git diff --check clean"
+  },
+  "reviewCorrections": [
+    "Article availability and lookup use stable slug",
+    "RSS cache documentation scoped separately"
+  ],
+  "productionDeployment": "not deployed",
+  "checkpoint": "Historical 7 October monogram checkpoint with seven tests; latest release adds the eighth missing-record test"
+}

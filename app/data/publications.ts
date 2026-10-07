@@ -1,4 +1,6 @@
 export interface Publication {
+  slug: string;
+  type: "article" | "post" | "news";
   title: string;
   excerpt: string;
   publishedAt: string;
@@ -11,17 +13,21 @@ export interface Publication {
 
 const publications: Publication[] = [
   {
+    slug: "the-war-for-float",
+    type: "article",
     title: "The War for Float",
     excerpt:
       "Stablecoins are sold as a payments upgrade. In reality, they are a bid for the banking system's cheapest funding.",
     publishedAt: "2026-04-24",
-    topics: ["Stablecoins", "Banking", "Payments"],
+    topics: ["Stablecoins", "Banking", "Payments", "Financial infrastructure", "Regulation"],
     source: "Intelligent Rails",
     href: "/newsletter/the-war-for-float",
     external: false,
     featured: true,
   },
   {
+    slug: "payment-stack-revenue",
+    type: "post",
     title: "Your payment stack is bleeding 5% of revenue",
     excerpt:
       "Fragmented providers inflate transaction costs, consume finance-team time and hide operational losses from the board.",
@@ -32,6 +38,8 @@ const publications: Publication[] = [
     external: true,
   },
   {
+    slug: "ai-sales-judgement",
+    type: "post",
     title: "Most salespeople use AI to write more emails",
     excerpt:
       "The good ones use it to write fewer. AI scales judgement when the seller already knows which accounts deserve attention.",
@@ -42,6 +50,8 @@ const publications: Publication[] = [
     external: true,
   },
   {
+    slug: "apac-corridors-capital",
+    type: "post",
     title: "APAC corridors locking capital",
     excerpt:
       "Pre-funding across SGD-INR, HKD-PHP and JPY-IDR ties up working capital and adds FX drag before settlement begins.",
@@ -52,6 +62,8 @@ const publications: Publication[] = [
     external: true,
   },
   {
+    slug: "network-beats-corridor",
+    type: "post",
     title: "Network beats corridor",
     excerpt:
       "Nexus, Visa and Bridge, and OSN point to the same model: integrate once, then reach every connected market.",
@@ -62,6 +74,8 @@ const publications: Publication[] = [
     external: true,
   },
   {
+    slug: "agentic-ai-financial-services",
+    type: "post",
     title: "Agentic AI in financial services",
     excerpt:
       "Autonomous systems need bounded authority, clear ownership and human intervention before they enter regulated workflows.",
@@ -72,6 +86,14 @@ const publications: Publication[] = [
     external: true,
   },
 ];
+
+export function getRequiredPublication(slug: string): Publication {
+  const publication = publications.find((item) => item.slug === slug);
+  if (!publication) {
+    throw new Error(`Required publication "${slug}" is missing from the published inventory.`);
+  }
+  return publication;
+}
 
 export function formatPublicationDate(date: string): string {
   return new Intl.DateTimeFormat("en-GB", {

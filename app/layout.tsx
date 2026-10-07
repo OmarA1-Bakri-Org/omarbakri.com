@@ -73,6 +73,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.omarbakri.com",
+    types: {
+      "application/rss+xml": "/rss.xml",
+      "application/feed+json": "/feed.json",
+    },
   },
   robots: {
     index: true,

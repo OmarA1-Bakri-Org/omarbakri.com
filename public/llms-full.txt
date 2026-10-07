@@ -4,7 +4,7 @@ I spent fifteen years explaining technology. Then I learned to build it.
 
 Omar Al-Bakri builds AI systems for financial services. He learned Python and TypeScript in his forties after fifteen years in enterprise FinTech sales across Tier 1 banks and payments infrastructure. His work spans agent systems, full-stack products, retrieval, evaluation and production delivery.
 
-Bangkok-based · open to remote roles, consulting and contracting globally
+S.E. Asia · open to remote roles, consulting and contracting globally
 
 ## Remote roles
 
@@ -32,7 +32,26 @@ Helios coordinates B2B prospecting, enrichment and outreach through a desktop op
 
 thredOS provides a local-first operating model for agent workflows with dependencies, gates, approvals, runs and provenance.
 
-## Intelligent Rails
+## Current consulting engagement
+
+Omar is building portfolio-analysis and operational-review workflows for a
+confidential investment-management client. The work includes an interactive
+portfolio prototype with synthetic balances and returns, a synthetic
+trade-monitoring core, source contracts and reviewer controls. Live-source
+integration and operational acceptance remain separate from prototype validation.
+The client identity, private data and internal demo assets are not published.
+
+## Published content access
+
+- Read-only API: https://www.omarbakri.com/api/v1/content
+- OpenAPI description: https://www.omarbakri.com/api/v1/openapi.json
+- JSON Feed: https://www.omarbakri.com/feed.json
+- Article Markdown: https://www.omarbakri.com/newsletter/the-war-for-float.md
+
+External posts expose metadata and excerpts only. Cite Omar Al-Bakri and the
+canonical source URL. Public access does not grant a republication licence.
+
+## Intelligent Rails publications
 
 Analysis of payments, financial infrastructure and applied AI.
 

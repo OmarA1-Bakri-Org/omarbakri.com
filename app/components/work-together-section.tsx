@@ -78,7 +78,7 @@ export default function WorkTogetherSection() {
                 evaluation and stakeholder delivery sit close together.
               </p>
               <p className="text-primary">
-                Bangkok-based · open to remote roles, consulting and contracting globally
+                S.E. Asia · open to remote roles, consulting and contracting globally
               </p>
             </div>
           </div>

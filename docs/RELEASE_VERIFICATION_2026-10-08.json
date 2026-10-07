@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-08",
+  "scope": "Local release candidate before GitHub merge",
+  "userAuthorisedProductionRelease": true,
+  "build": "passed",
+  "typecheck": "passed",
+  "lint": "passed",
+  "contentTests": {
+    "passed": 8,
+    "failed": 0
+  },
+  "http": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/content",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/content?limit=2",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/content?type=news",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/content?limit=101",
+      "status": 400
+    },
+    {
+      "path": "/api/v1/content/no-such-post",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/content/the-war-for-float",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/openapi.json",
+      "status": 200
+    },
+    {
+      "path": "/feed.json",
+      "status": 200
+    },
+    {
+      "path": "/newsletter/the-war-for-float.md",
+      "status": 200
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200
+    },
+    {
+      "path": "/llms-full.txt",
+      "status": 200
+    },
+    {
+      "path": "/rss.xml",
+      "status": 200
+    },
+    {
+      "path": "/email-signature",
+      "status": 200
+    },
+    {
+      "path": "/publications",
+      "status": 404
+    }
+  ],
+  "inventory": {
+    "fullArticles": 1,
+    "externalExcerpts": 5,
+    "news": 0
+  },
+  "conditionalGet": 304,
+  "head": 200,
+  "options": 204,
+  "browser": {
+    "systemReduced": "default skips curtain; hero transform none",
+    "fullOverride": "on reduced OS curtain and hero transform enabled",
+    "reduceOverride": "on non-reduced OS skips curtain; hero transform none",
+    "consoleErrors": 0
+  },
+  "contrast": {
+    "muted": "#938C85",
+    "base": 5.97,
+    "subtle": 5.25
+  },
+  "reviewFixes": [
+    "Unused wrapper removed",
+    "Signature S.E. Asia and www canonical",
+    "Required-publication guard and regression",
+    "Accessible variant download labels",
+    "Test history clarified"
+  ],
+  "residuals": [
+    "Legacy CSP policy retained",
+    "Legacy form abuse controls retained",
+    "No production form or database writes in verification",
+    "Full Core Web Vitals/WCAG audit not claimed"
+  ],
+  "productionDeployment": "Check GitHub deployments and live verification receipt after merge"
+}
