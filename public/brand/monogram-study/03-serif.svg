@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 200" fill="none" role="img" aria-labelledby="title">
+  <title id="title">OAB — editorial serif</title>
+  <g stroke="#C4A265" stroke-linecap="butt" stroke-linejoin="miter">
+    <path stroke-width="3" d="M75 15C107 15 125 52 125 100C125 148 107 185 75 185C43 185 25 148 25 100C25 52 43 15 75 15Z"/>
+    <path stroke-width="3.6" d="M49 104L75 35L101 104M55 93H97M75 94V162M75 96C103 96 110 121 76 127C114 128 112 160 75 160"/>
+    <path stroke-width="2.5" d="M43 105H58M94 105H108M68 94H83M68 162H83"/>
+  </g>
+</svg>

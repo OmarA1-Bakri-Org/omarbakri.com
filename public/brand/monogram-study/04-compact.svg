@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 200" fill="none" role="img" aria-labelledby="title">
+  <title id="title">OAB — compact optical weight</title>
+  <g stroke="#C4A265" stroke-linecap="butt" stroke-linejoin="miter">
+    <path stroke-width="5.5" d="M75 17C107 17 125 53 125 100C125 147 107 183 75 183C43 183 25 147 25 100C25 53 43 17 75 17Z"/>
+    <path stroke-width="6" d="M49 104L75 40L101 104M56 94H98M75 94V159M75 98C103 98 108 122 75 127C111 129 108 157 75 157"/>
+  </g>
+</svg>

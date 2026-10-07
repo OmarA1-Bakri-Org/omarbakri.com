@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 200" fill="none" role="img" aria-labelledby="title">
+  <title id="title">OAB — architectural oval</title>
+  <g stroke="#C4A265" stroke-linecap="butt" stroke-linejoin="miter">
+    <path stroke-width="4" d="M75 15C104 15 122 43 122 76V124C122 157 104 185 75 185C46 185 28 157 28 124V76C28 43 46 15 75 15Z"/>
+    <path stroke-width="4.5" d="M47 105L75 36L103 105M56 92H99M75 92V162M75 96H84C112 96 112 126 84 126H75M75 126H87C115 126 115 160 87 160H75"/>
+  </g>
+</svg>
