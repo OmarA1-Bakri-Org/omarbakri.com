@@ -13,7 +13,7 @@ const html = `<!doctype html>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="640" style="width:640px;max-width:640px;border-collapse:collapse;background:#202938;font-family:Arial,'Helvetica Neue',sans-serif;">
 <tr>
 <td width="132" style="width:132px;padding:12px 0 12px 18px;vertical-align:middle;text-align:center;">
-<img src="https://omarbakri.com/email-signature-assets/monogram" width="97" height="160" alt="AB" style="display:block;width:97px;height:160px;border:0;outline:none;text-decoration:none;margin:0 auto;">
+<img src="https://omarbakri.com/email-signature-assets/monogram?v=2" width="97" height="160" alt="OAB monogram" style="display:block;width:97px;height:160px;border:0;outline:none;text-decoration:none;margin:0 auto;">
 </td>
 <td style="padding:18px 24px 18px 22px;vertical-align:middle;">
 <div style="font-size:30px;line-height:34px;font-weight:300;letter-spacing:.2px;color:#C5A15A;white-space:nowrap;">Omar Al-Bakri</div>

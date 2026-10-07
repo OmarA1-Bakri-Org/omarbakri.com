@@ -78,7 +78,7 @@ Draft submission, scheduled publishing, CMS integrations and MCP tooling are sep
 
 **An editorial engineering portfolio: warm black and gold, expressive serif identity, restrained motion and inspectable product evidence.** Preserve the visual identity. Prioritise contrast and system motion preferences, then improve project proof and page rhythm. The new engagement should strengthen the existing site rather than introduce another aesthetic.
 
-Visual changes are recommendations in this review; they are not implemented on this branch. This honours the requested review-and-suggest scope and the repository's design-approval gate. Content/API work is prepared for review and has not been published.
+The contrast, motion, proof and spacing changes remain recommendations. Separately, Omar selected the monogram refinements: 01 Refined for the main identity and 04 Compact for navigation and the favicon. Those approved marks are implemented on this branch through shared geometry. Content/API and monogram changes are available for review; the branch has not been merged into production.
 
 ## References consulted
 

@@ -77,6 +77,25 @@ test("full article shares Markdown with endpoint; external posts never invent bo
   assert.equal(detail.GET(request(), { params: { slug: "unknown" } }).status, 404);
 });
 
+test("article full text survives a canonical URL change with its stable slug", () => {
+  const publications = require(path.join(output, "data/publications.js")).default;
+  const article = publications.find((item) => item.slug === "the-war-for-float");
+  const originalHref = article.href;
+  const modulePath = require.resolve(path.join(output, "data/content.js"));
+  const originalModule = require.cache[modulePath];
+  try {
+    article.href = "/newsletter/a-new-canonical-url";
+    delete require.cache[modulePath];
+    const changed = require(modulePath).getContent(article.slug);
+    assert.equal(changed.availability, "full_text");
+    assert.equal(changed.canonicalUrl, "https://www.omarbakri.com/newsletter/a-new-canonical-url");
+    assert.ok(changed.content.text.includes("## The numbers that matter"));
+  } finally {
+    article.href = originalHref;
+    require.cache[modulePath] = originalModule;
+  }
+});
+
 test("GET, HEAD, OPTIONS and conditional requests use consistent validators and CORS", async () => {
   const response = list.GET(request());
   const etag = response.headers.get("etag");

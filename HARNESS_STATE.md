@@ -13,6 +13,19 @@ brownfield_debt_map: COMPLETE
 validation_status: VERIFIED_LOCAL_PRODUCTION_BUILD_AND_HTTP
 deployment_status: NOT_DEPLOYED
 
+## Approved monogram update
+
+Omar selected 01 Refined for the main identity and 04 Compact for navigation.
+Applied shared vector geometry across introduction, footer, favicon, Apple icon,
+social card and signature PNG. Flat gold replaces the low-contrast gradient.
+Signature generated at206x340 for existing97x160 display; URL versioned?v=2.
+Production build, lint, type-check, seven API tests and PNG endpoint dimensions passed.
+Browser verified compact navigation and refined footer at mobile/desktop widths.
+Two CodeRabbit findings corrected: stable-slug article lookup and RSS cache wording.
+Evidence: docs/MONOGRAM_VERIFICATION.json.
+Independent TypeScript review of the final integration passed with no actionable findings.
+Canonical GitHub PR18 remains the delivery surface; no main merge/production release.
+
 ## Verified capability route
 
 Task Router: inspected local 5.1.0 skill; dependency-aware routing used.

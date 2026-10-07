@@ -40,7 +40,7 @@ const Navbar = memo(function Navbar() {
             className="flex items-center gap-3 min-h-[44px] min-w-[44px] justify-center"
             aria-label="Omar Al-Bakri — home"
           >
-            <Monogram size={36} aria-hidden />
+            <Monogram size={36} variant="compact" aria-hidden />
           </a>
 
           <div className="hidden md:flex items-center gap-8">

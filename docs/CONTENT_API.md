@@ -21,7 +21,7 @@ The production hostname is `https://www.omarbakri.com`; these endpoints become p
 4. Fetch an item's `apiUrl`. `availability=full_text` includes `content.format=text/markdown` and `content.text`. `availability=excerpt_only` has `content=null`; use the excerpt and link to the original source.
 5. Store the ETag and send it as `If-None-Match` on subsequent requests. A `304` response has no body.
 
-All endpoints accept GET, HEAD and OPTIONS and allow public cross-origin reads. No authentication is required. Responses cache for five minutes and carry content-derived weak ETags. Error responses are not cached. Unsupported methods are rejected by Next.js. No write endpoints exist.
+The new content API, OpenAPI, JSON Feed and Markdown endpoints accept GET, HEAD and OPTIONS and allow public cross-origin reads. No authentication is required. Successful responses from these endpoints cache for five minutes and carry content-derived weak ETags; errors are not cached. The existing `/rss.xml` route retains its separate one-hour cache policy and does not use the shared content-derived ETag handler. Unsupported methods are rejected by Next.js. No write endpoints exist.
 
 ## Query contract
 

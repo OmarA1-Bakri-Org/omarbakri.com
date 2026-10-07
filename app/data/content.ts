@@ -5,8 +5,10 @@ export const SITE_URL = "https://www.omarbakri.com";
 export const CONTENT_TYPES = ["article", "post", "news"] as const;
 export type ContentType = typeof CONTENT_TYPES[number];
 
+const FULL_ARTICLE_SLUG = "the-war-for-float";
+
 export function articleMarkdown(): string {
-  const article = publications.find((item) => item.href === "/newsletter/the-war-for-float")!;
+  const article = publications.find((item) => item.slug === FULL_ARTICLE_SLUG)!;
   return [`# ${article.title}`, `By Omar Al-Bakri | ${article.publishedAt}`, article.excerpt,
     ...warForFloatBlocks.map((block) => {
       if (block.type === "divider") return "---";
@@ -20,7 +22,7 @@ export function articleMarkdown(): string {
 
 // Slugs are durable identifiers, not recomputed from editable titles.
 export const contentItems = publications.map((publication) => {
-  const fullText = publication.href === "/newsletter/the-war-for-float";
+  const fullText = publication.slug === FULL_ARTICLE_SLUG;
   const canonicalUrl = publication.external ? publication.href : `${SITE_URL}${publication.href}`;
   const slug = publication.slug;
   if (!slug) throw new Error("New publication requires a durable content slug");
