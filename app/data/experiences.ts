@@ -8,6 +8,18 @@ export interface Experience {
 
 const experiences: Experience[] = [
   {
+    title: "Applied AI Engineering Consultant",
+    company: "Confidential investment-management client",
+    period: "2026 — Present",
+    description:
+      "Building portfolio-analysis and operational-review workflows that combine deterministic calculations, traceable evidence and human oversight. Prototype and integration work is in progress; live-source integration and operational acceptance remain separate from synthetic validation.",
+    outcomes: [
+      "Built and reviewed an interactive portfolio prototype covering holdings, performance and position-level estimates, with synthetic balances and returns",
+      "Developed a synthetic trade-monitoring core with persistent case evidence, reviewer decisions and recovery controls",
+      "Defined source contracts, access boundaries and evaluation criteria for integrating AI into existing investment workflows",
+    ],
+  },
+  {
     title: "Independent Applied AI Engineer",
     company: "CallScore · ruleIQ · Helios · thredOS",
     period: "2023 — Present",
